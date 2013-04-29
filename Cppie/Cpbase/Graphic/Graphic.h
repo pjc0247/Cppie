@@ -9,6 +9,13 @@
 #include "../Data/Color.h"
 #include "../Data/Rect.h"
 
+
+#define CPPIE_RENDERER_SOFTWARE "software"
+#define CPPIE_RENDERER_OPENGL	"opengl"
+#define CPPIE_RENDERER_OPENGLES "opengles"
+#define CPPIE_RENDERER_DIRECT3D "direct3d"
+
+
 namespace Cppie{
 	extern SDL_Renderer *renderer;
 	extern SDL_Window *window;
