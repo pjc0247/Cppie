@@ -25,30 +25,12 @@ namespace Cppie{
 		if(SDL_Init(SDL_INIT_VIDEO) != 0)
 			return -1;
 
-		window = SDL_CreateWindow("chocopie",
-						SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-						480, 320, 0);
-		if(window == NULL)
-			return -2;
-
-		
-		int n = SDL_GetNumRenderDrivers();
-		for(int i=0;i<n;i++){
-			SDL_RendererInfo info;
-
-			SDL_GetRenderDriverInfo(i, &info);
-			if(!strcmp(info.name, "opengl")){
-				renderer = SDL_CreateRenderer(window, i,
-					SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-			}
-		}
-		if(renderer == NULL)
-			return -3;
-
 		graphic = new Graphic();
 
 		scene = new SceneManager();
 		objmgr = new ObjectManager();
+
+		graphic->initialize(CPPIE_RENDERER_OPENGL);
 
 		log->output("All done");
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdio.h>
+#include <SDL.h>
 
 #include "Graphic.h"
 
@@ -10,6 +11,30 @@ namespace Cppie{
 		blend = NONE;
 	}
 	Graphic::~Graphic(){
+	}
+
+	int Graphic::initialize(const char *rdriver){
+		window = SDL_CreateWindow("chocopie",
+						SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+						480, 320, 0);
+		if(window == NULL)
+			return -2;
+
+		
+		int n = SDL_GetNumRenderDrivers();
+		for(int i=0;i<n;i++){
+			SDL_RendererInfo info;
+
+			SDL_GetRenderDriverInfo(i, &info);
+			if(!strcmp(info.name, rdriver)){
+				renderer = SDL_CreateRenderer(window, i,
+					SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+			}
+		}
+		if(renderer == NULL)
+			return -3;
+	}
+	void Graphic::dispose(){
 	}
 
 	void Graphic::line(int x1,int y1,int x2,int y2){
