@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Debug/Log.h"
+#include "Log/Log.h"
 
 #include "System/Core.h"
 #include "System/Object.h"

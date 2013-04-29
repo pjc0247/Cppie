@@ -2,7 +2,7 @@
 
 #include <SDL.h>
 
-#include "../Debug/Log.h"
+#include "../Log/Log.h"
 #include "../Scene/SceneManager.h"
 #include "../Graphic/Graphic.h"
 #include "../GameObject/ObjectManager.h"

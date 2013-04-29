@@ -34,6 +34,9 @@
     <Filter Include="소스 파일\Cpbase\Debug">
       <UniqueIdentifier>{4893d709-40ff-4b5a-9d5c-7e8648bf3ddf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Log">
+      <UniqueIdentifier>{4e6f2fe8-eb7e-47ce-bfa9-248ab0292874}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,8 +81,8 @@
     <ClInclude Include="Cpbase\GameObject\ObjectManager.h">
       <Filter>소스 파일\Cpbase\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Cpbase\Debug\Log.h">
-      <Filter>소스 파일\Cpbase\Debug</Filter>
+    <ClInclude Include="Cpbase\Log\Log.h">
+      <Filter>소스 파일\Cpbase\Log</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,8 +122,8 @@
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp">
       <Filter>소스 파일\Cpbase\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Cpbase\Debug\Log.cpp">
-      <Filter>소스 파일\Cpbase\Debug</Filter>
+    <ClCompile Include="Cpbase\Log\Log.cpp">
+      <Filter>소스 파일\Cpbase\Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
