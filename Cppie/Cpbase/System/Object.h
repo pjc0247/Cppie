@@ -32,7 +32,7 @@ namespace Cppie{
 
 		virtual void update(){
 		}
-		virtual void draw(int x,int y){
+		virtual void draw(int x=0,int y=0){
 		}
 
 		void setColor(Color color){
