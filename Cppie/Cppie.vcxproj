@@ -93,6 +93,8 @@
     <ClInclude Include="Cpbase\Graphic\BlendMode.h" />
     <ClInclude Include="Cpbase\Graphic\Graphic.h" />
     <ClInclude Include="Cpbase\Graphic\Sprite.h" />
+    <ClInclude Include="Cpbase\Input\Keyboard.h" />
+    <ClInclude Include="Cpbase\Input\KeyCode.h" />
     <ClInclude Include="Cpbase\Log\Log.h" />
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
@@ -110,6 +112,7 @@
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
     <ClCompile Include="Cpbase\Graphic\Graphic.cpp" />
     <ClCompile Include="Cpbase\Graphic\Sprite.cpp" />
+    <ClCompile Include="Cpbase\Input\Keyboard.cpp" />
     <ClCompile Include="Cpbase\Log\Log.cpp" />
     <ClCompile Include="Cpbase\Scene\Scene.h" />
     <ClCompile Include="Cpbase\Scene\SceneManager.cpp" />

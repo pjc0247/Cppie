@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\Cpbase\Log">
       <UniqueIdentifier>{4e6f2fe8-eb7e-47ce-bfa9-248ab0292874}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\input">
+      <UniqueIdentifier>{f9164289-2329-4d13-a844-c245e8cba6fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -84,6 +87,12 @@
     <ClInclude Include="Cpbase\Log\Log.h">
       <Filter>소스 파일\Cpbase\Log</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Input\Keyboard.h">
+      <Filter>소스 파일\Cpbase\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Input\KeyCode.h">
+      <Filter>소스 파일\Cpbase\input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -124,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Log\Log.cpp">
       <Filter>소스 파일\Cpbase\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Input\Keyboard.cpp">
+      <Filter>소스 파일\Cpbase\input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
