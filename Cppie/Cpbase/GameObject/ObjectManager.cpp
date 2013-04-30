@@ -15,7 +15,7 @@ namespace Cppie{
 
 	void ObjectManager::update(){
 		std::list<Layer *>::iterator itor;
-			
+
 		for(itor=o.begin();itor!=o.end();++itor){
 			(*itor)->update();
 		}

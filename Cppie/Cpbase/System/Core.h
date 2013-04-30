@@ -2,6 +2,7 @@
 
 #include <SDL.h>
 
+#include "SystemManager.h"
 #include "../Log/Log.h"
 #include "../Scene/SceneManager.h"
 #include "../Graphic/Graphic.h"
@@ -11,6 +12,8 @@
 namespace Cppie{
 	extern SDL_Window *window;
 	extern SDL_Renderer *renderer;
+
+	extern System *system;
 
 	extern Graphic *graphic;
 

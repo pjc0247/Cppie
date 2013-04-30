@@ -10,6 +10,8 @@ namespace Cppie{
 	SDL_Window *window = nullptr;
 	SDL_Renderer *renderer = nullptr;
 
+	System *system = nullptr;
+	
 	Graphic *graphic = nullptr;
 
 	SceneManager *scene = nullptr;
@@ -27,6 +29,8 @@ namespace Cppie{
 		if(SDL_Init(SDL_INIT_VIDEO) != 0)
 			return -1;
 
+		system = new System();
+
 		graphic = new Graphic();
 
 		scene = new SceneManager();
@@ -35,6 +39,10 @@ namespace Cppie{
 		keyboard = new Keyboard();
 
 		graphic->initialize(CPPIE_RENDERER_OPENGL);
+
+		system->add(scene);
+		system->add(objmgr);
+		system->add(keyboard);
 
 		log->output("All done");
 
@@ -60,7 +68,7 @@ namespace Cppie{
 				}
 			}
 
-			scene->update();
+			system->update();
 			SDL_RenderPresent(renderer);
 
 			float elapsed;
