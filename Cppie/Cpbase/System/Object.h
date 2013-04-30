@@ -24,7 +24,7 @@ namespace Cppie{
 
 	public:
 		DrawableObject(){
-			color = Color::White;
+			setColor(Color::White);
 			blend = BLEND;
 		}
 		~DrawableObject(){
@@ -34,7 +34,9 @@ namespace Cppie{
 		}
 
 		void setColor(Color color){
-			this->color = color;
+			this->color.set(
+					color.r,color.g,color.b,
+					color.a);
 		}
 		Color getColor(){
 			return this->color;
