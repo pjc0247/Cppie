@@ -13,17 +13,17 @@ namespace Cppie{
 	}
 
 	void Layer::update(){
-		std::list<GameObject *>::iterator itor;
+		std::list<DrawableObject *>::iterator itor;
 
 		for(itor=o.begin();itor!=o.end();++itor){
 			(*itor)->update();
 		}
 	}
 
-	void Layer::add(GameObject *obj){
+	void Layer::add(DrawableObject *obj){
 		o.push_back(obj);
 	}
-	void Layer::remove(GameObject *obj){
+	void Layer::remove(DrawableObject *obj){
 		o.remove(obj);
 	}
 
