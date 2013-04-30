@@ -20,3 +20,6 @@
 #include "GameObject/Layer.h"
 #include "GameObject/ObjectManager.h"
 #include "GameObject/GameObject.h"
+
+#include "Input/KeyCode.h"
+#include "Input/Keyboard.h"

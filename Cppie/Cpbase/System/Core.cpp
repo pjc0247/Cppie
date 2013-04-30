@@ -15,6 +15,8 @@ namespace Cppie{
 	SceneManager *scene = nullptr;
 	ObjectManager *objmgr = nullptr;
 
+	Keyboard *keyboard = nullptr;
+
 	Log *log = nullptr;
 
 	int initialize(){
@@ -29,6 +31,8 @@ namespace Cppie{
 
 		scene = new SceneManager();
 		objmgr = new ObjectManager();
+
+		keyboard = new Keyboard();
 
 		graphic->initialize(CPPIE_RENDERER_OPENGL);
 
