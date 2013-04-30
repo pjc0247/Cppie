@@ -30,6 +30,8 @@ namespace Cppie{
 		~DrawableObject(){
 		}
 
+		virtual void update(){
+		}
 		virtual void draw(int x,int y){
 		}
 
