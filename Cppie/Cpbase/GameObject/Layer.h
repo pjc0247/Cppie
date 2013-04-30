@@ -9,13 +9,13 @@ namespace Cppie{
 	class Layer : public Object{
 	public:
 		float z;
-		std::list<DrawableObject *> o;
+		std::list<Object *> o;
 
 	public:
 		Layer(float z = Z_OBJECT);
 
 		virtual void update();
-		void add(DrawableObject *obj);
-		void remove(DrawableObject *obj);
+		void add(Object *obj);
+		void remove(Object *obj);
 	};
 };
