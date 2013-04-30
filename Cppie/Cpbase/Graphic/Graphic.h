@@ -21,6 +21,9 @@ namespace Cppie{
 	extern SDL_Window *window;
 
 	class Graphic : public DrawableObject{
+	private:
+		char title[256];
+
 	public:
 
 		Graphic();

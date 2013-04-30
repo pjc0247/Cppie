@@ -37,8 +37,6 @@ public :
 		layer = new Layer(Z_UI);
 		layer->add(obj);
 
-		objmgr->add(layer);
-
 		return 0;
 	}
 	virtual void dispose(){

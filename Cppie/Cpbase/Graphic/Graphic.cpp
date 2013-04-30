@@ -70,9 +70,11 @@ namespace Cppie{
 	}
 
 	void Graphic::setTitle(const char *title){
-		SDL_SetWindowTitle(window, title);
+		//SDL_SetWindowTitle(window, title);
+		strcpy_s(this->title,256, title);
 	}
 	const char *Graphic::getTitle(){
-		return SDL_GetWindowTitle(window);
+		//return SDL_GetWindowTitle(window);
+		return title;
 	}
 };

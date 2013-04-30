@@ -39,6 +39,7 @@ namespace Cppie{
 		keyboard = new Keyboard();
 
 		graphic->initialize(CPPIE_RENDERER_OPENGL);
+		graphic->setTitle("Cppie");
 
 		system->add(objmgr);
 		system->add(keyboard);
@@ -77,7 +78,8 @@ namespace Cppie{
 			fps = 1000 / elapsed;
 			{
 				char title[128];
-				sprintf_s(title, "Cppie - fps : %.1f", fps);
+				sprintf_s(title, "%s - fps : %.1f",
+									graphic->getTitle(), fps);
 				SDL_SetWindowTitle(window, title);
 			}
 		}
