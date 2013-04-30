@@ -7,6 +7,8 @@
 namespace Cppie{
 
 	Sprite::Sprite(const char *image, int wSlice,int hSlice){
+		DrawableObject::DrawableObject();
+
 		SDL_Surface *surface;
 		char new_path[256];
 
@@ -27,13 +29,10 @@ namespace Cppie{
 		step = 0;
 		angle = 0;
 
-		blend = BLEND;
 		flip = SDL_FLIP_NONE;
 
 		origin.x = w/2;
 		origin.y = h/2;
-
-		color = Color::White;
 	}
 	Sprite::~Sprite(){
 		dispose();
