@@ -8,6 +8,7 @@
 #include "../Graphic/Graphic.h"
 #include "../GameObject/ObjectManager.h"
 #include "../Input/Keyboard.h"
+#include "../Input/Mouse.h"
 
 namespace Cppie{
 	extern SDL_Window *window;
@@ -23,6 +24,7 @@ namespace Cppie{
 	extern ObjectManager *objmgr;
 
 	extern Keyboard *keyboard;
+	extern Mouse *mouse;
 
 	int initialize();
 	void quit();

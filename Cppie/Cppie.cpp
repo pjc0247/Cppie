@@ -48,6 +48,8 @@ public :
 		if(keyboard->triggered(CPPIE_SPACE))
 			logger->output("space bar triggered\n");
 
+		printf("%d \n", mouse->getState(CPPIE_MOUSEBUTTON_WHEEL));
+
 		graphic->line(0,0,100,100);
 		
 	}

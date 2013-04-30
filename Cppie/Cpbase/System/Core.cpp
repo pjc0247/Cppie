@@ -18,6 +18,7 @@ namespace Cppie{
 	ObjectManager *objmgr = nullptr;
 
 	Keyboard *keyboard = nullptr;
+	Mouse *mouse = nullptr;
 
 	Log *logger = nullptr;
 
@@ -37,12 +38,14 @@ namespace Cppie{
 		objmgr = new ObjectManager();
 
 		keyboard = new Keyboard();
+		mouse = new Mouse();
 
 		graphic->initialize(CPPIE_RENDERER_OPENGL);
 		graphic->setTitle("Cppie");
 
 		system->add(objmgr);
 		system->add(keyboard);
+		system->add(mouse);
 		system->add(scene);
 
 		logger->output("All done");
@@ -65,6 +68,38 @@ namespace Cppie{
 				switch(event.type){
 				case SDL_QUIT:
 					quit = true;
+					break;
+				case SDL_MOUSEBUTTONDOWN:
+					switch(event.button.button){
+					case SDL_BUTTON_LEFT:
+						mouse->setState(
+							CPPIE_MOUSEBUTTON_LEFT, CPPIE_MOUSESTATE_DOWN);
+						break;
+					case SDL_BUTTON_RIGHT:
+						mouse->setState(
+							CPPIE_MOUSEBUTTON_RIGHT, CPPIE_MOUSESTATE_DOWN);
+						break;
+					case SDL_BUTTON_MIDDLE:
+						mouse->setState(
+							CPPIE_MOUSEBUTTON_WHEEL, CPPIE_MOUSESTATE_DOWN);
+						break;
+					}
+					break;
+				case SDL_MOUSEBUTTONUP:
+					switch(event.button.button){
+					case SDL_BUTTON_LEFT:
+						mouse->setState(
+							CPPIE_MOUSEBUTTON_LEFT, CPPIE_MOUSESTATE_UP);
+						break;
+					case SDL_BUTTON_RIGHT:
+						mouse->setState(
+							CPPIE_MOUSEBUTTON_RIGHT, CPPIE_MOUSESTATE_UP);
+						break;
+					case SDL_BUTTON_MIDDLE:
+						mouse->setState(
+							CPPIE_MOUSEBUTTON_WHEEL, CPPIE_MOUSESTATE_UP);
+						break;
+					}
 					break;
 				}
 			}

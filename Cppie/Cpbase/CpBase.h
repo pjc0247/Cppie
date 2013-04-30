@@ -24,3 +24,4 @@
 
 #include "Input/KeyCode.h"
 #include "Input/Keyboard.h"
+#include "Input/Mouse.h"

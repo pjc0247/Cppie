@@ -96,6 +96,9 @@
     <ClInclude Include="Cpbase\System\SystemManager.h">
       <Filter>소스 파일\Cpbase\System</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Input\Mouse.h">
+      <Filter>소스 파일\Cpbase\input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -142,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\System\SystemManager.cpp">
       <Filter>소스 파일\Cpbase\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Input\Mouse.cpp">
+      <Filter>소스 파일\Cpbase\input</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
