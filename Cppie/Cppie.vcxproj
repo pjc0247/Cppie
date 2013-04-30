@@ -98,6 +98,7 @@
     <ClInclude Include="Cpbase\Log\Log.h" />
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
+    <ClInclude Include="Cpbase\System\SystemManager.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +119,7 @@
     <ClCompile Include="Cpbase\Scene\SceneManager.cpp" />
     <ClCompile Include="Cpbase\System\Core.cpp" />
     <ClCompile Include="Cpbase\System\Object.h" />
+    <ClCompile Include="Cpbase\System\SystemManager.cpp" />
     <ClCompile Include="Cppie.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>

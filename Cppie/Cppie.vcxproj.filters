@@ -93,6 +93,9 @@
     <ClInclude Include="Cpbase\Input\KeyCode.h">
       <Filter>소스 파일\Cpbase\input</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\System\SystemManager.h">
+      <Filter>소스 파일\Cpbase\System</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -136,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Input\Keyboard.cpp">
       <Filter>소스 파일\Cpbase\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\System\SystemManager.cpp">
+      <Filter>소스 파일\Cpbase\System</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

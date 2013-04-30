@@ -3,6 +3,7 @@
 #include "Log/Log.h"
 
 #include "System/Core.h"
+#include "System/SystemManager.h"
 #include "System/Object.h"
 
 #include "Data/Color.h"
