@@ -6,8 +6,11 @@
 
 #include "KeyCode.h"
 
-#define CPPIE_KEYBUFFER_LENGTH 256
-#define CPPIE_KEYBUFFER_SIZE sizeof(unsigned char)*CPPIE_KEYBUFFER_LENGTH
+#define CPPIE_KEYBOARDSTATE_DOWN	true
+#define CPPIE_KEYBOARDSTATE_UP		false
+
+#define CPPIE_KEYBUFFER_LENGTH		256
+#define CPPIE_KEYBUFFER_SIZE		sizeof(unsigned char)*CPPIE_KEYBUFFER_LENGTH
 
 namespace Cppie{
 	class Keyboard : public Object{

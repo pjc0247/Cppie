@@ -5,7 +5,9 @@
 
 namespace Cppie{
 	Keyboard::Keyboard(){
-		memset(keybuffer, 0, CPPIE_KEYBUFFER_SIZE);
+		memset(keybuffer, 
+			CPPIE_KEYBOARDSTATE_UP,
+			CPPIE_KEYBUFFER_SIZE);
 	}
 	Keyboard::~Keyboard(){
 	}
