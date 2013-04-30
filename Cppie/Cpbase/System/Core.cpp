@@ -40,9 +40,9 @@ namespace Cppie{
 
 		graphic->initialize(CPPIE_RENDERER_OPENGL);
 
-		system->add(scene);
 		system->add(objmgr);
 		system->add(keyboard);
+		system->add(scene);
 
 		log->output("All done");
 
