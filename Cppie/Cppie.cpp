@@ -23,17 +23,15 @@ class TestScene : public Scene{
 	Sprite *bgi;
 	GameObject *obj;
 	Layer *layer;
-
-	Keyboard *keybd;
 public :
 	virtual int initialize(){
 		Scene::initialize();
 
 		bgi = new Sprite("cat.png");
 		obj = new GameObject(0,0,bgi);
-
-		keybd = new Keyboard();
 		
+		obj->color.set(255,128,2);
+
 		layer = new Layer(Z_UI);
 		layer->add(obj);
 
@@ -47,9 +45,8 @@ public :
 	virtual void update(){
 		Scene::update();
 
-		obj->color.set(255,128,2);
 		if(keyboard->triggered(CPPIE_SPACE))
-			printf("A");
+			logger->output("space bar triggered\n");
 
 		graphic->line(0,0,100,100);
 		

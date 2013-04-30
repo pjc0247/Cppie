@@ -19,12 +19,12 @@ namespace Cppie{
 
 	Keyboard *keyboard = nullptr;
 
-	Log *log = nullptr;
+	Log *logger = nullptr;
 
 	int initialize(){
-		log = new Log();
+		logger = new Log();
 
-		log->output("Cppie initializing...");
+		logger->output("Cppie initializing...");
 
 		if(SDL_Init(SDL_INIT_VIDEO) != 0)
 			return -1;
@@ -45,7 +45,7 @@ namespace Cppie{
 		system->add(keyboard);
 		system->add(scene);
 
-		log->output("All done");
+		logger->output("All done");
 
 		return 0;
 	}

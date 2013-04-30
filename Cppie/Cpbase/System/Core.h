@@ -13,6 +13,8 @@ namespace Cppie{
 	extern SDL_Window *window;
 	extern SDL_Renderer *renderer;
 
+	extern Log *logger;
+
 	extern System *system;
 
 	extern Graphic *graphic;
