@@ -27,6 +27,8 @@ public :
 
 		bgi = new Sprite("cat.png");
 		obj = new GameObject(0,0,bgi);
+
+		
 		
 		layer = new Layer(Z_UI);
 		layer->add(obj);
@@ -43,7 +45,9 @@ public :
 	virtual void update(){
 		Scene::update();
 
+		//printf("r %d %d %d\n", Color::Red.r,Color::Red.g,Color::Red.b);
 		//bgi->draw(0,0);
+		obj->color.set(255,128,2);
 		objmgr->update();
 
 		graphic->line(0,0,100,100);
