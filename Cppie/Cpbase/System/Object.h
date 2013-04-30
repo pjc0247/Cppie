@@ -17,7 +17,7 @@ namespace Cppie{
 		}
 	};
 
-	class DrawableObject{
+	class DrawableObject : public Object{
 	public:
 		Color color;
 		BlendMode blend;
