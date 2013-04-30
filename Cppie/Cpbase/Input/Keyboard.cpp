@@ -1,6 +1,8 @@
 #include "Keyboard.h"
 #include "KeyCode.h"
 
+#include <memory.h>
+
 namespace Cppie{
 	Keyboard::Keyboard(){
 		memset(keybuffer, 0, CPPIE_KEYBUFFER_SIZE);
