@@ -1,8 +1,6 @@
 #pragma once
 
 #include <SDL.h>
-#include <Windows.h>
-#include <gl/GL.h>
 
 #include "../System/Object.h"
 
