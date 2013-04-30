@@ -15,12 +15,16 @@
 
 #include "Cpbase/CpBase.h"
 
+#include "Cpbase\/Input/Keyboard.h"
+
 using namespace Cppie;
 
 class TestScene : public Scene{
 	Sprite *bgi;
 	GameObject *obj;
 	Layer *layer;
+
+	Keyboard *keybd;
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -28,7 +32,7 @@ public :
 		bgi = new Sprite("cat.png");
 		obj = new GameObject(0,0,bgi);
 
-		
+		keybd = new Keyboard();
 		
 		layer = new Layer(Z_UI);
 		layer->add(obj);
@@ -45,10 +49,9 @@ public :
 	virtual void update(){
 		Scene::update();
 
-		//printf("r %d %d %d\n", Color::Red.r,Color::Red.g,Color::Red.b);
-		//bgi->draw(0,0);
 		obj->color.set(255,128,2);
-		objmgr->update();
+		if(keyboard->triggered(CPPIE_SPACE))
+			printf("A");
 
 		graphic->line(0,0,100,100);
 		
