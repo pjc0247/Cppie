@@ -29,5 +29,6 @@ namespace Cppie{
 		
 		virtual void draw(int x,int y);
 		void stretch(int x,int y,int w,int h);
+
 	};
 };
