@@ -40,6 +40,9 @@
     <Filter Include="소스 파일\Cpbase\input">
       <UniqueIdentifier>{f9164289-2329-4d13-a844-c245e8cba6fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Task">
+      <UniqueIdentifier>{23c87275-5b15-4380-8857-99ce415601b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -99,6 +102,9 @@
     <ClInclude Include="Cpbase\Input\Mouse.h">
       <Filter>소스 파일\Cpbase\input</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Task\AsyncTask.h">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -148,6 +154,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Input\Mouse.cpp">
       <Filter>소스 파일\Cpbase\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Task\AsyncTask.cpp">
+      <Filter>소스 파일\Cpbase\Task</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
