@@ -105,6 +105,9 @@
     <ClInclude Include="Cpbase\Task\AsyncTask.h">
       <Filter>소스 파일\Cpbase\Task</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Task\Task.h">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -156,6 +159,9 @@
       <Filter>소스 파일\Cpbase\input</Filter>
     </ClCompile>
     <ClCompile Include="Cpbase\Task\AsyncTask.cpp">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Task\Task.cpp">
       <Filter>소스 파일\Cpbase\Task</Filter>
     </ClCompile>
   </ItemGroup>

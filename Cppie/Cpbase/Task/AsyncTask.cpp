@@ -1,5 +1,7 @@
 #include "AsyncTask.h"
 
+#include "Task.h"
+
 namespace Cppie{
 
 	struct AsyncTaskParam{
