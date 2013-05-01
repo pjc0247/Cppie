@@ -17,12 +17,16 @@
 
 #include "Cpbase\/Input/Keyboard.h"
 
+#include "Cpbase/Task/AsyncTask.h"
+
 using namespace Cppie;
 
 class TestScene : public Scene{
 	Sprite *bgi;
 	GameObject *obj;
 	Layer *layer;
+
+	AsyncTask *task;
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -34,6 +38,13 @@ public :
 
 		layer = new Layer(Z_UI);
 		layer->add(obj);
+
+		task = new AsyncTask(
+					CPPIE_TASK(
+						while(1)
+						printf("lambda\n");
+					));
+		task->run();
 
 		return 0;
 	}
@@ -48,7 +59,7 @@ public :
 		if(keyboard->triggered(CPPIE_SPACE))
 			logger->output("space bar triggered\n");
 
-		printf("%d \n", mouse->getState(CPPIE_MOUSEBUTTON_WHEEL));
+		printf("%d \n", mouse->x);
 
 		graphic->line(0,0,100,100);
 		
