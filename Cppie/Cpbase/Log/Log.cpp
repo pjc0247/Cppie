@@ -28,7 +28,8 @@ namespace Cppie{
 		len = vsprintf_s(buffer, format, ap);
 		va_end(ap);
 
-		printf("[Log] : %s\n", buffer);
+		sprintf_s(buffer,"[LOG] %s\n", buffer);
+		printf(buffer);
 		if(fp != nullptr)
 			fprintf(fp, buffer);
 	}
