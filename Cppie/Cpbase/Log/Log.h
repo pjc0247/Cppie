@@ -13,6 +13,11 @@ namespace Cppie{
 		int initialize(){}
 		void dispose();
 
+		void warn(const char *msg, ...);
+		void error(const char *msg, ...);
 		void output(const char *msg, ...);
+
+	private:
+		void log(const char *msg);
 	};
 };
