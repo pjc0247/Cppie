@@ -22,15 +22,17 @@ namespace Cppie{
 		Delay(p->posepone);
 		p->klass->task();
 
+		delete p;
+
 		return 0;
 	}
 	void AsyncTask::run(int postpone){
-		AsyncTaskParam p;
+		AsyncTaskParam *p = new AsyncTaskParam;
 
-		p.klass = this;
-		p.posepone = postpone;
+		p->klass = this;
+		p->posepone = postpone;
 
 		thread = _beginthreadex(
-			NULL,0, Cppie::AsyncTask::TaskThread, &p,NULL,NULL);
+			NULL,0, Cppie::AsyncTask::TaskThread, p,NULL,NULL);
 	}
 };
