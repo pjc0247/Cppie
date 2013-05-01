@@ -21,6 +21,7 @@ namespace Cppie{
 
 		Delay(p->posepone);
 		p->klass->task();
+
 		return 0;
 	}
 	void AsyncTask::run(int postpone){
