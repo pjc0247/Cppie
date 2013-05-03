@@ -9,7 +9,7 @@ namespace Cppie{
 
 	public:
 		SceneManager();
-		~SceneManager();
+		virtual ~SceneManager();
 
 		int initialize();
 		void dispose();

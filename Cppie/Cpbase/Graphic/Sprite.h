@@ -22,7 +22,7 @@ namespace Cppie{
 		SDL_Point origin;
 	public:
 		Sprite(const char *image, int wSlice=1,int hSlice=1);
-		~Sprite();
+		virtual ~Sprite();
 
 		virtual int initialize();
 		virtual void dispose();

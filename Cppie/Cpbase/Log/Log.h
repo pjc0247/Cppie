@@ -8,7 +8,7 @@ namespace Cppie{
 		FILE *fp;
 	public:
 		Log(const char *file = nullptr);
-		~Log();
+		virtual ~Log();
 
 		int initialize(){}
 		void dispose();

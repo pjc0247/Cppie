@@ -9,7 +9,7 @@ namespace Cppie{
 		Point(int x,int y){
 			set(x,y);
 		}
-		~Point(){
+		virtual ~Point(){
 		}
 
 		virtual int initialize(){

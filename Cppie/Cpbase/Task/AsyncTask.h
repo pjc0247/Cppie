@@ -21,7 +21,7 @@ namespace Cppie{
 
 	public:
 		AsyncTask(Task task);
-		~AsyncTask();
+		virtual ~AsyncTask();
 
 		static unsigned int __stdcall TaskThread(void *arg);
 

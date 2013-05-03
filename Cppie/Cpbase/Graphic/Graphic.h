@@ -27,7 +27,7 @@ namespace Cppie{
 	public:
 
 		Graphic();
-		~Graphic();
+		virtual ~Graphic();
 
 		int initialize(const char *rdriver);
 		void dispose();

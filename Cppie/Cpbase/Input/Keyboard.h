@@ -21,7 +21,7 @@ namespace Cppie{
 	public:
 
 		Keyboard();
-		~Keyboard();
+		virtual ~Keyboard();
 
 		virtual int initialize();
 		virtual void dispose();

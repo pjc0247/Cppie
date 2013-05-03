@@ -22,7 +22,7 @@ namespace Cppie{
 	public:
 
 		Mouse();
-		~Mouse();
+		virtual ~Mouse();
 
 		virtual void update();
 

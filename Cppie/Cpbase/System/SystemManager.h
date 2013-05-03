@@ -11,7 +11,7 @@ namespace Cppie{
 
 	public:
 		System();
-		~System();
+		virtual ~System();
 
 		virtual void update();
 		void add(Object *obj);
