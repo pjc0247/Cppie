@@ -29,9 +29,7 @@ namespace Cppie{
 		len = vsprintf_s(buffer, format, ap);
 		va_end(ap);
 
-		sprintf_s(buffer,"[WARN] %s\n", buffer);
-
-		log(buffer);
+		log("WARN", buffer);
 	}
 	void Log::error(const char *format, ...){
 		char buffer[1024];
@@ -42,9 +40,7 @@ namespace Cppie{
 		len = vsprintf_s(buffer, format, ap);
 		va_end(ap);
 
-		sprintf_s(buffer,"[ERROR] %s\n", buffer);
-
-		log(buffer);
+		log("ERROR", buffer);
 	}
 	void Log::output(const char *format, ...){
 		char buffer[1024];
@@ -55,14 +51,16 @@ namespace Cppie{
 		len = vsprintf_s(buffer, format, ap);
 		va_end(ap);
 
-		sprintf_s(buffer,"[LOG] %s\n", buffer);
-
-		log(buffer);
+		log("LOG", buffer);
 	}
 
-	void Log::log(const char *msg){
-		printf(msg);
+	void Log::log(const char *caption, const char *msg){
+		char buffer[1024];
+
+		sprintf_s(buffer, "[%s] %s\n", caption, msg);
+
+		printf(buffer);
 		if(fp != nullptr)
-			fprintf(fp, msg);
+			fprintf(fp, buffer);
 	}
 };

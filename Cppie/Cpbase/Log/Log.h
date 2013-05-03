@@ -18,6 +18,6 @@ namespace Cppie{
 		void output(const char *msg, ...);
 
 	private:
-		void log(const char *msg);
+		void log(const char *caption,const char *format);
 	};
 };
