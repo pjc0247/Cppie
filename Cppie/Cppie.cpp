@@ -26,7 +26,6 @@ class TestScene : public Scene{
 	GameObject *obj;
 	Layer *layer;
 
-	AsyncTask *task;
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -38,13 +37,6 @@ public :
 
 		layer = new Layer(Z_UI);
 		layer->add(obj);
-
-		task = new AsyncTask(
-					CPPIE_TASK(
-						while(1)
-						printf("lambda\n");
-					));
-		task->run();
 
 		return 0;
 	}
