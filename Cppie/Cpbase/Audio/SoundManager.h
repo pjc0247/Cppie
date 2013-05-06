@@ -13,12 +13,16 @@ namespace Cppie{
 	private:
 		FMOD::System *system;
 
+		int volume;
 	public:
 		SoundManager(int maxChannels);
 		virtual ~SoundManager();
 
 		virtual int initialize();
 		virtual void dispose();
+
+		void setVolume(int v);
+		int getVolume();
 
 		FMOD::System *getSystem();
 	};
