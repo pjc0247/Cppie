@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\sdk\sdl\include;C:\sdk\SDL_GDIPLUS;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\sdk\sdl\lib;C:\sdk\SDL_GDIPLUS;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\sdk\sdl\include;C:\sdk\SDL_GDIPLUS;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Windows\api\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\sdk\sdl\lib;C:\sdk\SDL_GDIPLUS;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Windows\api\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -83,6 +83,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cpbase\Audio\Sound.h" />
+    <ClInclude Include="Cpbase\Audio\SoundManager.h" />
+    <ClInclude Include="Cpbase\Audio\SoundStream.h" />
     <ClInclude Include="Cpbase\CpBase.h" />
     <ClInclude Include="Cpbase\Data\Point.h" />
     <ClInclude Include="Cpbase\Data\Rect.h" />
@@ -105,6 +108,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cpbase\Audio\Sound.cpp" />
+    <ClCompile Include="Cpbase\Audio\SoundManager.cpp" />
+    <ClCompile Include="Cpbase\Audio\SoundStream.cpp" />
     <ClCompile Include="Cpbase\Data\Color.cpp">
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(RelativeDir)</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(RelativeDir)</ObjectFileName>

@@ -14,6 +14,10 @@
 #include "Graphic/Sprite.h"
 #include "Graphic/Graphic.h"
 
+#include "Audio/Sound.h"
+#include "Audio/SoundStream.h"
+#include "Audio/SoundManager.h"
+
 #include "Scene/Scene.h"
 #include "Scene/SceneManager.h"
 

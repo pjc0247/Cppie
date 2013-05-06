@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\Cpbase\Task">
       <UniqueIdentifier>{23c87275-5b15-4380-8857-99ce415601b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Audio">
+      <UniqueIdentifier>{20d5d9dc-44bc-4a6b-8bda-1107017043cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -108,6 +111,15 @@
     <ClInclude Include="Cpbase\Task\Task.h">
       <Filter>소스 파일\Cpbase\Task</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Audio\Sound.h">
+      <Filter>소스 파일\Cpbase\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Audio\SoundManager.h">
+      <Filter>소스 파일\Cpbase\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Audio\SoundStream.h">
+      <Filter>소스 파일\Cpbase\Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -163,6 +175,15 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Task\Task.cpp">
       <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Audio\Sound.cpp">
+      <Filter>소스 파일\Cpbase\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Audio\SoundManager.cpp">
+      <Filter>소스 파일\Cpbase\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Audio\SoundStream.cpp">
+      <Filter>소스 파일\Cpbase\Audio</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

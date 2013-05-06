@@ -6,6 +6,7 @@
 #include "../Log/Log.h"
 #include "../Scene/SceneManager.h"
 #include "../Graphic/Graphic.h"
+#include "../Audio/SoundManager.h"
 #include "../GameObject/ObjectManager.h"
 #include "../Input/Keyboard.h"
 #include "../Input/Mouse.h"
@@ -19,6 +20,8 @@ namespace Cppie{
 	extern System *system;
 
 	extern Graphic *graphic;
+
+	extern SoundManager *sndmgr;
 
 	extern SceneManager *scene;
 	extern ObjectManager *objmgr;

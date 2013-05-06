@@ -14,6 +14,8 @@ namespace Cppie{
 	
 	Graphic *graphic = nullptr;
 
+	SoundManager *sndmgr = nullptr;
+
 	SceneManager *scene = nullptr;
 	ObjectManager *objmgr = nullptr;
 
@@ -33,6 +35,8 @@ namespace Cppie{
 		system = new System();
 
 		graphic = new Graphic();
+
+		sndmgr = new SoundManager(CPPIE_SOUND_MAXCHANNELS);
 
 		scene = new SceneManager();
 		objmgr = new ObjectManager();

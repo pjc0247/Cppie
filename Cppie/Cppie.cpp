@@ -11,6 +11,7 @@
 #include <sdl_gdiplus.h>
 #pragma comment (lib,"sdl")
 #pragma comment (lib,"sdl_gdiplus")
+#pragma comment (lib,"fmodex_vc")
 #pragma comment (lib,"opengl32")
 
 #include "Cpbase/CpBase.h"
@@ -26,6 +27,8 @@ class TestScene : public Scene{
 	GameObject *obj;
 	Layer *layer;
 
+	Sound *sound;
+
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -38,6 +41,8 @@ public :
 		layer = new Layer(Z_UI);
 		layer->add(obj);
 
+		sound = new SoundStream("kalimba.mp3");
+		
 		return 0;
 	}
 	virtual void dispose(){
