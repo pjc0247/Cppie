@@ -21,8 +21,10 @@ namespace Cppie{
 			logger->error("Failed to open audio file - %s", sound);
 			this->sound = nullptr;
 		}
-		else
+		else{
+			sndmgr->add(this);
 			logger->output("loaded : Sound(%x) - %s", this, sound);
+		}
 	}
 	Sound::~Sound(){
 		dispose();
@@ -38,6 +40,8 @@ namespace Cppie{
 		if(sound != nullptr){
 			sound->release();
 		}
+
+		sndmgr->remove(this);
 
 		logger->output("disposed : Sound(%x)", this);
 	}
@@ -118,6 +122,9 @@ namespace Cppie{
 	}
 	void Sound::setVolume(int v){
 		float tmp;
+
+		v = (float)sndmgr->getVolume() / 100 * v;
+
 		tmp = (float)v;
 		tmp /= 100;
 

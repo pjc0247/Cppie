@@ -1,5 +1,7 @@
 #include "SoundManager.h"
 
+#include "../System/Core.h"
+
 namespace Cppie{
 	SoundManager::SoundManager(int maxChannels){
 		FMOD::System_Create(&system);
@@ -26,8 +28,21 @@ namespace Cppie{
 		return system;
 	}
 
+	void SoundManager::add(Sound *sound){
+		o.push_back(sound);
+	}
+	void SoundManager::remove(Sound *sound){
+		o.remove(sound);
+	}
+
 	void SoundManager::setVolume(int v){
 		this->volume = v;
+
+		std::list<Sound *>::iterator itor;
+		for(itor=o.begin();itor!=o.end();++itor){
+			int original = (*itor)->getVolume();
+			(*itor)->setVolume(original);
+		}
 	}
 	int SoundManager::getVolume(){
 		return this->volume;

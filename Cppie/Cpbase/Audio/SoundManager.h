@@ -4,6 +4,7 @@
 #include "Sound.h"
 
 #include <fmod.hpp>
+#include <list>
 
 #define CPPIE_SOUND_MAXCHANNELS 32
 
@@ -12,6 +13,8 @@ namespace Cppie{
 	class SoundManager : public Object {
 	private:
 		FMOD::System *system;
+		
+		std::list<Sound *> o;
 
 		int volume;
 	public:
@@ -20,6 +23,9 @@ namespace Cppie{
 
 		virtual int initialize();
 		virtual void dispose();
+
+		void add(Sound *sound);
+		void remove(Sound *sound);
 
 		void setVolume(int v);
 		int getVolume();

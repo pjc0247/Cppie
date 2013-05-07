@@ -43,6 +43,9 @@ public :
 
 		sound = new SoundStream("kalimba.mp3");
 		
+		sound->play();
+		sndmgr->setVolume(10);
+
 		return 0;
 	}
 	virtual void dispose(){
@@ -56,7 +59,7 @@ public :
 		if(keyboard->triggered(CPPIE_SPACE))
 			logger->output("space bar triggered\n");
 
-		printf("%d \n", mouse->x);
+		//printf("%d \n", mouse->x);
 
 		graphic->line(0,0,100,100);
 		

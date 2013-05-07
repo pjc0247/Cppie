@@ -19,7 +19,9 @@ namespace Cppie{
 			logger->error("Failed to open audio file - %s", sound);
 			this->sound = nullptr;
 		}
-		else
+		else{
+			sndmgr->add(this);
 			logger->output("loaded : Sound(%x) - %s", this, sound);
+		}
 	}
 };
