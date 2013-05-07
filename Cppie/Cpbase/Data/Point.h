@@ -6,6 +6,9 @@ namespace Cppie{
 		int x,y;
 
 	public:
+		Point(){
+			set(0,0);
+		}
 		Point(int x,int y){
 			set(x,y);
 		}
