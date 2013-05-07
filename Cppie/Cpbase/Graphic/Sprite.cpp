@@ -25,6 +25,8 @@ namespace Cppie{
 			w /= wSlice;
 			h /= hSlice;
 		}
+		this->wSlice = wSlice;
+		this->hSlice = hSlice;
 
 		step = 0;
 		angle = 0;
