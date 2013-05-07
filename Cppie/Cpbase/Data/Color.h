@@ -6,6 +6,9 @@ namespace Cppie{
 		int r,g,b,a;
 
 	public:
+		Color(){
+			set(0,0,0,255);
+		}
 		Color(int r=0,int g=0,int b=0,int a=255){
 			set(r,g,b,a);
 		}
