@@ -6,6 +6,9 @@ namespace Cppie{
 		int w,h;
 
 	public:
+		Size(){
+			set(0,0);
+		}
 		Size(int w,int h){
 			set(w,h);
 		}
