@@ -23,4 +23,6 @@ namespace Cppie{
 			this->h = h;
 		}
 	};
+
+	Size cpSize(int w,int h);
 };
