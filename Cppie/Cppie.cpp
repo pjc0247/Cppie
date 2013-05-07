@@ -23,7 +23,7 @@
 using namespace Cppie;
 
 class TestScene : public Scene{
-	Sprite *bgi, *src;
+	Sprite *bgi;
 	GameObject *obj;
 	Layer *layer;
 
@@ -33,20 +33,14 @@ public :
 	virtual int initialize(){
 		Scene::initialize();
 
-		bgi = new Sprite("out.png");
+		bgi = new Sprite("cat.png");
 		obj = new GameObject(0,0,bgi);
 
-		src = new Sprite("src.png");
-
-		Rect rect;
-		rect.set(0,0,src->w, src->h);
-		printf("%d %d\n", src->w, src->h);
-		graphic->setSize(rect);
 		
 	//	obj->color.set(255,128,2);
 
 		layer = new Layer(Z_UI);
-		//layer->add(obj);
+		layer->add(obj);
 
 		return 0;
 	}
@@ -58,7 +52,6 @@ public :
 	virtual void update(){
 		Scene::update();
 
-		src->draw(0,0);
 		bgi->draw(0,0);
 
 		if(keyboard->triggered(CPPIE_ESCAPE)){
@@ -71,7 +64,7 @@ public :
 int _tmain(int argc, _TCHAR* argv[])
 {
 	
-	Cppie::initialize(40,40);
+	Cppie::initialize(480,320);
 	Scene *scene = new TestScene;
 	Cppie::scene->change(scene);
 	Cppie::run();
