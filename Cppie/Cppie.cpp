@@ -36,9 +36,6 @@ public :
 		bgi = new Sprite("cat.png");
 		obj = new GameObject(0,0,bgi);
 
-		
-	//	obj->color.set(255,128,2);
-
 		layer = new Layer(Z_UI);
 		layer->add(obj);
 

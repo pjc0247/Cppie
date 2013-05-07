@@ -9,6 +9,8 @@
 #include "Data/Color.h"
 #include "Data/Point.h"
 #include "Data/Rect.h"
+#include "Data/Size.h"
+#include "Data/make.h"
 
 #include "Graphic/BlendMode.h"
 #include "Graphic/Sprite.h"
