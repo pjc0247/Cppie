@@ -24,7 +24,7 @@ namespace Cppie{
 
 	Log *logger = nullptr;
 
-	int initialize(){
+	int initialize(int w,int h){
 		logger = new Log();
 
 		logger->output("Cppie initializing...");
@@ -34,7 +34,7 @@ namespace Cppie{
 
 		system = new System();
 
-		graphic = new Graphic();
+		graphic = new Graphic(w,h,CPPIE_RENDERER_OPENGL);
 
 		sndmgr = new SoundManager(CPPIE_SOUND_MAXCHANNELS);
 
@@ -44,7 +44,6 @@ namespace Cppie{
 		keyboard = new Keyboard();
 		mouse = new Mouse();
 
-		graphic->initialize(CPPIE_RENDERER_OPENGL);
 		graphic->setTitle("Cppie");
 
 		system->add(objmgr);

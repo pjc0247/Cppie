@@ -26,10 +26,10 @@ namespace Cppie{
 
 	public:
 
-		Graphic();
+		Graphic(int w,int h,const char *rdriver);
 		virtual ~Graphic();
 
-		int initialize(const char *rdriver);
+		int initialize(int w,int h,const char *rdriver);
 		void dispose();
 
 		void line(int x1,int y1,int x2,int y2);

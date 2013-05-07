@@ -29,7 +29,7 @@ namespace Cppie{
 	extern Keyboard *keyboard;
 	extern Mouse *mouse;
 
-	int initialize();
+	int initialize(int w,int h);
 	void quit();
 	void run();
 };

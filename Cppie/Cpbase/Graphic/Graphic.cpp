@@ -6,17 +6,19 @@
 #include "Graphic.h"
 
 namespace Cppie{
-	Graphic::Graphic(){
+	Graphic::Graphic(int w,int h,const char *rdriver){
 		color = Color::White;
 		blend = NONE;
+
+		initialize(w,h, rdriver);
 	}
 	Graphic::~Graphic(){
 	}
 
-	int Graphic::initialize(const char *rdriver){
+	int Graphic::initialize(int w,int h,const char *rdriver){
 		window = SDL_CreateWindow("chocopie",
 						SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-						480, 320, 0);
+						w,h, 0);
 		if(window == NULL)
 			return -2;
 
