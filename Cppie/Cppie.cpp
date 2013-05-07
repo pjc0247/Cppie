@@ -23,7 +23,7 @@
 using namespace Cppie;
 
 class TestScene : public Scene{
-	Sprite *bgi;
+	Sprite *bgi, *src;
 	GameObject *obj;
 	Layer *layer;
 
@@ -33,18 +33,20 @@ public :
 	virtual int initialize(){
 		Scene::initialize();
 
-		bgi = new Sprite("cat.png");
+		bgi = new Sprite("out.png");
 		obj = new GameObject(0,0,bgi);
+
+		src = new Sprite("src.png");
+
+		Rect rect;
+		rect.set(0,0,src->w, src->h);
+		printf("%d %d\n", src->w, src->h);
+		graphic->setSize(rect);
 		
-		obj->color.set(255,128,2);
+	//	obj->color.set(255,128,2);
 
 		layer = new Layer(Z_UI);
-		layer->add(obj);
-
-		sound = new SoundStream("kalimba.mp3");
-		
-		sound->play();
-		sndmgr->setVolume(10);
+		//layer->add(obj);
 
 		return 0;
 	}
@@ -56,19 +58,20 @@ public :
 	virtual void update(){
 		Scene::update();
 
-		if(keyboard->triggered(CPPIE_SPACE))
+		src->draw(0,0);
+		bgi->draw(0,0);
+
+		if(keyboard->triggered(CPPIE_ESCAPE)){
 			logger->output("space bar triggered\n");
+		}
 
-		//printf("%d \n", mouse->x);
-
-		graphic->line(0,0,100,100);
-		
 	}
 };
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Cppie::initialize();
+	
+	Cppie::initialize(40,40);
 	Scene *scene = new TestScene;
 	Cppie::scene->change(scene);
 	Cppie::run();
