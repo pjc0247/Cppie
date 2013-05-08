@@ -9,7 +9,7 @@ namespace Cppie{
 		Rect(){
 			set(0,0);
 		}
-		Rect(int x=0,int y=0,int w=0,int h=0){
+		Rect(int x,int y,int w=1,int h=1){
 			set(x,y);
 		}
 		virtual ~Rect(){
