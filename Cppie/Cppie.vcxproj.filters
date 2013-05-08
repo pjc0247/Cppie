@@ -120,6 +120,9 @@
     <ClInclude Include="Cpbase\Audio\SoundStream.h">
       <Filter>소스 파일\Cpbase\Audio</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Data\make.h">
+      <Filter>소스 파일\Cpbase\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -184,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Audio\SoundStream.cpp">
       <Filter>소스 파일\Cpbase\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Data\make.cpp">
+      <Filter>소스 파일\Cpbase\Data</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -87,6 +87,7 @@
     <ClInclude Include="Cpbase\Audio\SoundManager.h" />
     <ClInclude Include="Cpbase\Audio\SoundStream.h" />
     <ClInclude Include="Cpbase\CpBase.h" />
+    <ClInclude Include="Cpbase\Data\make.h" />
     <ClInclude Include="Cpbase\Data\Point.h" />
     <ClInclude Include="Cpbase\Data\Rect.h" />
     <ClInclude Include="Cpbase\GameObject\GameObject.h" />
@@ -117,6 +118,7 @@
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(RelativeDir)</XMLDocumentationFileName>
     </ClCompile>
     <ClCompile Include="Cpbase\Data\Color.h" />
+    <ClCompile Include="Cpbase\Data\make.cpp" />
     <ClCompile Include="Cpbase\Data\Point.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
