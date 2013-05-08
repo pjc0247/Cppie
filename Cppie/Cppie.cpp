@@ -22,6 +22,19 @@
 
 using namespace Cppie;
 
+class TestScene2 : public Scene{
+public:
+	virtual int initialize(){
+		return 0;
+	}
+	virtual void dispose(){
+	}
+
+	virtual void update(){
+		printf("now in scene2!\n");
+	}
+};
+
 class TestScene : public Scene{
 	Sprite *bgi;
 	GameObject *obj;
@@ -53,10 +66,14 @@ public :
 
 		if(keyboard->triggered(CPPIE_ESCAPE)){
 			logger->output("space bar triggered\n");
+
+			TestScene2 *new_scene = new TestScene2;
+			scene->change(new_scene);
 		}
 
 	}
 };
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {
