@@ -24,7 +24,7 @@ namespace Cppie{
 		Sprite(const char *image, int wSlice=1,int hSlice=1);
 		virtual ~Sprite();
 
-		virtual int initialize();
+		virtual int initialize(const char *image, int wSlice,int hSlice);
 		virtual void dispose();
 		
 		virtual void draw(int x,int y);
