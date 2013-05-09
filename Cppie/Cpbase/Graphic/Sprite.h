@@ -21,6 +21,7 @@ namespace Cppie{
 		SDL_RendererFlip flip;
 		SDL_Point origin;
 	public:
+		Sprite();
 		Sprite(const char *image, int wSlice=1,int hSlice=1);
 		virtual ~Sprite();
 

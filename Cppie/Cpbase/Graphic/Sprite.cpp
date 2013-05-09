@@ -6,9 +6,19 @@
 
 namespace Cppie{
 
+	Sprite::Sprite(){
+		DrawableObject::DrawableObject();
+	}
 	Sprite::Sprite(const char *image, int wSlice,int hSlice){
 		DrawableObject::DrawableObject();
 
+		initialize(image, wSlice, hSlice);
+	}
+	Sprite::~Sprite(){
+		dispose();
+	}
+
+	int Sprite::initialize(const char *image, int wSlice,int hSlice){
 		SDL_Surface *surface;
 		char new_path[256];
 
@@ -35,12 +45,7 @@ namespace Cppie{
 
 		origin.x = w/2;
 		origin.y = h/2;
-	}
-	Sprite::~Sprite(){
-		dispose();
-	}
 
-	int Sprite::initialize(){
 		return 0;
 	}
 	void Sprite::dispose(){
