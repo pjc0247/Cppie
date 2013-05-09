@@ -14,6 +14,7 @@
 
 #include "Graphic/BlendMode.h"
 #include "Graphic/Sprite.h"
+#include "Graphic/SpriteNumber.h"
 #include "Graphic/Graphic.h"
 
 #include "Audio/Sound.h"

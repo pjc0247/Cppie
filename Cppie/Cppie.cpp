@@ -37,6 +37,7 @@ public:
 
 class TestScene : public Scene{
 	Sprite *bgi;
+	SpriteNumber *num;
 	GameObject *obj;
 	Layer *layer;
 
@@ -49,8 +50,10 @@ public :
 		bgi = new Sprite("cat.png");
 		obj = new GameObject(0,0,bgi);
 
+		num = new SpriteNumber("num.png");
+
 		layer = new Layer(Z_UI);
-		layer->add(obj);
+		//layer->add(obj);
 
 		return 0;
 	}
@@ -62,7 +65,9 @@ public :
 	virtual void update(){
 		Scene::update();
 
-		bgi->draw(0,0);
+	//	bgi->draw(0,0);
+
+		num->draw(0,0,109123);
 
 		if(keyboard->triggered(CPPIE_ESCAPE)){
 			logger->output("space bar triggered\n");

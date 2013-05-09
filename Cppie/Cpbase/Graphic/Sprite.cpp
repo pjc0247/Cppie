@@ -43,8 +43,6 @@ namespace Cppie{
 		origin.x = w/2;
 		origin.y = h/2;
 
-		printf("%x %d\n", texture);
-
 		return 0;
 	}
 	void Sprite::dispose(){
@@ -67,9 +65,6 @@ namespace Cppie{
 
 		dst.x = x, dst.y = y;
 		dst.w = w, dst.h = h;
-		
-		printf("a %x %d\n", texture);
-
 
 		SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
 		SDL_SetTextureAlphaMod(texture, color.a);
