@@ -8,6 +8,7 @@
 typedef function<void()>		Task;
 
 #define CPPIE_TASK_IMMEDIATE	0
+#define CPPIE_TASK_NEXT_LOOP	0
 
 namespace Cppie{
 
