@@ -3,7 +3,6 @@
 #include "../System/Object.h"
 
 #include <functional>
-#include <process.h>
 
 using namespace std;
 
