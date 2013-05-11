@@ -6,12 +6,6 @@
 
 using namespace std;
 
-#define CPPIE_TASK(code)		[&](){code}
-#define CPPIE_SAFE_TASK(code)	[=](){code}
-typedef function<void()>		Task;
-
-#define CPPIE_TASK_IMMEDIATE	0
-
 namespace Cppie{
 	class AsyncTask : public Object{
 	private:
