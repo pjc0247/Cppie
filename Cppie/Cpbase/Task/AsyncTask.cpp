@@ -43,4 +43,13 @@ namespace Cppie{
 		thread = SDL_CreateThread(
 			Cppie::AsyncTask::TaskThread, NULL, p);
 	}
+
+	int AsyncTask::wait(){
+		int result;
+
+		SDL_WaitThread(thread, &result);
+		this->thread = nullptr;
+
+		return result;
+	}
 };
