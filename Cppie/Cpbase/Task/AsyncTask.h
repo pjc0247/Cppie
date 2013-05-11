@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../System/Object.h"
+#include "Task.h"
 
 #include <functional>
 
