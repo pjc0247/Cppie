@@ -19,6 +19,8 @@ namespace Cppie{
 	int AsyncTask::initialize(Task task){
 		this->task = task;
 		this->thread = nullptr;
+
+		return 0;
 	}
 	void AsyncTask::dispose(){
 	}
