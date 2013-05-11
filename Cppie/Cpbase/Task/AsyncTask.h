@@ -17,14 +17,18 @@ namespace Cppie{
 	class AsyncTask : public Object{
 	private:
 		Task task;
-		unsigned int thread;
+		SDL_Thread* thread;
 
 	public:
 		AsyncTask(Task task);
 		virtual ~AsyncTask();
 
+		virtual int initialize(Task task);
+		virtual void dispose();
+
 		static int TaskThread(void *arg);
 
 		void run(int postpone=CPPIE_TASK_IMMEDIATE);
+		void wait();
 	};
 };

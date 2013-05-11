@@ -10,9 +10,17 @@ namespace Cppie{
 	};
 
 	AsyncTask::AsyncTask(Task task){
-		this->task = task;
+		initialize(task);
 	}
 	AsyncTask::~AsyncTask(){
+		dispose();
+	}
+
+	int AsyncTask::initialize(Task task){
+		this->task = task;
+		this->thread = nullptr;
+	}
+	void AsyncTask::dispose(){
 	}
 
 	int AsyncTask::TaskThread(void *arg){
@@ -32,7 +40,7 @@ namespace Cppie{
 		p->klass = this;
 		p->posepone = postpone;
 
-		SDL_CreateThread(
+		thread = SDL_CreateThread(
 			Cppie::AsyncTask::TaskThread, NULL, p);
 	}
 };
