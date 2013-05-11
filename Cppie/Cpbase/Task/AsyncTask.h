@@ -23,7 +23,7 @@ namespace Cppie{
 		AsyncTask(Task task);
 		virtual ~AsyncTask();
 
-		static unsigned int __stdcall TaskThread(void *arg);
+		static int TaskThread(void *arg);
 
 		void run(int postpone=CPPIE_TASK_IMMEDIATE);
 	};

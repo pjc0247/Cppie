@@ -15,7 +15,7 @@ namespace Cppie{
 	AsyncTask::~AsyncTask(){
 	}
 
-	unsigned int __stdcall AsyncTask::TaskThread(void *arg){
+	int AsyncTask::TaskThread(void *arg){
 		AsyncTaskParam *p;
 		p = (AsyncTaskParam*)arg;
 
@@ -32,7 +32,7 @@ namespace Cppie{
 		p->klass = this;
 		p->posepone = postpone;
 
-		thread = _beginthreadex(
-			NULL,0, Cppie::AsyncTask::TaskThread, p,NULL,NULL);
+		SDL_CreateThread(
+			Cppie::AsyncTask::TaskThread, NULL, p);
 	}
 };
