@@ -9,6 +9,8 @@ namespace Cppie{
 	public:
 		std::list<Object *> o;
 
+		int loopCount;
+
 	public:
 		System();
 		virtual ~System();

@@ -2,6 +2,7 @@
 
 namespace Cppie{
 	System::System(){
+		loopCount = 1;
 	}
 	System::~System(){
 	}

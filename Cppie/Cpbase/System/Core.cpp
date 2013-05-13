@@ -115,6 +115,8 @@ namespace Cppie{
 			system->update();
 			SDL_RenderPresent(renderer);
 
+			system->loopCount ++;
+
 			float elapsed;
 			elapsed = (SDL_GetTicks() - startTick);
 			if(elapsed == 0) elapsed = 1;
