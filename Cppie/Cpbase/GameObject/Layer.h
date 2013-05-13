@@ -13,6 +13,7 @@ namespace Cppie{
 
 	public:
 		Layer(float z = Z_OBJECT);
+		virtual ~Layer();
 
 		virtual void update();
 		void add(Object *obj);

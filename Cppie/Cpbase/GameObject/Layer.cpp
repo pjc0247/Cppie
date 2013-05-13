@@ -7,9 +7,14 @@ namespace Cppie{
 	extern ObjectManager *objmgr;
 
 	Layer::Layer(float z){
+		initialize();
+
 		this->z = z;
 
 		objmgr->add(this);
+	}
+	Layer::~Layer(){
+		dispose();
 	}
 
 	void Layer::update(){
