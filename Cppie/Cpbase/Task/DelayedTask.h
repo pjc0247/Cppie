@@ -11,6 +11,8 @@ namespace Cppie{
 	class DelayedTask : public TaskObject{
 	public:
 		int delay;
+		int startCount;
+		int startTick;
 
 	public:
 		DelayedTask();
@@ -19,6 +21,8 @@ namespace Cppie{
 
 		virtual int initialize(Task task);
 		virtual void dispose();
+
+		virtual void update();
 
 		void run(int delay=CPPIE_TASK_NEXT_LOOP);
 	};
