@@ -23,10 +23,10 @@ namespace Cppie{
 	}
 
 
-	int GetTicks(){
+	int getTicks(){
 		return SDL_GetTicks();
 	}
-	void Delay(int ms){
+	void delay(int ms){
 		if(ms <= 0) return;
 		SDL_Delay(ms);
 	}
