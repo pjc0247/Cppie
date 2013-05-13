@@ -29,7 +29,7 @@ namespace Cppie{
 		AsyncTaskParam *p;
 		p = (AsyncTaskParam*)arg;
 
-		Delay(p->posepone);
+		delay(p->posepone);
 		p->klass->task();
 
 		delete p;
