@@ -126,6 +126,12 @@
     <ClInclude Include="Cpbase\Graphic\SpriteNumber.h">
       <Filter>소스 파일\Cpbase\Graphic</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Task\DelayedTask.h">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Task\TaskManager.h">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -196,6 +202,12 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Graphic\SpriteNumber.cpp">
       <Filter>소스 파일\Cpbase\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Task\DelayedTask.cpp">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Task\TaskManager.cpp">
+      <Filter>소스 파일\Cpbase\Task</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
