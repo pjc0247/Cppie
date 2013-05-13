@@ -24,6 +24,8 @@ namespace Cppie{
 
 	Log *logger = nullptr;
 
+	TaskManager *taskmgr = nullptr;
+
 	int initialize(int w,int h){
 		logger = new Log();
 
@@ -44,12 +46,15 @@ namespace Cppie{
 		keyboard = new Keyboard();
 		mouse = new Mouse();
 
+		taskmgr = new TaskManager();
+
 		graphic->setTitle("Cppie");
 
 		system->add(objmgr);
 		system->add(keyboard);
 		system->add(mouse);
 		system->add(scene);
+		system->add(taskmgr);
 
 		logger->output("All done");
 

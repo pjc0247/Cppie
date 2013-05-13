@@ -10,6 +10,7 @@
 #include "../GameObject/ObjectManager.h"
 #include "../Input/Keyboard.h"
 #include "../Input/Mouse.h"
+#include "../Task/TaskManager.h"
 
 namespace Cppie{
 	extern SDL_Window *window;
@@ -28,6 +29,8 @@ namespace Cppie{
 
 	extern Keyboard *keyboard;
 	extern Mouse *mouse;
+
+	extern TaskManager *taskmgr;
 
 	int initialize(int w,int h);
 	void quit();
