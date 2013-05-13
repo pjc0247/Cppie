@@ -36,5 +36,6 @@ namespace Cppie{
 		virtual void run();
 	};
 
+	int GetTicks();
 	void Delay(int ms);
 };
