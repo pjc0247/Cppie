@@ -32,3 +32,8 @@
 #include "Input/KeyCode.h"
 #include "Input/Keyboard.h"
 #include "Input/Mouse.h"
+
+#include "Task/Task.h"
+#include "Task/TaskManager.h"
+#include "Task/AsyncTask.h"
+#include "Task/DelayedTask.h"
