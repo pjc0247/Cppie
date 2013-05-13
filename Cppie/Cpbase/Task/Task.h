@@ -22,7 +22,7 @@ typedef function<void()>		Task;
 
 namespace Cppie{
 	class TaskObject : public Object{
-	private:
+	protected:
 		Task task;
 
 	public:
