@@ -8,9 +8,8 @@
 using namespace std;
 
 namespace Cppie{
-	class AsyncTask : public Object{
+	class AsyncTask : public TaskObject{
 	private:
-		Task task;
 		SDL_Thread* thread;
 
 	public:

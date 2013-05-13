@@ -8,10 +8,7 @@
 using namespace std;
 
 namespace Cppie{
-	class DelayedTask : public Object{
-	private:
-		Task task;
-		
+	class DelayedTask : public TaskObject{
 	public:
 		int delay;
 
