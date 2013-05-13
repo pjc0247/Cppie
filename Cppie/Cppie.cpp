@@ -19,6 +19,7 @@
 #include "Cpbase\/Input/Keyboard.h"
 
 #include "Cpbase/Task/AsyncTask.h"
+#include "Cpbase/Task/DelayedTask.h"
 
 using namespace Cppie;
 
@@ -43,6 +44,8 @@ class TestScene : public Scene{
 
 	Sound *sound;
 
+	DelayedTask *task;
+
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -54,6 +57,13 @@ public :
 
 		layer = new Layer(Z_UI);
 		//layer->add(obj);
+
+		task = new DelayedTask(
+			CPPIE_TASK(
+				printf("hello world\n");
+			));
+
+		task->run();
 
 		return 0;
 	}
