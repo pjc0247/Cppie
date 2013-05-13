@@ -22,7 +22,7 @@ namespace Cppie{
 		if(delay == CPPIE_TASK_NEXT_LOOP){
 		}
 		else{
-
+			
 		}
 	}
 };
