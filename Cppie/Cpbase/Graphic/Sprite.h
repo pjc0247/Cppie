@@ -9,6 +9,7 @@ namespace Cppie{
 	extern SDL_Renderer *renderer;
 
 	class Sprite : public DrawableObject{
+	protected:
 		SDL_Texture *texture;
 
 	public:
