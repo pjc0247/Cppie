@@ -15,6 +15,8 @@ namespace Cppie{
 	int DelayedTask::initialize(Task task){
 		this->task = task;
 
+		taskmgr->add(this);
+
 		return 0;
 	}
 	void DelayedTask::dispose(){
@@ -29,6 +31,7 @@ namespace Cppie{
 		else{
 			if(getTicks() - startTick >= delay){
 				task();
+				
 			}
 		}
 	}
@@ -38,7 +41,8 @@ namespace Cppie{
 			startCount = system->loopCount;
 		}
 		else{
-			startTick = getTicks();
+			this->delay = delay;
+			this->startTick = getTicks();
 		}
 	}
 };
