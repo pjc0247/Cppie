@@ -14,6 +14,7 @@ namespace Cppie{
 
 	int DelayedTask::initialize(Task task){
 		this->task = task;
+		this->state = CPPIE_TASKSTATE_RUNNING;
 
 		taskmgr->add(this);
 
@@ -23,26 +24,40 @@ namespace Cppie{
 	}
 
 	void DelayedTask::update(){
+		if(this->state != CPPIE_TASKSTATE_WAITING)
+			return;
+
 		if(delay == CPPIE_TASK_NEXT_LOOP){
 			if(startCount != system->loopCount){
+				this->state = CPPIE_TASKSTATE_RUNNING;
+
 				task();
+
+				this->state = CPPIE_TASKSTATE_DEAD;
 			}
 		}
 		else{
 			if(getTicks() - startTick >= delay){
+				this->state = CPPIE_TASKSTATE_RUNNING;
+
 				task();
 				
+				this->state = CPPIE_TASKSTATE_DEAD;
 			}
 		}
 	}
 
 	void DelayedTask::run(int delay){
 		if(delay == CPPIE_TASK_NEXT_LOOP){
-			startCount = system->loopCount;
+			this->startCount = system->loopCount;
+
+			this->state = CPPIE_TASKSTATE_WAITING;
 		}
 		else{
 			this->delay = delay;
 			this->startTick = getTicks();
+
+			this->state = CPPIE_TASKSTATE_WAITING;
 		}
 	}
 };

@@ -20,6 +20,8 @@ namespace Cppie{
 		this->task = task;
 		this->thread = nullptr;
 
+		this->state = CPPIE_TASKSTATE_DEAD;
+
 		return 0;
 	}
 	void AsyncTask::dispose(){
@@ -30,7 +32,10 @@ namespace Cppie{
 		p = (AsyncTaskParam*)arg;
 
 		delay(p->posepone);
+
+		p->klass->state = CPPIE_TASKSTATE_RUNNING;
 		p->klass->task();
+		p->klass->state = CPPIE_TASKSTATE_DEAD;
 
 		delete p;
 
@@ -44,6 +49,8 @@ namespace Cppie{
 
 		thread = SDL_CreateThread(
 			Cppie::AsyncTask::TaskThread, NULL, p);
+
+		this->state = CPPIE_TASKSTATE_WAITING;
 	}
 
 	int AsyncTask::wait(){
