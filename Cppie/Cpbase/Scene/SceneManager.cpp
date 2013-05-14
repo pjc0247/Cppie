@@ -26,6 +26,7 @@ namespace Cppie{
 
 		if(old_scene != nullptr){
 			old_scene->dispose();
+			delete old_scene;
 		}
 
 		scene = new_scene;
