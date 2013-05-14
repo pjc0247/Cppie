@@ -63,7 +63,7 @@ public :
 				printf("hello world\n");
 			));
 
-		task->run();
+		task->run(3000);
 
 		return 0;
 	}
