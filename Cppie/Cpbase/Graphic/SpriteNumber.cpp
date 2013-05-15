@@ -2,12 +2,9 @@
 
 namespace Cppie{
 	SpriteNumber::SpriteNumber(){
-		Sprite::Sprite();
 	}
 	SpriteNumber::SpriteNumber(const char *image){
-		DrawableObject::DrawableObject();
 		initialize(image, 10,1);
-		
 	}
 	SpriteNumber::~SpriteNumber(){
 		dispose();
