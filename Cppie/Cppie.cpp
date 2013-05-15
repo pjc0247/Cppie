@@ -58,8 +58,15 @@ public :
 		layer = new Layer(Z_UI);
 		//layer->add(obj);
 
+		Task t;
+		t = CPPIE_TASK(
+				while(1)
+				printf("hello world\n");
+			);
+
 		task = new DelayedTask(
 			CPPIE_TASK(
+				while(1)
 				printf("hello world\n");
 			));
 

@@ -20,6 +20,7 @@ namespace Cppie{
 
 	void TaskObject::run(){
 		this->task();
+			
 	}
 
 

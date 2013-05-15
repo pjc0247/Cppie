@@ -25,7 +25,7 @@ namespace Cppie{
 	public:
 		DrawableObject(){
 			color = Color::White;
-			blend = BLEND;
+			blend = BLEND;	
 		}
 		virtual ~DrawableObject(){
 		}
