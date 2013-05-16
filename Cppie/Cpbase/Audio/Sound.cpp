@@ -118,12 +118,12 @@ namespace Cppie{
 		float tmp;
 		channel->getVolume(&tmp);
 
-		return (int)tmp*100;
+		return static_cast<int>(tmp*100);
 	}
 	void Sound::setVolume(int v){
 		float tmp;
 
-		v = (float)sndmgr->getVolume() / 100 * v;
+		v = static_cast<float>(sndmgr->getVolume()) / 100 * v;
 
 		tmp = (float)v;
 		tmp /= 100;
