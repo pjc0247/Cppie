@@ -44,7 +44,9 @@ class TestScene : public Scene{
 
 	Sound *sound;
 
-	DelayedTask *task;
+	AsyncTask *task;
+
+	int n;
 
 public :
 	virtual int initialize(){
@@ -58,16 +60,17 @@ public :
 		layer = new Layer(Z_UI);
 		//layer->add(obj);
 
+		n = 10;
+
 		Task t;
 		t = CPPIE_TASK(
-				while(1)
-				printf("hello world\n");
+				printf("i am task\n");
 			);
 
-		task = new DelayedTask(
-			CPPIE_TASK(
-				while(1)
-				printf("hello world\n");
+		task = new AsyncTask(
+			CPPIE_SAFE_TASK(
+			while(1)
+					n++;
 			));
 
 		task->run(3000);
@@ -93,6 +96,7 @@ public :
 			scene->change(new_scene);
 		}
 
+		printf("%d\n", n);
 	}
 };
 
