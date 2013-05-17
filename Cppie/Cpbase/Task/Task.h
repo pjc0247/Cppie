@@ -11,7 +11,7 @@ using namespace std;
 typedef function<void()>		Task;
 
 #define CPPIE_TASK_IMMEDIATE	0
-#define CPPIE_TASK_NEXT_LOOP	0
+#define CPPIE_TASK_NEXT_LOOP	-1
 
 #define CPPIE_TASKSTATE_DEAD	0	// 작업이 실행되고 있는 상태도 아니고, 실행될 예정도 없는 상태
 #define CPPIE_TASKSTATE_WAITING	1	// 작업이 실행을 대기하고 있는 상태
