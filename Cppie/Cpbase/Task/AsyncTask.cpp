@@ -6,7 +6,7 @@ namespace Cppie{
 
 	struct AsyncTaskParam{
 		AsyncTask	*klass;
-		int			posepone;
+		int			delay;
 	};
 
 	AsyncTask::AsyncTask(Task task){
@@ -31,7 +31,7 @@ namespace Cppie{
 		AsyncTaskParam *p;
 		p = (AsyncTaskParam*)arg;
 
-		delay(p->posepone);
+		delay(p->delay);
 
 		p->klass->state = CPPIE_TASKSTATE_RUNNING;
 		p->klass->task();
@@ -41,11 +41,11 @@ namespace Cppie{
 
 		return 0;
 	}
-	void AsyncTask::run(int postpone){
+	void AsyncTask::run(int delay){
 		AsyncTaskParam *p = new AsyncTaskParam;
 
 		p->klass = this;
-		p->posepone = postpone;
+		p->delay = delay;
 
 		thread = SDL_CreateThread(
 			Cppie::AsyncTask::TaskThread, NULL, p);

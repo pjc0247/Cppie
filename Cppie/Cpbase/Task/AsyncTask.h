@@ -21,7 +21,7 @@ namespace Cppie{
 
 		static int TaskThread(void *arg);
 
-		void run(int postpone=CPPIE_TASK_IMMEDIATE);
+		void run(int delay=CPPIE_TASK_IMMEDIATE);
 		int wait();
 	};
 };
