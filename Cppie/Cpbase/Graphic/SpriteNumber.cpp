@@ -5,6 +5,7 @@ namespace Cppie{
 	}
 	SpriteNumber::SpriteNumber(const char *image){
 		initialize(image, 10,1);
+		gap = 1.0f;
 	}
 	SpriteNumber::~SpriteNumber(){
 		dispose();
@@ -21,7 +22,7 @@ namespace Cppie{
 
 		for(int i=0;i<len;i++){
 			step = num%10;
-			Sprite::draw(x+(len-i-1)*w,y);
+			Sprite::draw(x+(len-i-1)* (w*gap),y);
 			num /= 10;
 		}
 	}
