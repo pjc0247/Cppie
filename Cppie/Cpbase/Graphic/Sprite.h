@@ -15,6 +15,7 @@ namespace Cppie{
 	public:
 		int w,h;
 		int wSlice, hSlice;
+		int alpha;
 
 		int step;
 
