@@ -132,6 +132,9 @@
     <ClInclude Include="Cpbase\Task\TaskManager.h">
       <Filter>소스 파일\Cpbase\Task</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Task\RepeatedTask.h">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -207,6 +210,9 @@
       <Filter>소스 파일\Cpbase\Task</Filter>
     </ClCompile>
     <ClCompile Include="Cpbase\Task\TaskManager.cpp">
+      <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Task\RepeatedTask.cpp">
       <Filter>소스 파일\Cpbase\Task</Filter>
     </ClCompile>
   </ItemGroup>

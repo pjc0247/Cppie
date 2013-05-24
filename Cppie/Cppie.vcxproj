@@ -107,6 +107,7 @@
     <ClInclude Include="Cpbase\System\SystemManager.h" />
     <ClInclude Include="Cpbase\Task\AsyncTask.h" />
     <ClInclude Include="Cpbase\Task\DelayedTask.h" />
+    <ClInclude Include="Cpbase\Task\RepeatedTask.h" />
     <ClInclude Include="Cpbase\Task\Task.h" />
     <ClInclude Include="Cpbase\Task\TaskManager.h" />
     <ClInclude Include="targetver.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Cpbase\System\SystemManager.cpp" />
     <ClCompile Include="Cpbase\Task\AsyncTask.cpp" />
     <ClCompile Include="Cpbase\Task\DelayedTask.cpp" />
+    <ClCompile Include="Cpbase\Task\RepeatedTask.cpp" />
     <ClCompile Include="Cpbase\Task\Task.cpp" />
     <ClCompile Include="Cpbase\Task\TaskManager.cpp" />
     <ClCompile Include="Cppie.cpp">
