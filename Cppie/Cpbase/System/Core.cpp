@@ -31,8 +31,10 @@ namespace Cppie{
 
 		logger->output("Cppie initializing...");
 
-		if(SDL_Init(SDL_INIT_VIDEO) != 0)
+		if(SDL_Init(SDL_INIT_VIDEO) != 0){
+			logger->error("Cannot initialize SDL video system");
 			return -1;
+		}
 
 		system = new System();
 
