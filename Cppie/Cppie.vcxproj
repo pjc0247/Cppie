@@ -110,6 +110,7 @@
     <ClInclude Include="Cpbase\Task\RepeatedTask.h" />
     <ClInclude Include="Cpbase\Task\Task.h" />
     <ClInclude Include="Cpbase\Task\TaskManager.h" />
+    <ClInclude Include="Cpbase\Util\Random.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>

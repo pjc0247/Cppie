@@ -46,6 +46,9 @@
     <Filter Include="소스 파일\Cpbase\Audio">
       <UniqueIdentifier>{20d5d9dc-44bc-4a6b-8bda-1107017043cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Util">
+      <UniqueIdentifier>{abf2c90c-671e-449b-97db-eb43a28600c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -134,6 +137,9 @@
     </ClInclude>
     <ClInclude Include="Cpbase\Task\RepeatedTask.h">
       <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Util\Random.h">
+      <Filter>소스 파일\Cpbase\Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
