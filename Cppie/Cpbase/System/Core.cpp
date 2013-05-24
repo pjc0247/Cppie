@@ -50,10 +50,11 @@ namespace Cppie{
 
 		graphic->setTitle("Cppie");
 
+		system->add(scene);
 		system->add(objmgr);
 		system->add(keyboard);
 		system->add(mouse);
-		system->add(scene);
+		
 		system->add(taskmgr);
 
 		logger->output("All done");
