@@ -37,6 +37,7 @@ namespace Cppie{
 
 		step = 0;
 		angle = 0;
+		alpha =  255;
 
 		flip = SDL_FLIP_NONE;
 
@@ -59,15 +60,18 @@ namespace Cppie{
 		SDL_Rect src;
 		SDL_Rect dst;
 
-		src.x = w * (step % wSlice);
-		src.y = h * (step / wSlice);
-		src.w = w, src.h = h;
+		src.x = this->w * (step % wSlice);
+		src.y = this->h * (step / wSlice);
+		src.w = this->w, src.h = this->h;
 
 		dst.x = x, dst.y = y;
 		dst.w = w, dst.h = h;
 
+		origin.x = src.x + w/2;
+		origin.y = src.y + h/2;
+
 		SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
-		SDL_SetTextureAlphaMod(texture, color.a);
+		SDL_SetTextureAlphaMod(texture, alpha);
 		SDL_RenderCopyEx(renderer, texture, &src, &dst, angle,  &origin, flip);
 	}
 
