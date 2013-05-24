@@ -129,5 +129,7 @@ namespace Cppie{
 				SDL_SetWindowTitle(window, title);
 			}
 		}
+
+		scene->dispose();
 	}
 };
