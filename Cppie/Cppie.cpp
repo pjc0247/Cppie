@@ -20,6 +20,9 @@
 
 #include "Cpbase/Task/AsyncTask.h"
 #include "Cpbase/Task/DelayedTask.h"
+#include "Cpbase/Task/RepeatedTask.h"
+
+#include "Cpbase/Util/Random.h"
 
 using namespace Cppie;
 
@@ -36,15 +39,69 @@ public:
 	}
 };
 
+
+Sprite *sakura[10];
+	Layer *layer;
+
+class Sakura : public DrawableObject{
+	Sprite *sprite;
+	float sx,sy,sa;
+	float alpha;
+	float x,y;
+	float angle;
+public:
+	Sakura(int x,int y){
+		initialize(x,y);
+	}
+	
+	virtual int initialize(int x,int y){
+		int n = rand()%8+1;
+
+		this->x = x;
+		this->y = y;
+		sprite = sakura[n];
+		
+		sx = rand()%10 * 0.1 - 0.5;
+		sy = rand()%10 * 0.1;
+		sa = rand()%10 * 0.2;
+
+		angle = 0;
+		alpha = rand()%108;
+
+		return 0;
+	}
+
+	virtual void update(){
+		if (alpha <= 0) return;
+
+		if(y < 460){
+			x += sx;
+			y += sy;
+			angle += sa;
+		}
+		else{
+			alpha -= 0.2;
+
+		//	if (alpha <= 0)
+			//	layer->remove(this);
+				
+		}
+
+		sprite->alpha = alpha;
+		sprite->angle = angle;
+		sprite->stretch(x,y,24,24);
+	}
+};
+
 class TestScene : public Scene{
 	Sprite *bgi;
 	SpriteNumber *num;
 	GameObject *obj;
-	Layer *layer;
+
 
 	Sound *sound;
 
-	AsyncTask *task;
+	RepeatedTask *task;
 
 	int n;
 
@@ -52,28 +109,27 @@ public :
 	virtual int initialize(){
 		Scene::initialize();
 
-		bgi = new Sprite("cat.png");
-		obj = new GameObject(0,0,bgi);
+		bgi = new Sprite("bgi.jpg");
+		layer = new Layer();
 
-		num = new SpriteNumber("num.png");
-
-		layer = new Layer(Z_UI);
-		//layer->add(obj);
-
-		n = 10;
-
-		Task t;
-		t = CPPIE_TASK(
-				printf("i am task\n");
-			);
-
-		task = new AsyncTask(
-			CPPIE_SAFE_TASK(
-			while(1)
-					n++;
-			));
-
-		task->run(3000);
+		for(int i=1;i<9;i++){
+			char msg[128];
+			sprintf_s(msg,"sakura%d.png", i);
+			sakura[i] = new Sprite(msg);
+		}
+		
+		task = new RepeatedTask(
+				CPPIE_TASK(	
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(181,16)));
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(94,96)));
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(330,13)));
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(460,128)));
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(616,37)));
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(560,0)));
+					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(0,0)));
+				));
+		
+		task->run();
 
 		return 0;
 	}
@@ -84,19 +140,8 @@ public :
 	}
 	virtual void update(){
 		Scene::update();
-
-	//	bgi->draw(0,0);
-
-		num->draw(0,0,109123);
-
-		if(keyboard->triggered(CPPIE_ESCAPE)){
-			logger->output("space bar triggered\n");
-
-			TestScene2 *new_scene = new TestScene2;
-			scene->change(new_scene);
-		}
-
-		printf("%d\n", n);
+		
+		bgi->draw(0,0);
 	}
 };
 
@@ -104,7 +149,7 @@ public :
 int _tmain(int argc, _TCHAR* argv[])
 {
 	
-	Cppie::initialize(480,320);
+	Cppie::initialize(640,480);
 	Scene *scene = new TestScene;
 	Cppie::scene->change(scene);
 	Cppie::run();
