@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -34,6 +35,10 @@ namespace Cppie{
 		if(SDL_Init(SDL_INIT_VIDEO) != 0){
 			logger->error("Cannot initialize SDL video system");
 			return -1;
+		}
+		if(TTF_Init() != 0){
+			logger->error("Cannot initialize TrueType Font system");
+			return -2;
 		}
 
 		system = new System();
