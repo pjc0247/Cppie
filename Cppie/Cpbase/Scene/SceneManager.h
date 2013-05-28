@@ -5,6 +5,7 @@
 
 namespace Cppie{
 	class SceneManager : public Object{
+	public:
 		Scene *scene;
 
 	public:
