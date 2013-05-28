@@ -36,10 +36,13 @@ namespace Cppie{
 			logger->error("Cannot initialize SDL video system");
 			return -1;
 		}
+		logger->output("video system initialized");
+
 		if(TTF_Init() != 0){
 			logger->error("Cannot initialize TrueType Font system");
 			return -2;
 		}
+		logger->output("TreuType Font system initialized");
 
 		system = new System();
 
