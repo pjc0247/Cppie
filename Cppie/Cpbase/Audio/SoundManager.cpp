@@ -3,11 +3,11 @@
 #include "../System/Core.h"
 
 namespace Cppie{
+	SoundManager::SoundManager(){
+		initialize(CPPIE_SOUND_MAXCHANNELS);
+	}
 	SoundManager::SoundManager(int maxChannels){
-		FMOD::System_Create(&system);
-		system->init(maxChannels, FMOD_INIT_NORMAL, 0);
-
-		volume = 50;
+		initialize(maxChannels);
 	}
 	SoundManager::~SoundManager(){
 		if(system == nullptr){
@@ -18,7 +18,31 @@ namespace Cppie{
 		}
 	}
 
-	int SoundManager::initialize(){
+	int SoundManager::initialize(int maxChannels){
+		int result;
+
+		result = FMOD::System_Create(&system);
+
+		if(result != 0){
+			logger->error("Failed to create sound system - code : %d",
+				result);
+
+			return -1;
+		}
+
+		result = system->init(maxChannels, FMOD_INIT_NORMAL, 0);
+
+		if(result != 0){
+			logger->error("Failed to initialize sound system - code : %d",
+				result);
+			
+			return -2;
+		}
+
+		volume = 50;
+
+		logger->output("Sound system initialized");
+
 		return 0;
 	}
 	void SoundManager::dispose(){

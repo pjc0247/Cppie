@@ -18,10 +18,11 @@ namespace Cppie{
 
 		int volume;
 	public:
+		SoundManager();
 		SoundManager(int maxChannels);
 		virtual ~SoundManager();
 
-		virtual int initialize();
+		virtual int initialize(int maxChannels);
 		virtual void dispose();
 
 		void add(Sound *sound);
