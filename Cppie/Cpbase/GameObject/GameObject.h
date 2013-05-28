@@ -41,10 +41,12 @@ namespace Cppie{
 		virtual void dispose(){
 		}
 		virtual void draw(float x,float y){
-			sprite->color = color;
-			sprite->angle = angle;
-			sprite->step = step;
-			sprite->draw(x,y);
+			if(sprite != nullptr){
+				sprite->color = color;
+				sprite->angle = angle;
+				sprite->step = step;
+				sprite->draw(x,y);
+			}
 		}
 		virtual void update(){
 			if(visible) draw(x,y);
