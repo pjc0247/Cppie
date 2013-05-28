@@ -1,21 +1,25 @@
 #include "Mouse.h"
 
+#include "../System/Core.h"
+
 #include <SDL.h>
 #include <memory.h>
-
-#include "../System/Core.h"
 
 namespace Cppie{
 
 	Mouse::Mouse(){
-		memset(mousebuffer, 
-			CPPIE_MOUSESTATE_UP,
-			CPPIE_MOUSEBUFFER_SIZE);
+		initialize();
 	}
 	Mouse::~Mouse(){
 	}
 
 	int Mouse::initialize(){
+		memset(mousebuffer, 
+			CPPIE_MOUSESTATE_UP,
+			CPPIE_MOUSEBUFFER_SIZE);
+
+		logger->output("Mouse input system initialized");
+
 		return 0;
 	}
 	void Mouse::dispose(){

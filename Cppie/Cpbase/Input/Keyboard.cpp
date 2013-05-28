@@ -1,18 +1,25 @@
 #include "Keyboard.h"
+
+#include "../System/Core.h"
+
 #include "KeyCode.h"
 
 #include <memory.h>
 
 namespace Cppie{
 	Keyboard::Keyboard(){
-		memset(keybuffer, 
-			CPPIE_KEYBOARDSTATE_UP,
-			CPPIE_KEYBUFFER_SIZE);
+		initialize();
 	}
 	Keyboard::~Keyboard(){
 	}
 
 	int Keyboard::initialize(){
+		memset(keybuffer, 
+			CPPIE_KEYBOARDSTATE_UP,
+			CPPIE_KEYBUFFER_SIZE);
+
+		logger->output("Keyboard input system initialized");
+
 		return 0;
 	}
 	void Keyboard::dispose(){
