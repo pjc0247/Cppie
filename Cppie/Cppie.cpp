@@ -11,6 +11,7 @@
 #include <sdl_gdiplus.h>
 #pragma comment (lib,"sdl")
 #pragma comment (lib,"sdl_gdiplus")
+#pragma comment (lib,"sdl_ttf")
 #pragma comment (lib,"fmodex_vc")
 #pragma comment (lib,"opengl32")
 
