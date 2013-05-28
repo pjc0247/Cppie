@@ -24,19 +24,21 @@ namespace Cppie{
 		sprintf_s(new_path, "resource\\%s", image);
 		surface = IMG_Load(new_path);
 
-		if(surface != NULL){
-			logger->error("Failed to load image - %s", image);
-
+		if(surface != nullptr){
 			texture = SDL_CreateTextureFromSurface(renderer, surface);
 			SDL_FreeSurface(surface);
 		}
-		if(texture != NULL){
-			logger->error("Failed to create texture - %s", image);
-
+		else{
+			logger->error("Failed to load image - %s", image);
+		}
+		if(texture != nullptr){
 			SDL_QueryTexture(texture, NULL, NULL, &w, &h);
 
 			w /= wSlice;
 			h /= hSlice;
+		}
+		else{
+			logger->error("Failed to create texture - %s", image);
 		}
 		this->wSlice = wSlice;
 		this->hSlice = hSlice;
