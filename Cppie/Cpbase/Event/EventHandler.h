@@ -1,13 +1,14 @@
 #pragma once
 
-#include "../System/Core.h"
-
 #include "Event.h"
 #include "EventType.h"
 
 namespace Cppie{
 	class EventHandler{
 	public:
+		EventHandler();
+		virtual ~EventHandler();
+
 		virtual void onEvent(Event e);
 
 		virtual void onKeyDown(int key);

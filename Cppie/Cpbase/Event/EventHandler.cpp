@@ -1,6 +1,13 @@
 #include "EventHandler.h"
 
+#include "../System/Core.h"
+
 namespace Cppie{
+	EventHandler::EventHandler(){
+	}
+	EventHandler::~EventHandler(){
+	}
+
 	void EventHandler::onEvent(Event e){
 		switch(e.type){
 		case CPPIE_EVENT_EXIT:

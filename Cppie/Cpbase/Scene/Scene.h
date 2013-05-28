@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../System/object.h"
+
 #include "../Event/EventHandler.h"
 
 namespace Cppie{

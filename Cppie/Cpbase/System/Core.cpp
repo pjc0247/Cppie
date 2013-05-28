@@ -27,6 +27,8 @@ namespace Cppie{
 
 	TaskManager *taskmgr = nullptr;
 
+	EventManager *eventmgr = nullptr;
+
 	int initialize(int w,int h){
 		logger = new Log();
 
@@ -57,6 +59,8 @@ namespace Cppie{
 		mouse = new Mouse();
 
 		taskmgr = new TaskManager();
+
+		eventmgr = new EventManager();
 
 		graphic->setTitle("Cppie");
 
