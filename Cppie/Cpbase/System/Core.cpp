@@ -90,40 +90,113 @@ namespace Cppie{
 			while(SDL_PollEvent(&event)){
 				switch(event.type){
 				case SDL_QUIT:
-					quit = true;
-					break;
+					{
+						Event e;
+
+						e.type = CPPIE_EVENT_EXIT;
+						
+						eventmgr->raiseEvent(e);
+
+						quit = true;
+
+						break;
+					}
 				case SDL_MOUSEBUTTONDOWN:
-					switch(event.button.button){
-					case SDL_BUTTON_LEFT:
-						mouse->setState(
-							CPPIE_MOUSEBUTTON_LEFT, CPPIE_MOUSESTATE_DOWN);
-						break;
-					case SDL_BUTTON_RIGHT:
-						mouse->setState(
-							CPPIE_MOUSEBUTTON_RIGHT, CPPIE_MOUSESTATE_DOWN);
-						break;
-					case SDL_BUTTON_MIDDLE:
-						mouse->setState(
-							CPPIE_MOUSEBUTTON_WHEEL, CPPIE_MOUSESTATE_DOWN);
+					{
+						Event e;
+
+						switch(event.button.button){
+						case SDL_BUTTON_LEFT:
+							mouse->setState(
+								CPPIE_MOUSEBUTTON_LEFT, CPPIE_MOUSESTATE_DOWN);
+
+							e.type = CPPIE_EVENT_LEFTDOWN;
+							break;
+						case SDL_BUTTON_RIGHT:
+							mouse->setState(
+								CPPIE_MOUSEBUTTON_RIGHT, CPPIE_MOUSESTATE_DOWN);
+
+							e.type = CPPIE_EVENT_RIGHTDOWN;
+							break;
+						case SDL_BUTTON_MIDDLE:
+							mouse->setState(
+								CPPIE_MOUSEBUTTON_WHEEL, CPPIE_MOUSESTATE_DOWN);
+							break;
+						}
+
+						e.x = event.button.x;
+						e.y = event.button.y;
+
+						eventmgr->raiseEvent(e);
+
 						break;
 					}
-					break;
 				case SDL_MOUSEBUTTONUP:
-					switch(event.button.button){
-					case SDL_BUTTON_LEFT:
-						mouse->setState(
-							CPPIE_MOUSEBUTTON_LEFT, CPPIE_MOUSESTATE_UP);
+					{
+						Event e;
+
+						switch(event.button.button){
+						case SDL_BUTTON_LEFT:
+							mouse->setState(
+								CPPIE_MOUSEBUTTON_LEFT, CPPIE_MOUSESTATE_UP);
+
+							e.type = CPPIE_EVENT_LEFTUP;
+							break;
+						case SDL_BUTTON_RIGHT:
+							mouse->setState(
+								CPPIE_MOUSEBUTTON_RIGHT, CPPIE_MOUSESTATE_UP);
+
+							e.type = CPPIE_EVENT_RIGHTUP;
+							break;
+						case SDL_BUTTON_MIDDLE:
+							mouse->setState(
+								CPPIE_MOUSEBUTTON_WHEEL, CPPIE_MOUSESTATE_UP);
+							break;
+						}
 						break;
-					case SDL_BUTTON_RIGHT:
-						mouse->setState(
-							CPPIE_MOUSEBUTTON_RIGHT, CPPIE_MOUSESTATE_UP);
-						break;
-					case SDL_BUTTON_MIDDLE:
-						mouse->setState(
-							CPPIE_MOUSEBUTTON_WHEEL, CPPIE_MOUSESTATE_UP);
+
+						e.x = event.button.x;
+						e.y = event.button.y;
+
+						eventmgr->raiseEvent(e);
+
 						break;
 					}
-					break;
+				case SDL_MOUSEMOTION:
+					{
+						Event e;
+
+						e.type = CPPIE_EVENT_MOUSEMOVE;
+						e.x = event.motion.x;
+						e.y = event.motion.y;
+
+						eventmgr->raiseEvent(e);
+
+						break;
+					}
+
+				case SDL_KEYDOWN:
+					{
+						Event e;
+
+						e.type = CPPIE_EVENT_KEYDOWN;
+						e.key = event.key.keysym.sym;
+
+						eventmgr->raiseEvent(e);
+
+						break;
+					}
+				case SDL_KEYUP:
+					{
+						Event e;
+
+						e.type = CPPIE_EVENT_KEYUP;
+						e.key = event.key.keysym.sym;
+
+						eventmgr->raiseEvent(e);
+
+						break;
+					}
 				}
 			}
 
