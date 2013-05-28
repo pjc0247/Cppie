@@ -19,6 +19,9 @@ namespace Cppie{
 	}
 
 	void EventManager::raiseEvent(Event e){
-		scene->scene->onEvent(e);
+		if(scene->scene != nullptr)
+			scene->scene->onEvent(e);
+		else
+			logger->error("Failed to raise event - scene is null");
 	}
 };
