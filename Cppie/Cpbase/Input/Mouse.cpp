@@ -15,6 +15,11 @@ namespace Cppie{
 	Mouse::~Mouse(){
 	}
 
+	int Mouse::initialize(){
+		return 0;
+	}
+	void Mouse::dispose(){
+	}
 	void Mouse::update(){
 		SDL_GetMouseState(&x, &y);
 	}

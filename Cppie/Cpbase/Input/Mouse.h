@@ -24,6 +24,8 @@ namespace Cppie{
 		Mouse();
 		virtual ~Mouse();
 
+		virtual int initialized();
+		virtual void dispose();
 		virtual void update();
 
 		void setState(int button,bool state);
