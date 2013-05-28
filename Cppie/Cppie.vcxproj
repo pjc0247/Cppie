@@ -131,6 +131,7 @@
     <ClCompile Include="Cpbase\Data\Color.h" />
     <ClCompile Include="Cpbase\Data\make.cpp" />
     <ClCompile Include="Cpbase\Data\Point.cpp" />
+    <ClCompile Include="Cpbase\Event\EventHandler.cpp" />
     <ClCompile Include="Cpbase\Event\EventManager.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />

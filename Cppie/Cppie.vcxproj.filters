@@ -251,5 +251,8 @@
     <ClCompile Include="Cpbase\Event\EventManager.cpp">
       <Filter>소스 파일\Cpbase\Event</Filter>
     </ClCompile>
+    <ClCompile Include="Cpbase\Event\EventHandler.cpp">
+      <Filter>소스 파일\Cpbase\Event</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
