@@ -24,13 +24,13 @@ namespace Cppie{
 		sprintf_s(new_path, "resource\\%s", image);
 		surface = IMG_Load(new_path);
 
-		if(surface != nullptr){
+		if(surface != NULL){
 			logger->error("Failed to load image - %s", image);
 
 			texture = SDL_CreateTextureFromSurface(renderer, surface);
 			SDL_FreeSurface(surface);
 		}
-		if(texture != nullptr){
+		if(texture != NULL){
 			logger->error("Failed to create texture - %s", image);
 
 			SDL_QueryTexture(texture, NULL, NULL, &w, &h);
