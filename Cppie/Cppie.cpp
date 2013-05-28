@@ -138,6 +138,7 @@ public :
 		Scene::dispose();
 
 		bgi->dispose();
+		task->dispose();
 	}
 	virtual void update(){
 		Scene::update();
