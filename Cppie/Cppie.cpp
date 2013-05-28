@@ -100,7 +100,7 @@ class TestScene : public Scene{
 
 
 	Sound *sound;
-
+	          
 	RepeatedTask *task;
 
 	int n;
@@ -140,7 +140,7 @@ public :
 	}
 	virtual void update(){
 		Scene::update();
-		
+
 		bgi->draw(0,0);
 	}
 };
@@ -149,7 +149,7 @@ public :
 int _tmain(int argc, _TCHAR* argv[])
 {
 	
-	Cppie::initialize(640,480);
+	Cppie::initialize(840,640);
 	Scene *scene = new TestScene;
 	Cppie::scene->change(scene);
 	Cppie::run();

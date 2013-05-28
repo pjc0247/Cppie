@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Data//Color.h"
-#include "../Graphic/BlendMode.h"
+#include "../Graphic/BlendMode.h"	
 
 #include <stdio.h>
 
