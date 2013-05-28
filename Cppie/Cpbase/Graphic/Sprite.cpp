@@ -30,6 +30,8 @@ namespace Cppie{
 		}
 		else{
 			logger->error("Failed to load image - %s", image);
+
+			return -1;
 		}
 		if(texture != nullptr){
 			SDL_QueryTexture(texture, NULL, NULL, &w, &h);
@@ -39,6 +41,8 @@ namespace Cppie{
 		}
 		else{
 			logger->error("Failed to create texture - %s", image);
+
+			return -2;
 		}
 		this->wSlice = wSlice;
 		this->hSlice = hSlice;
