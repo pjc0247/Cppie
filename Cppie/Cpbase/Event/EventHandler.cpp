@@ -31,6 +31,9 @@ namespace Cppie{
 		case CPPIE_EVENT_KEYUP:
 			onKeyDown(e.key);
 			break;
+		case CPPIE_EVENT_MOUSEMOVE:
+			onMouseMove(e.x,e.y);
+			break;
 		default:
 			logger->warn("Unexcepted event");
 			break;
@@ -49,6 +52,9 @@ namespace Cppie{
 	void EventHandler::onRightDown(int x,int y){
 	}
 	void EventHandler::onRightUp(int x,int y){
+	}
+
+	void EventHandler::onMouseMove(int x,int y){
 	}
 
 	void EventHandler::onExit(){

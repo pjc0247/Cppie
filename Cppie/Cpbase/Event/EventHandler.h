@@ -19,6 +19,8 @@ namespace Cppie{
 		virtual void onRightDown(int x,int y);
 		virtual void onRightUp(int x,int y);
 
+		virtual void onMouseMove(int x,int y);
+
 		virtual void onExit();
 	};
 };
