@@ -27,6 +27,14 @@
 #include "Data/make.h"
 
 /*
+	Event Management
+*/
+#include "Event/Event.h"
+#include "Event/EventType.h"
+#include "Event/EventManager.h"
+#include "Event/EventHandler.h"
+
+/*
 	Graphic
 */
 #include "Graphic/BlendMode.h"
