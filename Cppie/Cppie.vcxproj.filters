@@ -52,6 +52,12 @@
     <Filter Include="소스 파일\Cpbase\TTF">
       <UniqueIdentifier>{b287b4a1-4284-456e-a3f4-b99463104470}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Window">
+      <UniqueIdentifier>{b1ff69ec-2b1b-4c75-9876-7021b8a3f6b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Cpbase\Event">
+      <UniqueIdentifier>{e6e7352e-46cf-4779-a9f4-68c4a6ab2eee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -150,6 +156,18 @@
     <ClInclude Include="Cpbase\TTF\han2unicode.h">
       <Filter>소스 파일\Cpbase\TTF</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Event\EventHandler.h">
+      <Filter>소스 파일\Cpbase\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Event\Event.h">
+      <Filter>소스 파일\Cpbase\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Event\EventManager.h">
+      <Filter>소스 파일\Cpbase\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Event\EventType.h">
+      <Filter>소스 파일\Cpbase\Event</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -229,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Task\RepeatedTask.cpp">
       <Filter>소스 파일\Cpbase\Task</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Event\EventManager.cpp">
+      <Filter>소스 파일\Cpbase\Event</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

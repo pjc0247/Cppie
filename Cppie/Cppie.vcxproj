@@ -90,6 +90,10 @@
     <ClInclude Include="Cpbase\Data\make.h" />
     <ClInclude Include="Cpbase\Data\Point.h" />
     <ClInclude Include="Cpbase\Data\Rect.h" />
+    <ClInclude Include="Cpbase\Event\Event.h" />
+    <ClInclude Include="Cpbase\Event\EventHandler.h" />
+    <ClInclude Include="Cpbase\Event\EventManager.h" />
+    <ClInclude Include="Cpbase\Event\EventType.h" />
     <ClInclude Include="Cpbase\GameObject\GameObject.h" />
     <ClInclude Include="Cpbase\GameObject\Layer.h" />
     <ClInclude Include="Cpbase\GameObject\ObjectManager.h" />
@@ -127,6 +131,7 @@
     <ClCompile Include="Cpbase\Data\Color.h" />
     <ClCompile Include="Cpbase\Data\make.cpp" />
     <ClCompile Include="Cpbase\Data\Point.cpp" />
+    <ClCompile Include="Cpbase\Event\EventManager.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
     <ClCompile Include="Cpbase\Graphic\Graphic.cpp" />
