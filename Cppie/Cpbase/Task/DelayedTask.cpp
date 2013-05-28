@@ -21,6 +21,7 @@ namespace Cppie{
 		return 0;
 	}
 	void DelayedTask::dispose(){
+		taskmgr->remove(this);
 	}
 
 	void DelayedTask::update(){
