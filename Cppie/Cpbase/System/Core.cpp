@@ -67,7 +67,7 @@ namespace Cppie{
 		
 		system->add(taskmgr);
 
-		logger->output("All done");
+		logger->output("All systems ready...");
 
 		return 0;
 	}
