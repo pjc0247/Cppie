@@ -43,6 +43,11 @@
 #include "Graphic/Graphic.h"
 
 /*
+	TrueTypeFont System
+*/
+#include "TTF/Font.h"
+
+/*
 	Audio
 */
 #include "Audio/Sound.h"
