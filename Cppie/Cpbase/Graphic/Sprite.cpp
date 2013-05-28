@@ -52,7 +52,7 @@ namespace Cppie{
 		origin.x = w/2;
 		origin.y = h/2;
 
-		logger->output("Sprite image loaded - %s, %x", image, this);
+		logger->output("loaded - %s, %x", image, this);
 
 		return 0;
 	}
