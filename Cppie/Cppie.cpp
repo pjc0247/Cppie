@@ -144,6 +144,12 @@ public :
 
 		bgi->draw(0,0);
 	}
+
+	virtual void onLeftDown(int x,int y){
+		printf("%d %d\n", x,y);
+	}
+	virtual void onKeyDown(int key){
+	}
 };
 
 
