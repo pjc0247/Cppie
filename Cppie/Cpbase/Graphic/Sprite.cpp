@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+#include "../System/Core.h"
+
 #include "Sprite.h"
 
 namespace Cppie{
@@ -23,10 +25,14 @@ namespace Cppie{
 		surface = IMG_Load(new_path);
 
 		if(surface != nullptr){
+			logger->error("Failed to load image - %s", image);
+
 			texture = SDL_CreateTextureFromSurface(renderer, surface);
 			SDL_FreeSurface(surface);
 		}
 		if(texture != nullptr){
+			logger->error("Failed to create texture - %s", image);
+
 			SDL_QueryTexture(texture, NULL, NULL, &w, &h);
 
 			w /= wSlice;
