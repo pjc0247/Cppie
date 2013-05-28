@@ -1,0 +1,17 @@
+#pragma once
+
+#define CPPIE_EVENT_NONE		0
+
+#define CPPIE_EVENT_EXIT		101
+
+#define CPPIE_EVENT_KEYDOWN		201
+#define CPPIE_EVENT_KEYUP		202
+#define CPPIE_EVENT_LEFTDOWN	211
+#define CPPIE_EVENT_LEFTUP		212
+#define CPPIE_EVENT_RIGHTDOWN	221
+#define CPPIE_EVENT_RIGHTUP		222
+
+#define CPPIE_EVENT_UNKNOWN		999
+
+namespace Cppie{
+};
