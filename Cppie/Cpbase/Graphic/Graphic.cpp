@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <SDL.h>
 
+#include "../System/Core.h"
+
 #include "Graphic.h"
 
 namespace Cppie{
@@ -19,8 +21,11 @@ namespace Cppie{
 		window = SDL_CreateWindow("chocopie",
 						SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 						w,h, 0);
-		if(window == NULL)
+		if(window == NULL){
+			logger->error("Failed to create game window");
+
 			return -2;
+		}
 
 		
 		int n = SDL_GetNumRenderDrivers();
@@ -33,8 +38,13 @@ namespace Cppie{
 					SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 			}
 		}
-		if(renderer == NULL)
+		if(renderer == NULL){
+			logger->error("Open GL not supported");
+
 			return -3;
+		}
+
+		logger->output("Graphic system initialized");
 	}
 	void Graphic::dispose(){
 	}
