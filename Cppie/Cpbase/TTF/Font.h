@@ -42,13 +42,13 @@ namespace Cppie{
 
 			return size;
 		}
-		void draw(int x,int y,char *msg){
+		void draw(int x,int y,const char *msg){
 			SDL_Surface *text;
 			SDL_Texture *texture;
 			Uint16 string_han[256];
 			SDL_Color color;
 
-			han2unicode(msg, string_han);
+			han2unicode(const_cast<char*>(msg), string_han);
 			
 			color.r = this->color.r;
 			color.g = this->color.g;
