@@ -21,11 +21,13 @@ namespace Cppie{
 	public:
 		Color color;
 		BlendMode blend;
+		int alpha;
 
 	public:
 		DrawableObject(){
 			color = Color::White;
 			blend = BLEND;	
+			alpha = 255;
 		}
 		virtual ~DrawableObject(){
 		}
