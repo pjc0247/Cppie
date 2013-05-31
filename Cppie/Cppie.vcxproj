@@ -151,6 +151,7 @@
     <ClCompile Include="Cpbase\Task\RepeatedTask.cpp" />
     <ClCompile Include="Cpbase\Task\Task.cpp" />
     <ClCompile Include="Cpbase\Task\TaskManager.cpp" />
+    <ClCompile Include="Cpbase\TTF\Font.cpp" />
     <ClCompile Include="Cppie.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
