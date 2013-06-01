@@ -168,6 +168,9 @@
     <ClInclude Include="Cpbase\Event\EventType.h">
       <Filter>소스 파일\Cpbase\Event</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Graphic\Texture.h">
+      <Filter>소스 파일\Cpbase\Graphic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -256,6 +259,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\TTF\Font.cpp">
       <Filter>소스 파일\Cpbase\TTF</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Graphic\Texture.cpp">
+      <Filter>소스 파일\Cpbase\Graphic</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
