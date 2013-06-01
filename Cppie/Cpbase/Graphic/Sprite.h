@@ -5,12 +5,12 @@
 
 #include "../System/Object.h"
 
-namespace Cppie{
-	extern SDL_Renderer *renderer;
+#include "Texture.h"
 
+namespace Cppie{
 	class Sprite : public DrawableObject{
 	protected:
-		SDL_Texture *texture;
+		Texture *texture;
 
 	public:
 		int w,h;
@@ -33,5 +33,9 @@ namespace Cppie{
 		virtual void draw(int x,int y);
 		void stretch(int x,int y,int w,int h);
 
+	protected:
+		void applyColor();
+		void applyBlendMode();
+		void applyAlpha();
 	};
 };

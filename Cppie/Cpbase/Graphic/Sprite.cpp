@@ -18,32 +18,11 @@ namespace Cppie{
 	}
 
 	int Sprite::initialize(const char *image, int wSlice,int hSlice){
-		SDL_Surface *surface;
-		char new_path[256];
+		texture = new Texture(image);
 
-		sprintf_s(new_path, "resource\\%s", image);
-		surface = IMG_Load(new_path);
+		this->w = texture->w;
+		this->h = texture->h;
 
-		if(surface != nullptr){
-			texture = SDL_CreateTextureFromSurface(renderer, surface);
-			SDL_FreeSurface(surface);
-		}
-		else{
-			logger->error("Failed to load image - %s", image);
-
-			return -1;
-		}
-		if(texture != nullptr){
-			SDL_QueryTexture(texture, NULL, NULL, &w, &h);
-
-			w /= wSlice;
-			h /= hSlice;
-		}
-		else{
-			logger->error("Failed to create texture - %s", image);
-
-			return -2;
-		}
 		this->wSlice = wSlice;
 		this->hSlice = hSlice;
 
@@ -62,31 +41,30 @@ namespace Cppie{
 	}
 	void Sprite::dispose(){
 		if(texture != nullptr){
-			SDL_DestroyTexture(texture);
+			texture->dispose();
 			texture = nullptr;
 		}
 	}
 
 	void Sprite::draw(int x,int y){
-		stretch(x,y,w,h);
+		applyColor(), applyBlendMode(), applyAlpha();
+
+		texture->draw(x,y);
 	}
 	void Sprite::stretch(int x,int y,int w,int h){
-		SDL_Rect src;
-		SDL_Rect dst;
+		applyColor(), applyBlendMode(), applyAlpha();
 
-		src.x = this->w * (step % wSlice);
-		src.y = this->h * (step / wSlice);
-		src.w = this->w, src.h = this->h;
+		texture->stretch(x,y,w,h);
+	}
 
-		dst.x = x, dst.y = y;
-		dst.w = w, dst.h = h;
-
-		origin.x = src.x + w/2;
-		origin.y = src.y + h/2;
-
-		SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
-		SDL_SetTextureAlphaMod(texture, alpha);
-		SDL_RenderCopyEx(renderer, texture, &src, &dst, angle,  &origin, flip);
+	void Sprite::applyColor(){
+		texture->color = color;
+	}
+	void Sprite::applyBlendMode(){
+		texture->blend = blend;
+	}
+	void Sprite::applyAlpha(){
+		texture->alpha = alpha;
 	}
 
 };
