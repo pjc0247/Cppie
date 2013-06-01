@@ -38,6 +38,7 @@
 	Graphic
 */
 #include "Graphic/BlendMode.h"
+#include "Graphic/Texture.h"
 #include "Graphic/Sprite.h"
 #include "Graphic/SpriteNumber.h"
 #include "Graphic/Graphic.h"
