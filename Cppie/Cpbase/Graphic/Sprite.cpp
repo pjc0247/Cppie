@@ -20,11 +20,11 @@ namespace Cppie{
 	int Sprite::initialize(const char *image, int wSlice,int hSlice){
 		texture = new Texture(image);
 
-		this->w = texture->w;
-		this->h = texture->h;
-
 		this->wSlice = wSlice;
 		this->hSlice = hSlice;
+
+		this->w = texture->w / wSlice;
+		this->h = texture->h / hSlice;
 
 		step = 0;
 		angle = 0;
