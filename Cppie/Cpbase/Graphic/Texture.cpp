@@ -114,8 +114,6 @@ namespace Cppie{
 		SDL_Rect dst;
 		SDL_Point pt;
 
-		applyColor(), applyBlendMode(), applyAlpha();
-
 		src.x = 0;
 		src.y = 0;
 		src.w = this->w, src.h = this->h;
@@ -126,6 +124,11 @@ namespace Cppie{
 		pt.x = origin.x;
 		pt.y = origin.y;
 
+		SDL_SetTextureColorMod(texture,
+				color.r, color.g, color.b);
+		SDL_SetTextureBlendMode(texture, blend);
+		SDL_SetTextureAlphaMod(texture, alpha);
+
 		SDL_RenderCopyEx(renderer, texture, &src, &dst,
 						angle, &pt, flip);
 	}
@@ -133,8 +136,6 @@ namespace Cppie{
 		SDL_Rect src;
 		SDL_Rect dst;
 		SDL_Point pt;
-
-		applyColor(), applyBlendMode(), applyAlpha();
 
 		src.x = srcX;
 		src.y = srcY;
@@ -147,6 +148,11 @@ namespace Cppie{
 		pt.x = origin.x;
 		pt.y = origin.y;
 
+		SDL_SetTextureColorMod(texture,
+				color.r, color.g, color.b);
+		SDL_SetTextureBlendMode(texture, blend);
+		SDL_SetTextureAlphaMod(texture, alpha);
+
 		SDL_RenderCopyEx(renderer, texture, &src, &dst,
 						angle, &pt, flip);
 	}
@@ -154,8 +160,6 @@ namespace Cppie{
 		SDL_Rect src;
 		SDL_Rect dst;
 		SDL_Point pt;
-
-		applyColor(), applyBlendMode(), applyAlpha();
 
 		src.x = 0;
 		src.y = 0;
@@ -167,6 +171,11 @@ namespace Cppie{
 		pt.x = origin.x;
 		pt.y = origin.y;
 
+		SDL_SetTextureColorMod(texture,
+				color.r, color.g, color.b);
+		SDL_SetTextureBlendMode(texture, blend);
+		SDL_SetTextureAlphaMod(texture, alpha);
+
 		SDL_RenderCopyEx(renderer, texture, &src, &dst,
 						angle, &pt, flip);
 	}
@@ -174,8 +183,6 @@ namespace Cppie{
 		SDL_Rect src;
 		SDL_Rect dst;
 		SDL_Point pt;
-
-		applyColor(), applyBlendMode(), applyAlpha();
 
 		src.x = srcX;
 		src.y = srcY;
@@ -188,18 +195,13 @@ namespace Cppie{
 		pt.x = origin.x;
 		pt.y = origin.y;
 
+		SDL_SetTextureColorMod(texture,
+				color.r, color.g, color.b);
+		SDL_SetTextureBlendMode(texture, blend);
+		SDL_SetTextureAlphaMod(texture, alpha);
+
 		SDL_RenderCopyEx(renderer, texture, &src, &dst,
 						angle, &pt, flip);
 	}
 
-	void Texture::applyColor(){
-		SDL_SetTextureColorMod(texture,
-				color.r, color.g, color.b);
-	}
-	void Texture::applyBlendMode(){
-		SDL_SetTextureBlendMode(texture, blend);
-	}
-	void Texture::applyAlpha(){
-		SDL_SetTextureAlphaMod(texture, alpha);
-	}
 };

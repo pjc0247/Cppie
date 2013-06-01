@@ -36,10 +36,5 @@ namespace Cppie{
 		virtual void draw(int x,int y, int srcX,int srcY,int srcW,int srcH);
 		void stretch(int x,int y,int w,int h);
 		void stretch(int x,int y,int w,int h,int srcX,int srcY,int srcW,int srcH);
-
-	protected:
-		void applyColor();
-		void applyBlendMode();
-		void applyAlpha();
 	};
 };
