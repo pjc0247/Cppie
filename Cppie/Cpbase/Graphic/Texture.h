@@ -23,11 +23,13 @@ namespace Cppie{
 		Texture(int w,int h);
 		Texture(Size size);
 		Texture(const char *image);
+		Texture(SDL_Texture *texture);
 		virtual ~Texture();
 
 		virtual int initialize(const char *image);
 		virtual int initializeWithImage(const char *image);
 		virtual int initializeWithSize(Size size);
+		virtual int initializeWithTexture(SDL_Texture *texture);
 		virtual void dispose();
 		
 		virtual void draw(int x,int y);

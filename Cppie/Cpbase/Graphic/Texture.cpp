@@ -18,6 +18,9 @@ namespace Cppie{
 	Texture::Texture(Size size){
 		initializeWithSize(size);
 	}
+	Texture::Texture(SDL_Texture *texture){
+		initializeWithTexture(texture);
+	}
 	Texture::~Texture(){
 		dispose();
 	}
@@ -73,6 +76,23 @@ namespace Cppie{
 
 		w = size.w;
 		h = size.h;
+
+		flip = SDL_FLIP_NONE;
+		angle = 0;
+		origin.x = w/2;
+		origin.y = h/2;
+
+		return 0;
+	}
+	int Texture::initializeWithTexture(SDL_Texture *texture){
+		if(texture == nullptr){
+			logger->error("Invalid texture - %x", texture);
+			return -1;
+		}
+
+		this->texture = texture;
+		
+		SDL_QueryTexture(texture, NULL,NULL, &w,&h);
 
 		flip = SDL_FLIP_NONE;
 		angle = 0;
