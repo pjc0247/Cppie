@@ -54,24 +54,21 @@ namespace Cppie{
 	}
 
 	void Sprite::draw(int x,int y){
-		applyColor(), applyBlendMode(), applyAlpha();
+		texture->alpha = alpha;
+		texture->angle = angle;
+		texture->color = color;
+		texture->blend = blend;
+		texture->flip = flip;
 
 		texture->draw(x,y);
 	}
 	void Sprite::stretch(int x,int y,int w,int h){
-		applyColor(), applyBlendMode(), applyAlpha();
+		texture->alpha = alpha;
+		texture->angle = angle;
+		texture->color = color;
+		texture->blend = blend;
+		texture->flip = flip;
 
 		texture->stretch(x,y,w,h);
 	}
-
-	void Sprite::applyColor(){
-		texture->color = color;
-	}
-	void Sprite::applyBlendMode(){
-		texture->blend = blend;
-	}
-	void Sprite::applyAlpha(){
-		texture->alpha = alpha;
-	}
-
 };
