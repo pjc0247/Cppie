@@ -46,6 +46,13 @@ namespace Cppie{
 		}
 	}
 
+	void Sprite::doStep(){
+		step++;
+		if(step >= wSlice * hSlice){
+			step = 0;
+		}
+	}
+
 	void Sprite::draw(int x,int y){
 		applyColor(), applyBlendMode(), applyAlpha();
 
