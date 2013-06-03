@@ -42,7 +42,6 @@ namespace Cppie{
 
 	Texture *Font::render(const char *msg){
 		SDL_Surface *text;
-		SDL_Texture *texture;
 		Uint16 string_han[256];
 		SDL_Color color;
 
@@ -55,18 +54,9 @@ namespace Cppie{
 		color.b = this->color.b;
 		text = TTF_RenderUNICODE_Blended(font, string_han, color);
 
-		texture = SDL_CreateTextureFromSurface(renderer, text);
+		finalTexture = new Texture(text);
 
-		SDL_Rect src = {0,0, text->w, text->h};
-		SDL_Rect dst = {0,0, text->w, text->h};
-
-		SDL_RenderCopy(renderer, texture, &src, &dst);
-
-		SDL_DestroyTexture(texture);
 		SDL_FreeSurface(text);
-
-		
-		finalTexture = new Texture(texture);
 
 		return finalTexture;
 	}
