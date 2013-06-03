@@ -99,6 +99,7 @@ class TestScene : public Scene{
 	SpriteNumber *num;
 	GameObject *obj;
 
+	Texture *tex;
 
 	Sound *sound;
 	          
@@ -110,8 +111,10 @@ public :
 	virtual int initialize(){
 		Scene::initialize();
 
-		bgi = new Sprite("bgi.jpg");
+		bgi = new Sprite("cat.png",2,2);
 		layer = new Layer();
+
+		tex = new Texture("cat.png");
 
 		for(int i=1;i<9;i++){
 			char msg[128];
@@ -143,6 +146,8 @@ public :
 	virtual void update(){
 		Scene::update();
 
+		bgi->step = 1;
+		//tex->draw(0,0);
 		bgi->draw(0,0);
 	}
 
