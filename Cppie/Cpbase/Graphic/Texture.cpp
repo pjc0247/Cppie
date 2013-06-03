@@ -21,6 +21,9 @@ namespace Cppie{
 	Texture::Texture(SDL_Texture *texture){
 		initializeWithTexture(texture);
 	}
+	Texture::Texture(SDL_Surface *surface,int access){
+		initializeWithSurface(surface, access);
+	}
 	Texture::~Texture(){
 		dispose();
 	}
@@ -94,7 +97,104 @@ namespace Cppie{
 
 		this->texture = texture;
 		
-		SDL_QueryTexture(texture, NULL,NULL, &w,&h);
+		flip = SDL_FLIP_NONE;
+		angle = 0;
+		alpha = 255;
+		origin.x = w/2;
+		origin.y = h/2;
+
+		return 0;
+	}
+	int Texture::initializeWithSurface(SDL_Surface *surface, int access){
+		if(surface == nullptr){
+			logger->error("Invalid surface - %x", surface);
+
+			return -1;
+		}
+
+		if(access == CPPIE_TEXTUREACCESS_STATIC){
+			texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+			if(texture == nullptr){
+				logger->error("Failed to create texture - %x, %d", surface, access);
+
+				return -3;
+			}
+		}
+		else if(access == CPPIE_TEXTUREACCESS_STREAMING){
+			void *pixels = nullptr;
+			int pitch;
+
+			unsigned int format;
+
+			int pixelBufferSize;
+
+			bool needAlphaChannel;
+			SDL_RendererInfo rendererInfo;
+
+			if (surface->format->Amask || SDL_GetColorKey(surface, NULL) == 0)
+				needAlphaChannel = true;
+			else
+				needAlphaChannel = false;
+
+			SDL_GetRendererInfo(renderer, &rendererInfo);
+			format = rendererInfo.texture_formats[0];
+			for (int i = 0; i < rendererInfo.num_texture_formats; ++i) {
+				if (!SDL_ISPIXELFORMAT_FOURCC(rendererInfo.texture_formats[i]) &&
+					SDL_ISPIXELFORMAT_ALPHA(rendererInfo.texture_formats[i]) == needAlphaChannel) {
+						format = rendererInfo.texture_formats[i];
+						break;
+				}
+			}
+
+			texture = SDL_CreateTexture(renderer, format,
+				SDL_TEXTUREACCESS_STREAMING, surface->w, surface->h);
+
+			printf("f %d %d\n", SDL_PIXELFORMAT_ARGB8888, format);
+
+			if(texture == nullptr){
+				logger->error("Failed to create texture - %x, %d", surface, access);
+
+				return -3;
+			}
+
+			pixelBufferSize = surface->w * surface->h * surface->format->BytesPerPixel;
+			
+			if(SDL_LockTexture(texture, NULL, (void**)&pixels, &pitch) != 0){
+				logger->error("Failed to access pixel buffer - %x", this);
+
+				return -4;
+			}
+			memcpy(pixels, surface->pixels, pixelBufferSize);
+			SDL_UnlockTexture(texture);
+		}
+		else if(access == CPPIE_TEXTUREACCESS_TARGET){
+			texture = SDL_CreateTexture(renderer, surface->format->format,
+				SDL_TEXTUREACCESS_TARGET, surface->w, surface->h);
+
+			if(texture == nullptr){
+				logger->error("Failed to create texture - %x, %d", surface, access);
+
+				return -3;
+			}
+
+			// todo
+			//
+			//
+		}
+		else{
+			logger->error("Wrong access type - %d", access);
+
+			return -2;
+		}
+
+		SDL_BlendMode surfaceBlendMode;
+		SDL_GetSurfaceBlendMode(surface, &surfaceBlendMode);
+
+		blend = surfaceBlendMode;
+
+		w = surface->w;
+		h = surface->h;
 
 		flip = SDL_FLIP_NONE;
 		angle = 0;

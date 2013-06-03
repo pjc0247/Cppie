@@ -7,6 +7,10 @@
 #include "../Data/Size.h"
 #include "../Data/Point.h"
 
+#define CPPIE_TEXTUREACCESS_STATIC		1
+#define CPPIE_TEXTUREACCESS_STREAMING	2
+#define CPPIE_TEXTUREACCESS_TARGET		3
+
 namespace Cppie{
 	class Texture : public DrawableObject{
 	protected:
@@ -24,12 +28,14 @@ namespace Cppie{
 		Texture(Size size);
 		Texture(const char *image);
 		Texture(SDL_Texture *texture);
+		Texture(SDL_Surface *texture,int access = CPPIE_TEXTUREACCESS_STATIC);
 		virtual ~Texture();
 
 		virtual int initialize(const char *image);
 		virtual int initializeWithImage(const char *image);
 		virtual int initializeWithSize(Size size);
 		virtual int initializeWithTexture(SDL_Texture *texture);
+		virtual int initializeWithSurface(SDL_Surface *surface,int access = CPPIE_TEXTUREACCESS_STATIC);
 		virtual void dispose();
 		
 		virtual void draw(int x,int y);
