@@ -3,6 +3,7 @@
 #include <SDL_TTF.h>
 
 #include "../System/Object.h"
+#include "../Graphic/Texture.h"
 
 namespace Cppie{
 	class Font : public DrawableObject{
@@ -17,6 +18,8 @@ namespace Cppie{
 		virtual void dispose();
 
 		Size querySize(char *msg);
+
+		Texture *render(const char *msg);
 		void draw(int x,int y,const char *msg);
 	};
 };

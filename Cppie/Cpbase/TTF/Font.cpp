@@ -11,7 +11,7 @@ namespace Cppie{
 
 	Font::Font(){
 	}
-	Font::Font(const char *font,int size=20){
+	Font::Font(const char *font,int size){
 		initialize(font, size);
 	}
 	Font::~Font(){
@@ -38,6 +38,37 @@ namespace Cppie{
 		TTF_SizeText(font, msg, &size.w, &size.h);
 
 		return size;
+	}
+
+	Texture *Font::render(const char *msg){
+		SDL_Surface *text;
+		SDL_Texture *texture;
+		Uint16 string_han[256];
+		SDL_Color color;
+
+		Texture *finalTexture;
+
+		han2unicode(const_cast<char*>(msg), string_han);
+
+		color.r = this->color.r;
+		color.g = this->color.g;
+		color.b = this->color.b;
+		text = TTF_RenderUNICODE_Blended(font, string_han, color);
+
+		texture = SDL_CreateTextureFromSurface(renderer, text);
+
+		SDL_Rect src = {0,0, text->w, text->h};
+		SDL_Rect dst = {0,0, text->w, text->h};
+
+		SDL_RenderCopy(renderer, texture, &src, &dst);
+
+		SDL_DestroyTexture(texture);
+		SDL_FreeSurface(text);
+
+		
+		finalTexture = new Texture(texture);
+
+		return finalTexture;
 	}
 	void Font::draw(int x,int y,const char *msg){
 		SDL_Surface *text;
