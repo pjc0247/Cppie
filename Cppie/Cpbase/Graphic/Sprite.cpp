@@ -18,13 +18,13 @@ namespace Cppie{
 	}
 
 	int Sprite::initialize(const char *image, int wSlice,int hSlice){
-		texture = new Texture(image);
+		Texture::initialize(image);
 
 		this->wSlice = wSlice;
 		this->hSlice = hSlice;
 
-		this->w = texture->w / wSlice;
-		this->h = texture->h / hSlice;
+		this->w = w / wSlice;
+		this->h = h / hSlice;
 
 		step = 0;
 		angle = 0;
@@ -35,40 +35,38 @@ namespace Cppie{
 		origin.x = w/2;
 		origin.y = h/2;
 
-		logger->output("loaded - %s, %x", image, this);
-
 		return 0;
 	}
 	void Sprite::dispose(){
-		if(texture != nullptr){
-			texture->dispose();
-			texture = nullptr;
-		}
+		Texture::dispose();
 	}
 
 	void Sprite::doStep(){
 		step++;
+		printf("%d \n", step);
 		if(step >= wSlice * hSlice){
 			step = 0;
 		}
 	}
 
 	void Sprite::draw(int x,int y){
-		texture->alpha = alpha;
-		texture->angle = angle;
-		texture->color = color;
-		texture->blend = blend;
-		texture->flip = flip;
-
-		texture->draw(x,y);
+		Rect srcRect;
+		srcRect.set(
+			step % wSlice * w,
+			step / wSlice * h,
+			w,h);
+		Texture::draw(x,y,
+			srcRect.x,srcRect.y,
+			srcRect.w,srcRect.h);
 	}
 	void Sprite::stretch(int x,int y,int w,int h){
-		texture->alpha = alpha;
-		texture->angle = angle;
-		texture->color = color;
-		texture->blend = blend;
-		texture->flip = flip;
-
-		texture->stretch(x,y,w,h);
+		Rect srcRect;
+		srcRect.set(
+			step % wSlice * w,
+			step / wSlice * h,
+			w,h);
+		Texture::stretch(x,y,w,h,
+			srcRect.x,srcRect.y,
+			srcRect.w,srcRect.h);
 	}
 };

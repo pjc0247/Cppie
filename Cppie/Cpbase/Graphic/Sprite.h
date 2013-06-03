@@ -8,14 +8,9 @@
 #include "Texture.h"
 
 namespace Cppie{
-	class Sprite : public DrawableObject{
-	protected:
-		Texture *texture;
-
+	class Sprite : public Texture{
 	public:
-		int w,h;
 		int wSlice, hSlice;
-		int alpha;
 
 		int step;
 
