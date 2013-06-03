@@ -55,6 +55,7 @@ namespace Cppie{
 
 		flip = SDL_FLIP_NONE;
 		angle = 0;
+		alpha = 255;
 		origin.x = w/2;
 		origin.y = h/2;
 		
@@ -79,6 +80,7 @@ namespace Cppie{
 
 		flip = SDL_FLIP_NONE;
 		angle = 0;
+		alpha = 255;
 		origin.x = w/2;
 		origin.y = h/2;
 
@@ -96,6 +98,7 @@ namespace Cppie{
 
 		flip = SDL_FLIP_NONE;
 		angle = 0;
+		alpha = 255;
 		origin.x = w/2;
 		origin.y = h/2;
 
