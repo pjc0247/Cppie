@@ -22,7 +22,7 @@ namespace Cppie{
 		Sprite(const char *image, int wSlice=1,int hSlice=1);
 		virtual ~Sprite();
 
-		virtual int initialize(const char *image, int wSlice,int hSlice);
+		virtual int initialize(const char *image, int wSlice=1,int hSlice=1);
 		virtual void dispose();
 		
 		void doStep();
