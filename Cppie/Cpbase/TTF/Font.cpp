@@ -55,6 +55,8 @@ namespace Cppie{
 		text = TTF_RenderUNICODE_Blended(font, string_han, color);
 
 		finalTexture = new Texture(text);
+		finalTexture->alpha = alpha;
+		finalTexture->blend = blend;
 
 		SDL_FreeSurface(text);
 
@@ -77,6 +79,9 @@ namespace Cppie{
 
 		SDL_Rect src = {0,0, text->w, text->h};
 		SDL_Rect dst = {x,y, text->w, text->h};
+
+		SDL_SetTextureBlendMode(texture, blend);
+		SDL_SetTextureAlphaMod(texture, alpha);
 
 		SDL_RenderCopy(renderer, texture, &src, &dst);
 
