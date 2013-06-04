@@ -21,8 +21,7 @@ namespace Cppie{
 	int Font::initialize(const char *font,int size){
 
 		this->font = TTF_OpenFont(font, size);
-		printf("%s\n", TTF_GetError());
-		printf("f%x", this->font);
+		
 		return 0;
 	}
 	void Font::dispose(){
