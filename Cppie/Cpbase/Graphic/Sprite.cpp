@@ -43,7 +43,7 @@ namespace Cppie{
 
 	void Sprite::doStep(){
 		step++;
-		printf("%d \n", step);
+
 		if(step >= wSlice * hSlice){
 			step = 0;
 		}
