@@ -4,6 +4,9 @@ namespace Cppie{
 	Version::Version(){
 		initialize();
 	}
+	Version::Version(char major,char minor,char fix){
+		initialize(major, minor, fix);
+	}
 	Version::~Version(){
 		dispose();
 	}
