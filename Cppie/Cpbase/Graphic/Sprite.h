@@ -13,10 +13,6 @@ namespace Cppie{
 		int wSlice, hSlice;
 
 		int step;
-
-		float angle;
-		SDL_RendererFlip flip;
-		SDL_Point origin;
 	public:
 		Sprite();
 		Sprite(const char *image, int wSlice=1,int hSlice=1);
