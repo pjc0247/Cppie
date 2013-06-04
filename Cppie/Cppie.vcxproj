@@ -111,6 +111,7 @@
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
     <ClInclude Include="Cpbase\System\SystemManager.h" />
+    <ClInclude Include="Cpbase\System\Version.h" />
     <ClInclude Include="Cpbase\Task\AsyncTask.h" />
     <ClInclude Include="Cpbase\Task\DelayedTask.h" />
     <ClInclude Include="Cpbase\Task\RepeatedTask.h" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Cpbase\System\Core.cpp" />
     <ClCompile Include="Cpbase\System\Object.h" />
     <ClCompile Include="Cpbase\System\SystemManager.cpp" />
+    <ClCompile Include="Cpbase\System\Version.cpp" />
     <ClCompile Include="Cpbase\Task\AsyncTask.cpp" />
     <ClCompile Include="Cpbase\Task\DelayedTask.cpp" />
     <ClCompile Include="Cpbase\Task\RepeatedTask.cpp" />
