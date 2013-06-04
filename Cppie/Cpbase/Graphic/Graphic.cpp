@@ -10,7 +10,7 @@
 namespace Cppie{
 	Graphic::Graphic(int w,int h,const char *rdriver){
 		color = Color::White;
-		blend = NONE;
+		blend = CPPIE_BLENDMODE_NONE;
 
 		initialize(w,h, rdriver);
 	}
