@@ -99,6 +99,7 @@ class TestScene : public Scene{
 	SpriteNumber *num;
 	GameObject *obj;
 
+	Font *font;
 	Texture *tex;
 
 	Sound *sound;
@@ -113,8 +114,6 @@ public :
 
 		bgi = new Sprite("cat.png",2,2);
 		layer = new Layer();
-
-		tex = new Texture("cat.png");
 
 		for(int i=1;i<9;i++){
 			char msg[128];
@@ -135,6 +134,12 @@ public :
 		
 		task->run();
 
+		font = new Font("c:\\windows\\fonts\\gulim.ttc");
+
+		//font->color = Color::Red;
+		font->alpha = 128;
+		tex = font->render("hello");
+
 		return 0;
 	}
 	virtual void dispose(){
@@ -147,8 +152,10 @@ public :
 		Scene::update();
 
 		bgi->step = 1;
-		//tex->draw(0,0);
+		
 		bgi->draw(0,0);
+		tex->draw(0,0);
+		
 	}
 
 	virtual void onLeftDown(int x,int y){
