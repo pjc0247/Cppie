@@ -19,9 +19,16 @@ namespace Cppie{
 	}
 
 	int Font::initialize(const char *font,int size){
-
 		this->font = TTF_OpenFont(font, size);
 		
+		if(this->font == nullptr){
+			logger->error("Failed to load font - %s, %d", font,size);
+
+			return -1;
+		}
+
+		logger->output("loaded - %s, %x", font, size);
+
 		return 0;
 	}
 	void Font::dispose(){
