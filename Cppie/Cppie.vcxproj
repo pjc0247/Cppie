@@ -99,6 +99,7 @@
     <ClInclude Include="Cpbase\GameObject\ObjectManager.h" />
     <ClInclude Include="Cpbase\GameObject\ZOrder.h" />
     <ClInclude Include="Cpbase\Graphic\BlendMode.h" />
+    <ClInclude Include="Cpbase\Graphic\Flip.h" />
     <ClInclude Include="Cpbase\Graphic\Graphic.h" />
     <ClInclude Include="Cpbase\Graphic\Sprite.h" />
     <ClInclude Include="Cpbase\Graphic\SpriteNumber.h" />

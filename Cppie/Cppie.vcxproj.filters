@@ -171,6 +171,9 @@
     <ClInclude Include="Cpbase\Graphic\Texture.h">
       <Filter>소스 파일\Cpbase\Graphic</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Graphic\Flip.h">
+      <Filter>소스 파일\Cpbase\Graphic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
