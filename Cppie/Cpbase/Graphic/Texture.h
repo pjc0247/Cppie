@@ -7,6 +7,9 @@
 #include "../Data/Size.h"
 #include "../Data/Point.h"
 
+#include "BlendMode.h"
+#include "Flip.h"
+
 #define CPPIE_TEXTUREACCESS_STATIC		1
 #define CPPIE_TEXTUREACCESS_STREAMING	2
 #define CPPIE_TEXTUREACCESS_TARGET		3
@@ -20,7 +23,7 @@ namespace Cppie{
 		int w,h;
 		float angle;
 		Point origin;
-		SDL_RendererFlip flip;
+		Flip flip;
 
 	public:
 		Texture();

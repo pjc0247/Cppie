@@ -56,7 +56,7 @@ namespace Cppie{
 			return -2;
 		}
 
-		flip = SDL_FLIP_NONE;
+		flip = CPPIE_FLIP_NONE;
 		angle = 0;
 		alpha = 255;
 		origin.x = w/2;
@@ -97,7 +97,7 @@ namespace Cppie{
 
 		this->texture = texture;
 		
-		flip = SDL_FLIP_NONE;
+		flip = CPPIE_FLIP_NONE;
 		angle = 0;
 		alpha = 255;
 		origin.x = w/2;
@@ -196,7 +196,7 @@ namespace Cppie{
 		w = surface->w;
 		h = surface->h;
 
-		flip = SDL_FLIP_NONE;
+		flip = CPPIE_FLIP_NONE;
 		angle = 0;
 		alpha = 255;
 		origin.x = w/2;
