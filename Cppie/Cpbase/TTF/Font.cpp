@@ -19,12 +19,38 @@ namespace Cppie{
 	}
 
 	int Font::initialize(const char *font,int size){
-		this->font = TTF_OpenFont(font, size);
-		
+		FILE *fp;
+		char path[256];
+
+		sprintf_s(path, "c:\\windows\\fonts\\%s", font);
+		fp = fopen(path, "r");
+		if(fp != NULL){
+			fclose(fp);
+			this->font = TTF_OpenFont(path, size);
+		}
+
+		sprintf_s(path, "resource\\%s", font);
+		fp = fopen(path, "r");
+		if(fp != NULL){
+			fclose(fp);
+			this->font = TTF_OpenFont(path, size);
+		}
+
+		fp = fopen(font, "r");
+		if(fp != NULL){
+			fclose(fp);
+			this->font = TTF_OpenFont(font, size);
+		}
+		else{
+			logger->error("File not found - %s, %d", font,size);
+
+			return -1;
+		}
+
 		if(this->font == nullptr){
 			logger->error("Failed to load font - %s, %d", font,size);
 
-			return -1;
+			return -2;
 		}
 
 		logger->output("loaded - %s, %x", font, size);
