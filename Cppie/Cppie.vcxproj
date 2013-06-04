@@ -90,6 +90,7 @@
     <ClInclude Include="Cpbase\Data\make.h" />
     <ClInclude Include="Cpbase\Data\Point.h" />
     <ClInclude Include="Cpbase\Data\Rect.h" />
+    <ClInclude Include="Cpbase\Data\Version.h" />
     <ClInclude Include="Cpbase\Event\Event.h" />
     <ClInclude Include="Cpbase\Event\EventHandler.h" />
     <ClInclude Include="Cpbase\Event\EventManager.h" />
@@ -111,7 +112,6 @@
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
     <ClInclude Include="Cpbase\System\SystemManager.h" />
-    <ClInclude Include="Cpbase\System\Version.h" />
     <ClInclude Include="Cpbase\Task\AsyncTask.h" />
     <ClInclude Include="Cpbase\Task\DelayedTask.h" />
     <ClInclude Include="Cpbase\Task\RepeatedTask.h" />
@@ -134,6 +134,7 @@
     <ClCompile Include="Cpbase\Data\Color.h" />
     <ClCompile Include="Cpbase\Data\make.cpp" />
     <ClCompile Include="Cpbase\Data\Point.cpp" />
+    <ClCompile Include="Cpbase\Data\Version.cpp" />
     <ClCompile Include="Cpbase\Event\EventHandler.cpp" />
     <ClCompile Include="Cpbase\Event\EventManager.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
@@ -150,7 +151,6 @@
     <ClCompile Include="Cpbase\System\Core.cpp" />
     <ClCompile Include="Cpbase\System\Object.h" />
     <ClCompile Include="Cpbase\System\SystemManager.cpp" />
-    <ClCompile Include="Cpbase\System\Version.cpp" />
     <ClCompile Include="Cpbase\Task\AsyncTask.cpp" />
     <ClCompile Include="Cpbase\Task\DelayedTask.cpp" />
     <ClCompile Include="Cpbase\Task\RepeatedTask.cpp" />

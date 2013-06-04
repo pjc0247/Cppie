@@ -17,4 +17,8 @@ namespace Cppie{
 		Color color(r,g,b,a);
 		return color;
 	}
+	Version cpColor(char major,char minor,char fix){
+		Version version(major,minor,fix);
+		return version;
+	}
 };

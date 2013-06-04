@@ -174,8 +174,8 @@
     <ClInclude Include="Cpbase\Graphic\Flip.h">
       <Filter>소스 파일\Cpbase\Graphic</Filter>
     </ClInclude>
-    <ClInclude Include="Cpbase\System\Version.h">
-      <Filter>소스 파일\Cpbase\System</Filter>
+    <ClInclude Include="Cpbase\Data\Version.h">
+      <Filter>소스 파일\Cpbase\Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -269,8 +269,8 @@
     <ClCompile Include="Cpbase\Graphic\Texture.cpp">
       <Filter>소스 파일\Cpbase\Graphic</Filter>
     </ClCompile>
-    <ClCompile Include="Cpbase\System\Version.cpp">
-      <Filter>소스 파일\Cpbase\System</Filter>
+    <ClCompile Include="Cpbase\Data\Version.cpp">
+      <Filter>소스 파일\Cpbase\Data</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
