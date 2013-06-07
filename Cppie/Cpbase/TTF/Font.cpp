@@ -23,20 +23,20 @@ namespace Cppie{
 		char path[256];
 
 		sprintf_s(path, "c:\\windows\\fonts\\%s", font);
-		fp = fopen(path, "r");
+		fopen_s(&fp, path, "r");
 		if(fp != NULL){
 			fclose(fp);
 			this->font = TTF_OpenFont(path, size);
 		}
 
 		sprintf_s(path, "resource\\%s", font);
-		fp = fopen(path, "r");
+		fopen_s(&fp, path, "r");
 		if(fp != NULL){
 			fclose(fp);
 			this->font = TTF_OpenFont(path, size);
 		}
 
-		fp = fopen(font, "r");
+		fopen_s(&fp, font, "r");
 		if(fp != NULL){
 			fclose(fp);
 			this->font = TTF_OpenFont(font, size);

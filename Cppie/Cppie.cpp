@@ -121,6 +121,7 @@ public :
 			sakura[i] = new Sprite(msg);
 		}
 		
+
 		task = new RepeatedTask(
 				CPPIE_TASK(	
 					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(181,16)));
