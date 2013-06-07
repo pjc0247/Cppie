@@ -21,6 +21,7 @@ namespace Cppie{
 			dstCur ++;
 			srcCur ++;
 		}
+		dst[dstCur] = '\0';
 	}
 	void makeWindowsPath(const char *src,char *dst){
 		int srcLen;
@@ -40,5 +41,6 @@ namespace Cppie{
 			dstCur ++;
 			srcCur ++;
 		}
+		dst[dstCur] = '\0';
 	}
 };
