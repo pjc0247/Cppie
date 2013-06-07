@@ -205,10 +205,10 @@ namespace Cppie{
 
 			system->loopCount ++;
 
-			float elapsed;
+			unsigned int elapsed;
 			elapsed = (SDL_GetTicks() - startTick);
 			if(elapsed == 0) elapsed = 1;
-			fps = 1000 / elapsed;
+			fps = 1000.0f / elapsed;
 			{
 				char title[128];
 				sprintf_s(title, "%s - fps : %.1f",
