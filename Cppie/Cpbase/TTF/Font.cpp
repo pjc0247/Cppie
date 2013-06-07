@@ -26,26 +26,29 @@ namespace Cppie{
 		fopen_s(&fp, path, "r");
 		if(fp != NULL){
 			fclose(fp);
-			this->font = TTF_OpenFont(path, size);
+			goto LoadFont;
 		}
 
 		sprintf_s(path, "resource\\%s", font);
 		fopen_s(&fp, path, "r");
 		if(fp != NULL){
 			fclose(fp);
-			this->font = TTF_OpenFont(path, size);
+			goto LoadFont;
 		}
 
 		fopen_s(&fp, font, "r");
 		if(fp != NULL){
 			fclose(fp);
-			this->font = TTF_OpenFont(font, size);
+			goto LoadFont;
 		}
 		else{
 			logger->error("File not found - %s, %d", font,size);
 
 			return -1;
 		}
+
+	LoadFont:
+		this->font = TTF_OpenFont(path, size);
 
 		if(this->font == nullptr){
 			logger->error("Failed to load font - %s, %d", font,size);
