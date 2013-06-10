@@ -64,7 +64,7 @@ namespace Cppie{
 			this->startTick = getTicks();
 
 			this->state = CPPIE_TASKSTATE_WAITING;
-		}
+		}	
 	}
 
 	void DelayedTask::pause(){

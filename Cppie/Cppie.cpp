@@ -126,7 +126,7 @@ public :
 		
 		spr = new Sprite("bomb1.png",4,4);
 		aobj = new AnimatedObject(0,0,
-			spr, 100);
+			spr, 50);
 
 		task = new RepeatedTask(
 				CPPIE_TASK(	
@@ -169,8 +169,18 @@ public :
 
 	virtual void onLeftDown(int x,int y){
 		printf("%d %d\n", x,y);
+		
 	}
-	virtual void onKeyDown(int key){
+	virtual void onKeyDown(int key,bool repeated){
+		printf(
+			"qweqwe\n");
+		aobj->repeat = false;
+	}
+
+	virtual void onKeyUp(int key,bool repeated){
+		printf(
+			"ertert\n");
+		aobj->repeat = true;
 	}
 };
 
