@@ -32,6 +32,8 @@ namespace Cppie{
 		int initialize(int w,int h,const char *rdriver);
 		void dispose();
 
+		void clear();
+
 		void line(int x1,int y1,int x2,int y2);
 		void rect(int x,int y,int w,int h);
 		void fill(int x,int y,int w,int h);

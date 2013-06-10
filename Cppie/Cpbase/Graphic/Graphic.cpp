@@ -49,6 +49,10 @@ namespace Cppie{
 	void Graphic::dispose(){
 	}
 
+	void Graphic::clear(){
+		SDL_RenderClear(renderer);
+	}
+
 	void Graphic::line(int x1,int y1,int x2,int y2){
 		SDL_SetRenderDrawColor(renderer,color.r, color.g, color.b, color.a);
 		SDL_SetRenderDrawBlendMode(renderer, blend);
