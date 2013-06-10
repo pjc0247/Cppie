@@ -16,45 +16,14 @@ namespace Cppie{
 		Rect rect;
 
 	public:
+		GameObject(float x=0,float y=0,Sprite *sprite=nullptr);
+		~GameObject();
 
-		GameObject(float x=0,float y=0,Sprite *sprite=nullptr){
-			initialize(x,y, sprite);
-		}
-		~GameObject(){
-			dispose();
-		}
+		virtual int initialize(float x=0,float y=0,Sprite *sprite=nullptr);
+		virtual void dispose();
 
-		virtual int initialize(float x=0,float y=0,Sprite *sprite=nullptr){
-			this->x = x;
-			this->y = y;
+		virtual void draw(float x,float y);
 
-			this->sprite = sprite;
-			if(sprite == nullptr){
-				visible = false;
-				rect.set();
-			}
-			else{
-				visible = true;
-				rect.set(x,y,sprite->w,sprite->h);
-			}
-
-			step = 0;
-			angle = 0;
-
-			return 0;
-		}
-		virtual void dispose(){
-		}
-		virtual void draw(float x,float y){
-			if(sprite != nullptr){
-				sprite->color = color;
-				sprite->angle = angle;
-				sprite->step = step;
-				sprite->draw(x,y);
-			}
-		}
-		virtual void update(){
-			if(visible) draw(x,y);
-		}
+		virtual void update();
 	};
 };

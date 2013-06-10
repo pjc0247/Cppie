@@ -284,5 +284,8 @@
     <ClCompile Include="Cpbase\GameObject\AnimatedObject.cpp">
       <Filter>소스 파일\Cpbase\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="Cpbase\GameObject\GameObject.cpp">
+      <Filter>소스 파일\Cpbase\GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -140,6 +140,7 @@
     <ClCompile Include="Cpbase\Event\EventHandler.cpp" />
     <ClCompile Include="Cpbase\Event\EventManager.cpp" />
     <ClCompile Include="Cpbase\GameObject\AnimatedObject.cpp" />
+    <ClCompile Include="Cpbase\GameObject\GameObject.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
     <ClCompile Include="Cpbase\Graphic\Graphic.cpp" />
