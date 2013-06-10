@@ -15,14 +15,14 @@ namespace Cppie{
 	int AnimatedObject::initialize(float x,float y,Sprite *sprite,int interval){
 		GameObject::initialize(x,y, sprite);
 
-		task = new RepeatedTask(CPPIE_SAFE_TASK(
+		animateTask = new RepeatedTask(CPPIE_SAFE_TASK(
 				step ++;
 				if(step >= sprite->wSlice*sprite->hSlice){
 					step = 0;
 				}
 			));
 
-		task->run(interval);
+		animateTask->run(interval);
 		
 		return 0;
 	}
