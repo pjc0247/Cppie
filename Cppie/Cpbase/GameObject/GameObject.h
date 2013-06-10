@@ -17,7 +17,7 @@ namespace Cppie{
 
 	public:
 		GameObject(float x=0,float y=0,Sprite *sprite=nullptr);
-		~GameObject();
+		virtual ~GameObject();
 
 		virtual int initialize(float x=0,float y=0,Sprite *sprite=nullptr);
 		virtual void dispose();
