@@ -18,6 +18,13 @@ namespace Cppie{
 	public:
 
 		GameObject(float x=0,float y=0,Sprite *sprite=nullptr){
+			initialize(x,y, sprite);
+		}
+		~GameObject(){
+			dispose();
+		}
+
+		virtual int initialize(float x=0,float y=0,Sprite *sprite=nullptr){
 			this->x = x;
 			this->y = y;
 
@@ -33,9 +40,7 @@ namespace Cppie{
 
 			step = 0;
 			angle = 0;
-		}
 
-		virtual int initialize(){
 			return 0;
 		}
 		virtual void dispose(){
