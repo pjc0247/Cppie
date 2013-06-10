@@ -11,11 +11,13 @@ namespace Cppie{
 	class DelayedTask : public TaskObject{
 	public:
 		int delay;
+
+		bool paused;
+	protected:
 		int startCount;
 		int startTick;
 
 		int pausedTick;
-		bool paused;
 
 	public:
 		DelayedTask();
