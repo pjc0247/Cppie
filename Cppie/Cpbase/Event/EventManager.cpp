@@ -24,4 +24,15 @@ namespace Cppie{
 		else
 			logger->error("Failed to raise event - scene is null");
 	}
+
+	void EventManager::enableKeyRepeat(){
+		keyRepeat = true;
+	}
+	void EventManager::disableKeyRepeat(){
+		keyRepeat = false;
+	}
+
+	bool EventManager::queryKeyRepeat(){
+		return keyRepeat;
+	}
 };
