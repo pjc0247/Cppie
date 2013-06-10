@@ -14,6 +14,9 @@ namespace Cppie{
 		int startCount;
 		int startTick;
 
+		int pausedTick;
+		bool paused;
+
 	public:
 		DelayedTask();
 		DelayedTask(Task task);
@@ -25,5 +28,8 @@ namespace Cppie{
 		virtual void update();
 
 		void run(int delay=CPPIE_TASK_NEXT_LOOP);
+
+		void pause();
+		void resume();
 	};
 };
