@@ -181,6 +181,7 @@ namespace Cppie{
 
 						e.type = CPPIE_EVENT_KEYDOWN;
 						e.key = event.key.keysym.sym;
+						e.repeated = event.key.repeat;
 
 						eventmgr->raiseEvent(e);
 
@@ -192,6 +193,7 @@ namespace Cppie{
 
 						e.type = CPPIE_EVENT_KEYUP;
 						e.key = event.key.keysym.sym;
+						e.repeated = event.key.repeat;
 
 						eventmgr->raiseEvent(e);
 
