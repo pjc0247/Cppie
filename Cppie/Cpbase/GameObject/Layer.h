@@ -12,7 +12,7 @@ namespace Cppie{
 		std::list<Object *> o;
 
 	public:
-		Layer(float z = Z_OBJECT);
+		Layer(float z = CPPIE_Z_OBJECT);
 		virtual ~Layer();
 
 		virtual void update();
