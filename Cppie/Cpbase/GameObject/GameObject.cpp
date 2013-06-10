@@ -12,22 +12,22 @@ namespace Cppie{
 
 	int GameObject::initialize(float x,float y,Sprite *sprite){
 		this->x = x;
-			this->y = y;
+		this->y = y;
 
-			this->sprite = sprite;
-			if(sprite == nullptr){
-				visible = false;
-				rect.set();
-			}
-			else{
-				visible = true;
-				rect.set(x,y,sprite->w,sprite->h);
-			}
+		this->sprite = sprite;
+		if(sprite == nullptr){
+			visible = false;
+			rect.set();
+		}
+		else{
+			visible = true;
+			rect.set(x,y,sprite->w,sprite->h);
+		}
 
-			step = 0;
-			angle = 0;
+		step = 0;
+		angle = 0;
 
-			return 0;
+		return 0;
 	}
 	void GameObject::dispose(){
 	}
