@@ -73,7 +73,7 @@ namespace Cppie{
 		paused = true;
 	}
 	void DelayedTask::resume(){
-		startTick -= getTicks() - pausedTick;
+		startTick += getTicks() - pausedTick;
 
 		paused = false;
 	}
