@@ -24,6 +24,7 @@
 #include "Cpbase/Task/RepeatedTask.h"
 
 #include "Cpbase/Util/Random.h"
+#include "Cpbase/GameObject/AnimatedObject.h"
 
 using namespace Cppie;
 
@@ -40,7 +41,6 @@ public:
 	}
 };
 
-
 Sprite *sakura[10];
 	Layer *layer;
 
@@ -50,6 +50,7 @@ class Sakura : public DrawableObject{
 	float alpha;
 	float x,y;
 	float angle;
+
 public:
 	Sakura(int x,int y){
 		initialize(x,y);
@@ -106,6 +107,8 @@ class TestScene : public Scene{
 	          
 	RepeatedTask *task;
 
+	Sprite *spr;
+	AnimatedObject *aobj;
 	int n;
 
 public :
@@ -121,6 +124,9 @@ public :
 			sakura[i] = new Sprite(msg);
 		}
 		
+		spr = new Sprite("bomb1.png",4,4);
+		aobj = new AnimatedObject(0,0,
+			spr, 100);
 
 		task = new RepeatedTask(
 				CPPIE_TASK(	
@@ -154,9 +160,11 @@ public :
 
 		bgi->step = 1;
 		
-		bgi->draw(0,0);
-		tex->draw(0,0);
-		
+		//bgi->draw(0,0);
+		//tex->draw(0,0);
+
+		aobj->update();
+		//spr->draw(0,0);
 	}
 
 	virtual void onLeftDown(int x,int y){
