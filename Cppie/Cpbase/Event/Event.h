@@ -7,6 +7,8 @@ namespace Cppie{
 		int key;
 		int x,y;
 
+		bool repeated;
+
 		void *data1;
 		void *data2;
 	};
