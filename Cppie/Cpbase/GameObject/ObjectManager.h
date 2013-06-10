@@ -1,11 +1,13 @@
 #pragma once
 
+#include "../System/Manager.h"
+
 #include "Layer.h"
 
 #include <list>
 
 namespace Cppie{
-	class ObjectManager : public Object{
+	class ObjectManager : public ManagerObject{
 	public:
 		std::list<Layer *> o;
 

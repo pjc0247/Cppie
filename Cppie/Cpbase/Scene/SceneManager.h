@@ -1,10 +1,11 @@
 #pragma once
 
-#include "../System/object.h"
+#include "../System/Manager.h"
+
 #include "Scene.h"
 
 namespace Cppie{
-	class SceneManager : public Object{
+	class SceneManager : public ManagerObject{
 	public:
 		Scene *scene;
 

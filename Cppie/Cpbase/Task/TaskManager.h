@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../System/Object.h"
+#include "../System/Manager.h"
 
 #include "Task.h"
 
@@ -8,7 +9,7 @@
 
 namespace Cppie{
 
-	class TaskManager : public Object{
+	class TaskManager : public ManagerObject{
 	private:
 		std::list<Object *> o;
 

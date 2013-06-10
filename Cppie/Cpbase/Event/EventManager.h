@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../System/Object.h"
+#include "../System/Manager.h"
 
 #include "Event.h"
 
 namespace Cppie{
-	class EventManager : public Object{
+	class EventManager : public ManagerObject{
 	protected:
 		bool keyRepeat;
 

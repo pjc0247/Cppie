@@ -1,11 +1,12 @@
 #pragma once
 
 #include "Object.h"
+#include "Manager.h"
 
 #include <list>
 
 namespace Cppie{
-	class System : public Object{
+	class System : public ManagerObject{
 	public:
 		std::list<Object *> o;
 

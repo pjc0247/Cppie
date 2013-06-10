@@ -1,6 +1,7 @@
 #pragma once
 
-#include "../System/Object.h"
+#include "../System/Manager.h"
+
 #include "Sound.h"
 
 #include <fmod.hpp>
@@ -10,7 +11,7 @@
 
 namespace Cppie{
 
-	class SoundManager : public Object {
+	class SoundManager : public ManagerObject {
 	private:
 		FMOD::System *system;
 		
