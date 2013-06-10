@@ -30,7 +30,7 @@ namespace Cppie{
 		if(this->state != CPPIE_TASKSTATE_WAITING)
 			return;
 
-		if(paused)
+		if(paused())
 			return;
 
 		if(delay == CPPIE_TASK_NEXT_LOOP){
