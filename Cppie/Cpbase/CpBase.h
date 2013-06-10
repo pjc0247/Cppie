@@ -14,6 +14,7 @@
 	Cppie System
 */
 #include "System/Core.h"
+#include "System/Manager.h"
 #include "System/SystemManager.h"
 #include "System/Object.h"
 
@@ -68,6 +69,7 @@
 #include "GameObject/Layer.h"
 #include "GameObject/ObjectManager.h"
 #include "GameObject/GameObject.h"
+#include "GameObject/AnimatedObject.h"
 
 /*
 	Input
@@ -84,3 +86,9 @@
 #include "Task/AsyncTask.h"
 #include "Task/DelayedTask.h"
 #include "Task/RepeatedTask.h"
+
+/*
+	Window
+*/
+#include "Window/WindowManager.h"
+#include "Window/Window.h"
