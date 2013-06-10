@@ -26,10 +26,10 @@ namespace Cppie{
 			onRightUp(e.x,e.y);
 			break;
 		case CPPIE_EVENT_KEYDOWN:
-			onKeyDown(e.key);
+			onKeyDown(e.key, e.repeated);
 			break;
 		case CPPIE_EVENT_KEYUP:
-			onKeyUp(e.key);
+			onKeyUp(e.key, e.repeated);
 			break;
 		case CPPIE_EVENT_MOUSEMOVE:
 			onMouseMove(e.x,e.y);
@@ -40,9 +40,9 @@ namespace Cppie{
 		}
 	}
 
-	void EventHandler::onKeyDown(int key){
+	void EventHandler::onKeyDown(int key,bool repeated){
 	}
-	void EventHandler::onKeyUp(int key){
+	void EventHandler::onKeyUp(int key,bool repeated){
 	}
 
 	void EventHandler::onLeftDown(int x,int y){
