@@ -12,6 +12,7 @@
 #include "../Input/Mouse.h"
 #include "../Task/TaskManager.h"
 #include "../Event/EventManager.h"
+#include "../Window/WindowManager.h"
 
 namespace Cppie{
 	extern SDL_Window *window;
@@ -34,6 +35,8 @@ namespace Cppie{
 	extern TaskManager *taskmgr;
 
 	extern EventManager *eventmgr;
+
+	extern WindowManager *winmgr;
 
 	int initialize(int w,int h);
 	void quit();

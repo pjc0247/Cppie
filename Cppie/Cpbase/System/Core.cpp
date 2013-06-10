@@ -29,6 +29,8 @@ namespace Cppie{
 
 	EventManager *eventmgr = nullptr;
 
+	WindowManager *winmgr = nullptr;
+
 	int initialize(int w,int h){
 		logger = new Log();
 
@@ -62,6 +64,8 @@ namespace Cppie{
 
 		eventmgr = new EventManager();
 
+		winmgr = new WindowManager();
+
 		graphic->setTitle("Cppie");
 
 		system->add(scene);
@@ -70,6 +74,7 @@ namespace Cppie{
 		system->add(mouse);
 		
 		system->add(taskmgr);
+		system->add(winmgr);
 
 		logger->output("All systems ready...");
 
