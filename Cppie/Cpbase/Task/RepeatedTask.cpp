@@ -18,6 +18,9 @@ namespace Cppie{
 		if(this->state != CPPIE_TASKSTATE_WAITING)
 			return;
 
+		if(paused)
+			return;
+
 		if(delay == CPPIE_TASK_NEXT_LOOP){
 			if(startCount != system->loopCount){
 				this->state = CPPIE_TASKSTATE_RUNNING;
