@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../System/Core.h"
+
 #include "SceneManager.h"
 
 namespace Cppie{
@@ -23,6 +25,12 @@ namespace Cppie{
 
 	int SceneManager::change(Scene *new_scene){
 		Scene *old_scene = scene;
+
+		if(new_scene == nullptr){
+			logger->error("Invalid scene");
+
+			return -1;
+		}
 
 		if(old_scene != nullptr){
 			old_scene->dispose();
