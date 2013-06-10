@@ -29,7 +29,7 @@ namespace Cppie{
 			onKeyDown(e.key);
 			break;
 		case CPPIE_EVENT_KEYUP:
-			onKeyDown(e.key);
+			onKeyUp(e.key);
 			break;
 		case CPPIE_EVENT_MOUSEMOVE:
 			onMouseMove(e.x,e.y);
