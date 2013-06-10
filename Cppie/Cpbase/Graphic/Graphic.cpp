@@ -73,7 +73,7 @@ namespace Cppie{
 		SDL_SetRenderDrawColor(renderer,color.r, color.g, color.b, color.a);
 		SDL_SetRenderDrawBlendMode(renderer, blend);
 
-		SDL_RenderDrawRect(renderer, &rect);
+		SDL_RenderFillRect(renderer, &rect);
 	}
 
 	void Graphic::setSize(Rect size){
