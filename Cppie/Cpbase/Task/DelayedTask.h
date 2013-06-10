@@ -12,7 +12,6 @@ namespace Cppie{
 	public:
 		int delay;
 
-		bool paused;
 	protected:
 		int startCount;
 		int startTick;
@@ -33,5 +32,7 @@ namespace Cppie{
 
 		void pause();
 		void resume();
+
+		bool paused();
 	};
 };
