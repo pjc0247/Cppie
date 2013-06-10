@@ -112,6 +112,7 @@
     <ClInclude Include="Cpbase\Log\Log.h" />
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
+    <ClInclude Include="Cpbase\System\Manager.h" />
     <ClInclude Include="Cpbase\System\SystemManager.h" />
     <ClInclude Include="Cpbase\Task\AsyncTask.h" />
     <ClInclude Include="Cpbase\Task\DelayedTask.h" />
@@ -122,6 +123,8 @@
     <ClInclude Include="Cpbase\TTF\han2unicode.h" />
     <ClInclude Include="Cpbase\Util\FilePath.h" />
     <ClInclude Include="Cpbase\Util\Random.h" />
+    <ClInclude Include="Cpbase\Window\Window.h" />
+    <ClInclude Include="Cpbase\Window\WindowManager.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +165,8 @@
     <ClCompile Include="Cpbase\Task\TaskManager.cpp" />
     <ClCompile Include="Cpbase\TTF\Font.cpp" />
     <ClCompile Include="Cpbase\Util\FilePath.cpp" />
+    <ClCompile Include="Cpbase\Window\Window.cpp" />
+    <ClCompile Include="Cpbase\Window\WindowManager.cpp" />
     <ClCompile Include="Cppie.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>

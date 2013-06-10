@@ -183,6 +183,15 @@
     <ClInclude Include="Cpbase\GameObject\AnimatedObject.h">
       <Filter>소스 파일\Cpbase\GameObject</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Window\Window.h">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Window\WindowManager.h">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\System\Manager.h">
+      <Filter>소스 파일\Cpbase\System</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -286,6 +295,12 @@
     </ClCompile>
     <ClCompile Include="Cpbase\GameObject\GameObject.cpp">
       <Filter>소스 파일\Cpbase\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Window\Window.cpp">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Window\WindowManager.cpp">
+      <Filter>소스 파일\Cpbase\Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
