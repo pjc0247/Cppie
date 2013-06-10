@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../System/Manager.h"
+#include "../GameObject/Layer.h"
 
 #include "Window.h"
 
@@ -10,6 +11,7 @@ namespace Cppie{
 	class WindowManager : public ManagerObject{
 	public:
 		std::list<Window *> o;
+		Layer *layer;
 
 	public:
 		WindowManager();
