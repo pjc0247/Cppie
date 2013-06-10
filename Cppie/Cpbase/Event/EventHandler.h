@@ -11,8 +11,8 @@ namespace Cppie{
 
 		virtual void onEvent(Event e);
 
-		virtual void onKeyDown(int key);
-		virtual void onKeyUp(int key);
+		virtual void onKeyDown(int key, bool repeated);
+		virtual void onKeyUp(int key, bool repeated);
 
 		virtual void onLeftDown(int x,int y);
 		virtual void onLeftUp(int x,int y);
