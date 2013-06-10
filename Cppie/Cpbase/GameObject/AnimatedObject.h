@@ -10,6 +10,8 @@ namespace Cppie{
 	public:
 		RepeatedTask *animateTask;
 
+		bool repeat;
+
 	public:
 		AnimatedObject();
 		AnimatedObject(float x,float y,Sprite *sprite,int interval);
