@@ -111,6 +111,8 @@ class TestScene : public Scene{
 	AnimatedObject *aobj;
 	int n;
 
+	Window *w;
+
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -140,6 +142,8 @@ public :
 				));
 		
 		task->run();
+
+		w = new Window(0,0,50,50);
 
 		font = new Font("c:\\windows\\fonts\\gulim.ttc");
 
