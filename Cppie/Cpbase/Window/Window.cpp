@@ -13,14 +13,19 @@ namespace Cppie{
 	}
 
 	int Window::initialize(int x,int y,int w,int h){
-		this->x = x;
-		this->y = y;
+		GameObject::initialize(x,y, nullptr);
+
+		visible = true;
+
 		this->w = w;
 		this->h = h;
+
+		winmgr->add(this);
 
 		return 0;
 	}
 	void Window::dispose(){
+		winmgr->remove(this);
 	}
 
 	void Window::draw(float x,float y){
