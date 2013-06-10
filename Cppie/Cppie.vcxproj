@@ -95,6 +95,7 @@
     <ClInclude Include="Cpbase\Event\EventHandler.h" />
     <ClInclude Include="Cpbase\Event\EventManager.h" />
     <ClInclude Include="Cpbase\Event\EventType.h" />
+    <ClInclude Include="Cpbase\GameObject\AnimatedObject.h" />
     <ClInclude Include="Cpbase\GameObject\GameObject.h" />
     <ClInclude Include="Cpbase\GameObject\Layer.h" />
     <ClInclude Include="Cpbase\GameObject\ObjectManager.h" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Cpbase\Data\Version.cpp" />
     <ClCompile Include="Cpbase\Event\EventHandler.cpp" />
     <ClCompile Include="Cpbase\Event\EventManager.cpp" />
+    <ClCompile Include="Cpbase\GameObject\AnimatedObject.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
     <ClCompile Include="Cpbase\Graphic\Graphic.cpp" />

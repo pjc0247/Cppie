@@ -180,6 +180,9 @@
     <ClInclude Include="Cpbase\Util\FilePath.h">
       <Filter>소스 파일\Cpbase\Util</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\GameObject\AnimatedObject.h">
+      <Filter>소스 파일\Cpbase\GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -277,6 +280,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Util\FilePath.cpp">
       <Filter>소스 파일\Cpbase\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\GameObject\AnimatedObject.cpp">
+      <Filter>소스 파일\Cpbase\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
