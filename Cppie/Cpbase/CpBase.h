@@ -94,3 +94,15 @@
 #include "Window/WindowEventType.h"
 #include "Window/WindowManager.h"
 #include "Window/Window.h"
+
+/*
+	Particle Engine
+*/
+#include "Particle/Particle.h"
+#include "Particle/ParticleGenerator.h"
+
+/*
+	Particle Presets
+*/
+#include "Particle/FlowParticle.h"
+#include "Particle/FireParticle.h"
