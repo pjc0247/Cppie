@@ -13,17 +13,14 @@ namespace Cppie{
 
 	public:
 		DrawableObject(){
-			color = Color::White;
-			blend = CPPIE_BLENDMODE_BLEND;	
-			alpha = 255;
+			
 		}
 		virtual ~DrawableObject(){
 		}
 
-		virtual void update(){
-		}
-		virtual void draw(int x=0,int y=0){
-		}
+		virtual int initialize();
+
+		virtual void draw(int x=0,int y=0);
 	};
 };
 };
