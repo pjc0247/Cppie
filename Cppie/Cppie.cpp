@@ -26,6 +26,11 @@
 #include "Cpbase/Util/Random.h"
 #include "Cpbase/GameObject/AnimatedObject.h"
 
+#include "Cpbase/Particle/ParticleGenerator.h"
+#include "Cpbase/Particle/Particle.h"
+#include "Cpbase/Particle/FlowParticle.h"
+#include "Cpbase/Particle/FireParticle.h"
+
 using namespace Cppie;
 
 class TestScene2 : public Scene{
@@ -113,6 +118,8 @@ class TestScene : public Scene{
 
 	Window *w;
 
+	ParticleGenerator *gen;
+
 public :
 	virtual int initialize(){
 		Scene::initialize();
@@ -126,7 +133,7 @@ public :
 			sakura[i] = new Sprite(msg);
 		}
 		
-		spr = new Sprite("bomb1.png",4,4);
+		spr = new Sprite("orange.png",4,4);
 		aobj = new AnimatedObject(0,0,
 			spr, 50);
 
@@ -149,7 +156,13 @@ public :
 
 		//font->color = Color::Red;
 		font->alpha = 128;
-		tex = font->render("hello");
+		tex = new Texture("fire.png");
+
+		
+		spr->blend = CPPIE_BLENDMODE_ADD;
+		gen = new FireGenerator(120,100, spr);
+		gen->activity = 30;
+
 
 		return 0;
 	}
@@ -162,12 +175,17 @@ public :
 	virtual void update(){
 		Scene::update();
 
+		graphic->color = Color::Black;
+		graphic->clear();
+
 		bgi->step = 1;
 		
-		//bgi->draw(0,0);
-		//tex->draw(0,0);
+		//spr->stretch(0,0,1000,1000);
 
-		aobj->update();
+		//bgi->draw(0,0);
+		tex->stretch(0,0,300,200);
+
+		//aobj->update();
 		//spr->draw(0,0);
 	}
 
