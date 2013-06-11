@@ -35,4 +35,17 @@ namespace Cppie{
 	void Window::update(){
 		GameObject::update();
 	}
+
+	void Window::focus(){
+		winmgr->setFocus(this);
+	}
+	void Window::unfocus(){
+		if(focused())
+			winmgr->clearFocus();
+	}
+	bool Window::focused(){
+		if(winmgr->getFocused() == this)
+			return true;
+		else return false;
+	}
 };
