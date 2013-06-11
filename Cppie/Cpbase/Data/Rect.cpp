@@ -17,9 +17,13 @@ namespace Cppie{
 
 	void Rect::set(int x,int y,int w,int h){
 		this->x = x;
-			this->y = y;
-			this->w = w;
-			this->h = h;
+		this->y = y;
+		this->w = w;
+		this->h = h;
+	}
+
+	bool Rect::collideWith(Rect r){
+		return HasIntersection(*this, r);
 	}
 
 	bool HasIntersection(Rect a,Rect b){
