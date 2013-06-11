@@ -29,8 +29,10 @@ namespace Cppie{
 	void Layer::add(Object *obj){
 		o.push_back(obj);
 	}
-	void Layer::remove(Object *obj){
+	void Layer::remove(Object *obj,bool release){
 		o.erase(std::find(o.begin(), o.end(), obj));
+
+		if(release)	delete obj;
 	}
 
 };
