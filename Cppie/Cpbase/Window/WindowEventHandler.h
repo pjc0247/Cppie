@@ -6,7 +6,7 @@
 
 namespace Cppie{
 	class WindowEventHandler : public EventHandler{
-
+	public:
 		virtual void onFocusGain(Window *before){
 		}
 		virtual void onFocusLost(Window *after){
