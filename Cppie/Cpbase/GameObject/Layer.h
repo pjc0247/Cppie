@@ -23,6 +23,6 @@ namespace Cppie{
 
 		virtual void update();
 		void add(Object *obj);
-		void remove(Object *obj,bool release=true);
+		void remove(Object *obj,bool release=false);
 	};
 };
