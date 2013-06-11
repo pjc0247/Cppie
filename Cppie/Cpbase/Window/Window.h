@@ -1,9 +1,10 @@
 ﻿#pragma once
 
 #include "../GameObject/GameObject.h"
+#include "../Event/EventHandler.h"
 
 namespace Cppie{
-	class Window : public GameObject{
+	class Window : public GameObject, public EventHandler{
 	public:
 		int w,h;
 
