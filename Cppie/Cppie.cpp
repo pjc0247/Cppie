@@ -160,8 +160,8 @@ public :
 
 		
 		spr->blend = CPPIE_BLENDMODE_ADD;
-		gen = new FireGenerator(120,100, spr);
-		gen->activity = 30;
+		gen = new FlowGenerator(220,400, spr);
+		gen->activity = 80;
 
 
 		return 0;
@@ -186,8 +186,9 @@ public :
 
 		spr->step = 3;
 
+		spr->angle += 10;
 	//	spr->draw(200,200);
-	//	spr->stretch(0,0,100,100);
+		spr->stretch(0,0,100,100);
 
 		//aobj->update();
 		//spr->draw(0,0);
