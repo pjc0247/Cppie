@@ -190,6 +190,9 @@ public :
 	//	spr->draw(200,200);
 		spr->stretch(0,0,100,100);
 
+		graphic->color = Color::Red;
+		graphic->fillCircle(300,100,20);
+
 		//aobj->update();
 		//spr->draw(0,0);
 	}
