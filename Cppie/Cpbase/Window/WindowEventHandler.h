@@ -11,5 +11,10 @@ namespace Cppie{
 		}
 		virtual void onFocusLost(Window *after){
 		}
+
+		virtual void onMouseEnter(int x,int y){
+		}
+		virtual void onMouseLeave(int x,int y){
+		}
 	};
 };
