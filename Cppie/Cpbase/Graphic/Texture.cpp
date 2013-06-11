@@ -271,8 +271,8 @@ namespace Cppie{
 		dst.x = x, dst.y = y;
 		dst.w = w, dst.h = h;
 
-		pt.x = origin.x;
-		pt.y = origin.y;
+		pt.x = origin.x * (w / this->w);
+		pt.y = origin.y * (h / this->h);	
 
 		SDL_SetTextureColorMod(texture,
 				color.r, color.g, color.b);
@@ -295,8 +295,8 @@ namespace Cppie{
 		dst.x = x, dst.y = y;
 		dst.w = w, dst.h = h;
 
-		pt.x = origin.x;
-		pt.y = origin.y;
+		pt.x = origin.x * (w / this->w);
+		pt.y = origin.y * (h / this->h);
 
 		SDL_SetTextureColorMod(texture,
 				color.r, color.g, color.b);
