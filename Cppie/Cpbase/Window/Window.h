@@ -1,7 +1,6 @@
 ﻿#pragma once
 
 #include "../GameObject/GameObject.h"
-#include "../Event/EventHandler.h"
 
 #include "WindowEventHandler.h"
 
