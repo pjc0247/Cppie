@@ -13,15 +13,13 @@ namespace Cppie{
 		Object *parent;
 
 	public:
-		virtual int initialize(){
-			parent = nullptr;
+		Object();
+		virtual ~Object();
 
-			return 0;
-		}
-		virtual void dispose(){
-		}
-		virtual void update(){
-		}
+		virtual int initialize();
+		virtual void dispose();
+
+		virtual void update();
 	};
 
 	class DrawableObject : public Object{
