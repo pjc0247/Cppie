@@ -11,6 +11,8 @@ namespace Cppie{
 	}
 
 	int GameObject::initialize(float x,float y,Sprite *sprite){
+		DrawableObject::initialize();
+
 		this->x = x;
 		this->y = y;
 
@@ -36,6 +38,7 @@ namespace Cppie{
 		if(sprite != nullptr){
 			sprite->color = color;
 			sprite->angle = angle;
+			sprite->alpha = alpha;
 			sprite->step = step;
 			sprite->draw(x,y);
 		}
