@@ -1,6 +1,27 @@
 #include "Rect.h"
 
 namespace Cppie{
+	Rect::Rect(){
+		set(0,0);
+	}
+	Rect::Rect(int x,int y,int w,int h){
+		set(x,y,w,h);
+	}
+
+	Rect::~Rect(){
+	}
+
+	int Rect::initialize(int x,int y,int w,int h){
+		set(x,y,w,h);
+	}
+
+	void Rect::set(int x,int y,int w,int h){
+		this->x = x;
+			this->y = y;
+			this->w = w;
+			this->h = h;
+	}
+
 	bool HasIntersection(Rect a,Rect b){
 		int Amin, Amax, Bmin, Bmax;
 
