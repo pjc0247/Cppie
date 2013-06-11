@@ -68,8 +68,9 @@ namespace Cppie{
 
 		for(itor=o.begin();itor!=o.end();++itor){
 			if(e.type >= CPPIE_EVENT_KEYDOWN && e.type <= CPPIE_EVENT_KEYUP &&
-				getFocused() != *itor){
+				getFocused() == *itor){
 					// do nothing
+					(*itor)->onEvent(e);
 			}
 			else if(e.type >= CPPIE_EVENT_LEFTDOWN && e.type <= CPPIE_EVENT_MOUSEMOVE){
 				Rect a,b;
@@ -88,6 +89,7 @@ namespace Cppie{
 						e.x = a.x - b.x;
 						e.y = a.x - b.y;
 
+						(*itor)->mouseHovered = true;
 						(*itor)->onEvent(e);
 					}
 
@@ -99,11 +101,11 @@ namespace Cppie{
 					e.x -= b.x;
 					e.y -= b.y;
 
+					(*itor)->mouseHovered = false;
 					(*itor)->onEvent(e);
 				}
 			}
-			else
-				(*itor)->onEvent(e);
+		
 		}
 	}
 };
