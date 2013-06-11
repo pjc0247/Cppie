@@ -13,6 +13,8 @@ namespace Cppie{
 
 	int Rect::initialize(int x,int y,int w,int h){
 		set(x,y,w,h);
+
+		return 0;
 	}
 
 	void Rect::set(int x,int y,int w,int h){
