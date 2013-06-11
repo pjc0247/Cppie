@@ -125,6 +125,7 @@
     <ClInclude Include="Cpbase\Util\Random.h" />
     <ClInclude Include="Cpbase\Window\Window.h" />
     <ClInclude Include="Cpbase\Window\WindowEventHandler.h" />
+    <ClInclude Include="Cpbase\Window\WindowEventType.h" />
     <ClInclude Include="Cpbase\Window\WindowManager.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -168,6 +169,7 @@
     <ClCompile Include="Cpbase\TTF\Font.cpp" />
     <ClCompile Include="Cpbase\Util\FilePath.cpp" />
     <ClCompile Include="Cpbase\Window\Window.cpp" />
+    <ClCompile Include="Cpbase\Window\WindowEventHandler.cpp" />
     <ClCompile Include="Cpbase\Window\WindowManager.cpp" />
     <ClCompile Include="Cppie.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>

@@ -195,6 +195,9 @@
     <ClInclude Include="Cpbase\Window\WindowEventHandler.h">
       <Filter>소스 파일\Cpbase\Window</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Window\WindowEventType.h">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -307,6 +310,9 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Data\Rect.cpp">
       <Filter>소스 파일\Cpbase\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Window\WindowEventHandler.cpp">
+      <Filter>소스 파일\Cpbase\Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
