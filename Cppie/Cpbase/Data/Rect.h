@@ -28,4 +28,6 @@ namespace Cppie{
 			this->h = h;
 		}
 	};
+
+	bool HasIntersection(Rect a,Rect b);
 };

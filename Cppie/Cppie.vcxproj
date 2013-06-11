@@ -140,6 +140,7 @@
     <ClCompile Include="Cpbase\Data\Color.h" />
     <ClCompile Include="Cpbase\Data\make.cpp" />
     <ClCompile Include="Cpbase\Data\Point.cpp" />
+    <ClCompile Include="Cpbase\Data\Rect.cpp" />
     <ClCompile Include="Cpbase\Data\Version.cpp" />
     <ClCompile Include="Cpbase\Event\EventHandler.cpp" />
     <ClCompile Include="Cpbase\Event\EventManager.cpp" />

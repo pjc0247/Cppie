@@ -305,5 +305,8 @@
     <ClCompile Include="Cpbase\Window\WindowManager.cpp">
       <Filter>소스 파일\Cpbase\Window</Filter>
     </ClCompile>
+    <ClCompile Include="Cpbase\Data\Rect.cpp">
+      <Filter>소스 파일\Cpbase\Data</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
