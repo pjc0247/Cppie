@@ -54,6 +54,8 @@ namespace Cppie{
 		sprite->alpha = alpha;
 		sprite->angle = angle;
 		sprite->color = color;
+		sprite->step = step;
+		
 		sprite->stretch(x,y, 
 			sprite->w * scaleX,
 			sprite->h * scaleY);
@@ -78,9 +80,6 @@ namespace Cppie{
 		alpha += alphaStep;
 		angle += angleStep;
 
-		step = 
-			(getTicks() - startTick)
-			/
-			((lifeTime) / (sprite->wSlice * sprite->wSlice));
+		step = (getTicks() - startTick) / (lifeTime / (sprite->wSlice * sprite->wSlice));
 	}
 };
