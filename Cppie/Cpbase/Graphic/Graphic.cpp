@@ -46,6 +46,11 @@ namespace Cppie{
 
 		logger->output("Graphic system initialized");
 
+		logger->output("Graphic Device Info");
+		logger->output("  - Renderer : %s", "OpenGL");
+		logger->output("  - Renderer Version : %s", glGetString(GL_VERSION));
+		logger->output("  - Rendering Device : %s", glGetString(GL_RENDERER));
+		logger->output("  - Vendor : %s", glGetString(GL_VENDOR));
 	}
 	void Graphic::dispose(){
 	}
