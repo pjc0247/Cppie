@@ -4,6 +4,8 @@
 #include "../Graphic/Sprite.h"
 #include "../Data/Rect.h"
 
+#include "Layer.h"
+
 namespace Cppie{
 	class GameObject : public DrawableObject{
 	public:
@@ -14,6 +16,8 @@ namespace Cppie{
 
 		Sprite *sprite;
 		Rect rect;
+
+		Layer *layer;
 
 	public:
 		GameObject(float x=0,float y=0,Sprite *sprite=nullptr);
