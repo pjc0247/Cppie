@@ -3,11 +3,11 @@
 #include "../Data//Color.h"
 #include "../Graphic/BlendMode.h"	
 
-#include "../GameObject/Layer.h"
-
 #include <stdio.h>
 
 namespace Cppie{
+	class Layer;
+
 	class Object{
 	public:
 		
