@@ -90,5 +90,7 @@
 /*
 	Window
 */
+#include "Window/WindowEventHandler.h"
+#include "Window/WindowEventType.h"
 #include "Window/WindowManager.h"
 #include "Window/Window.h"
