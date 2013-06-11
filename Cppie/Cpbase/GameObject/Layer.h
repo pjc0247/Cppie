@@ -19,6 +19,8 @@ namespace Cppie{
 		Layer(float z = CPPIE_Z_OBJECT);
 		virtual ~Layer();
 
+		virtual void dispose();
+
 		virtual void update();
 		void add(Object *obj);
 		void remove(Object *obj,bool release=true);
