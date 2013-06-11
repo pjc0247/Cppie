@@ -58,6 +58,9 @@
     <Filter Include="소스 파일\Cpbase\Event">
       <UniqueIdentifier>{e6e7352e-46cf-4779-a9f4-68c4a6ab2eee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Particle">
+      <UniqueIdentifier>{4835dc4e-426e-4b4c-9290-82904e08029d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -198,6 +201,18 @@
     <ClInclude Include="Cpbase\Window\WindowEventType.h">
       <Filter>소스 파일\Cpbase\Window</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Particle\Particle.h">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Particle\ParticleGenerator.h">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Particle\FlowParticle.h">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Particle\FireParticle.h">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">
@@ -313,6 +328,18 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Window\WindowEventHandler.cpp">
       <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Particle\Particle.cpp">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Particle\ParticleGenerator.cpp">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Particle\FlowParticle.cpp">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Particle\FireParticle.cpp">
+      <Filter>소스 파일\Cpbase\Particle</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -110,6 +110,10 @@
     <ClInclude Include="Cpbase\Input\KeyCode.h" />
     <ClInclude Include="Cpbase\Input\Mouse.h" />
     <ClInclude Include="Cpbase\Log\Log.h" />
+    <ClInclude Include="Cpbase\Particle\FireParticle.h" />
+    <ClInclude Include="Cpbase\Particle\FlowParticle.h" />
+    <ClInclude Include="Cpbase\Particle\Particle.h" />
+    <ClInclude Include="Cpbase\Particle\ParticleGenerator.h" />
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
     <ClInclude Include="Cpbase\System\Manager.h" />
@@ -156,6 +160,10 @@
     <ClCompile Include="Cpbase\Input\Keyboard.cpp" />
     <ClCompile Include="Cpbase\Input\Mouse.cpp" />
     <ClCompile Include="Cpbase\Log\Log.cpp" />
+    <ClCompile Include="Cpbase\Particle\FireParticle.cpp" />
+    <ClCompile Include="Cpbase\Particle\FlowParticle.cpp" />
+    <ClCompile Include="Cpbase\Particle\Particle.cpp" />
+    <ClCompile Include="Cpbase\Particle\ParticleGenerator.cpp" />
     <ClCompile Include="Cpbase\Scene\Scene.h" />
     <ClCompile Include="Cpbase\Scene\SceneManager.cpp" />
     <ClCompile Include="Cpbase\System\Core.cpp" />
