@@ -2,9 +2,22 @@
 
 namespace Cppie{
 	WindowManager::WindowManager(){
-		layer = new Layer(CPPIE_Z_UI);
+		initialize();
 	}
 	WindowManager::~WindowManager(){
+		dispose();
+	}
+
+	int WindowManager::initialize(){
+		layer = new Layer(CPPIE_Z_UI);
+
+		focused = nullptr;
+
+		return 0;
+	}
+	void WindowManager::dispose(){
+		focused = nullptr;
+
 		delete layer;
 	}
 
@@ -23,6 +36,28 @@ namespace Cppie{
 	void WindowManager::remove(Window *window){
 		o.remove(window);
 		layer->remove(window);
+	}
+
+	void WindowManager::setFocus(Window *window){
+		Window *before = nullptr;
+
+		if(focused != nullptr){
+			focused->onFocusLost(window);
+			before = focused;
+		}
+
+		focused = window;
+
+		window->onFocusGain(before);
+	}
+	void WindowManager::clearFocus(){
+		if(focused != nullptr)
+			focused->onFocusLost(nullptr);
+
+		focused = nullptr;
+	}
+	Window *WindowManager::getFocused(){
+		return focused;
 	}
 
 	void WindowManager::onEvent(Event e){
