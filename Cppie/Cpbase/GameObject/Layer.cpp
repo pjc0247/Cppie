@@ -27,9 +27,13 @@ namespace Cppie{
 	}
 
 	void Layer::add(Object *obj){
+		obj->parent = this;
+
 		o.push_back(obj);
 	}
 	void Layer::remove(Object *obj,bool release){
+		obj->parent = nullptr;
+
 		o.erase(std::find(o.begin(), o.end(), obj));
 
 		if(release)	delete obj;
