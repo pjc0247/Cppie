@@ -64,7 +64,7 @@ namespace Cppie{
 		srcRect.set(
 			step % wSlice * w,
 			step / wSlice * h,
-			w,h);
+			this->w,this->h);
 		Texture::stretch(x,y,w,h,
 			srcRect.x,srcRect.y,
 			srcRect.w,srcRect.h);
