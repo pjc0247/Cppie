@@ -31,6 +31,7 @@
 #include "Cpbase/Particle/FlowParticle.h"
 #include "Cpbase/Particle/FireParticle.h"
 
+
 using namespace Cppie;
 
 class TestScene2 : public Scene{
@@ -126,29 +127,10 @@ public :
 
 		bgi = new Sprite("cat.png",2,2);
 		layer = new Layer();
-
-		for(int i=1;i<9;i++){
-			char msg[128];
-			sprintf_s(msg,"sakura%d.png", i);
-			sakura[i] = new Sprite(msg);
-		}
 		
 		spr = new Sprite("orange.png",4,4);
 		aobj = new AnimatedObject(100,100,
 			spr, 50);
-
-		task = new RepeatedTask(
-				CPPIE_TASK(	
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(181,16)));
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(94,96)));
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(330,13)));
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(460,128)));
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(616,37)));
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(560,0)));
-					CPPIE_TOSS_EVENT(100/7, layer->add(new Sakura(0,0)));
-				));
-		
-		task->run();
 
 		w = new Window(0,0,50,50);
 
@@ -162,38 +144,42 @@ public :
 		spr->blend = CPPIE_BLENDMODE_ADD;
 		gen = new FlowGenerator(220,400, spr);
 		gen->activity = 80;
-
+		
 
 		return 0;
 	}
 	virtual void dispose(){
 		Scene::dispose();
+		printf("QWER");
 
-		bgi->dispose();
-		task->dispose();
+		delete spr;
+		delete tex;
+		delete layer;
+		delete aobj;
+		delete font;
 	}
 	virtual void update(){
 		Scene::update();
 
 		graphic->color = Color::Black;
-		graphic->clear();
+		//graphic->clear();
 
-		bgi->step = 1;
+		//bgi->step = 1;
 		
 		
 		//bgi->draw(0,0);
 		//tex->stretch(0,0,300,200);
 
-		spr->step = 3;
+		//spr->step = 3;
 
-		spr->angle += 10;
-	//	spr->draw(200,200);
-		spr->stretch(0,0,100,100);
+	spr->angle += 10;
+		spr->draw(200,200);
+		//spr->stretch(0,0,100,100);
 
 		graphic->color = Color::Red;
 		graphic->fillCircle(300,100,20);
 
-		//aobj->update();
+		aobj->update();
 		//spr->draw(0,0);
 	}
 
@@ -217,10 +203,11 @@ public :
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	
+
 	Cppie::initialize(840,640);
 	Scene *scene = new TestScene;
 	Cppie::scene->change(scene);
+
 	Cppie::run();
 	Cppie::quit();
 
