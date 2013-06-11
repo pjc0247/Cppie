@@ -2,9 +2,9 @@
 
 #include "../Event/EventHandler.h"
 
-#include "Window.h"
-
 namespace Cppie{
+	class Window;
+
 	class WindowEventHandler : public EventHandler{
 	public:
 		virtual void onFocusGain(Window *before){
