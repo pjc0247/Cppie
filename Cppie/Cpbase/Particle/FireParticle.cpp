@@ -17,7 +17,7 @@ namespace Cppie{
 		scaleX = 1.5;
 		scaleY = 1.5;
 
-		lifeTime = 6000;
+		lifeTime = 4000;
 	}
 
 	FireGenerator::FireGenerator(int x,int y,Sprite *sprite,int z){
