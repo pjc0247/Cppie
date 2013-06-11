@@ -3,12 +3,20 @@
 #include "../Data//Color.h"
 #include "../Graphic/BlendMode.h"	
 
+#include "../GameObject/Layer.h"
+
 #include <stdio.h>
 
 namespace Cppie{
 	class Object{
 	public:
+		
+		Object *parent;
+
+	public:
 		virtual int initialize(){
+			parent = nullptr;
+
 			return 0;
 		}
 		virtual void dispose(){
