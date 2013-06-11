@@ -134,7 +134,7 @@ public :
 		}
 		
 		spr = new Sprite("orange.png",4,4);
-		aobj = new AnimatedObject(0,0,
+		aobj = new AnimatedObject(100,100,
 			spr, 50);
 
 		task = new RepeatedTask(
@@ -180,10 +180,14 @@ public :
 
 		bgi->step = 1;
 		
-		//spr->stretch(0,0,1000,1000);
-
+		
 		//bgi->draw(0,0);
-		tex->stretch(0,0,300,200);
+		//tex->stretch(0,0,300,200);
+
+		spr->step = 3;
+
+	//	spr->draw(200,200);
+	//	spr->stretch(0,0,100,100);
 
 		//aobj->update();
 		//spr->draw(0,0);
