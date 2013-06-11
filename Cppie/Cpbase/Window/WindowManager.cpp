@@ -1,5 +1,7 @@
 #include "WindowManager.h"
 
+#include "WindowEventType.h"
+
 namespace Cppie{
 	WindowManager::WindowManager(){
 		initialize();
@@ -75,6 +77,25 @@ namespace Cppie{
 				b.set((*itor)->x,(*itor)->y,(*itor)->w,(*itor)->h);
 
 				if(HasIntersection(a,b)){
+					e.x -= (*itor)->x;
+					e.y -= (*itor)->y;
+
+					if(! (*itor)->mouseHovered){
+						Event e;
+
+						e.type = CPPIE_WINDOWEVENT_MOUSE_ENTER;
+
+						e.x = a.x - b.x;
+						e.y = a.x - b.x;
+
+						(*itor)->onEvent(e);
+					}
+
+					(*itor)->onEvent(e);
+				}
+				else if((*itor)->mouseHovered){
+					e.type = CPPIE_WINDOWEVENT_MOUSE_LEAVE;
+
 					e.x -= (*itor)->x;
 					e.y -= (*itor)->y;
 

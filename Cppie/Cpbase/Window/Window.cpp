@@ -16,6 +16,7 @@ namespace Cppie{
 		GameObject::initialize(x,y, nullptr);
 
 		visible = true;
+		mouseHovered = false;
 
 		this->w = w;
 		this->h = h;

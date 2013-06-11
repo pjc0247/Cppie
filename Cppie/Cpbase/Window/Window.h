@@ -10,6 +10,8 @@ namespace Cppie{
 	public:
 		int w,h;
 
+		bool mouseHovered;
+
 	public:
 		Window();
 		Window(int x,int y,int w,int h);
