@@ -65,6 +65,10 @@ namespace Cppie{
 		std::list<Window *>::iterator itor;
 
 		for(itor=o.begin();itor!=o.end();++itor){
+			if(e.type >= CPPIE_EVENT_KEYDOWN && e.type <= CPPIE_EVENT_KEYUP &&
+				getFocused() != *itor){
+					// do nothing
+			}
 			(*itor)->onEvent(e);
 		}
 	}
