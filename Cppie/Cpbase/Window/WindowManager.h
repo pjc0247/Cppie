@@ -21,5 +21,7 @@ namespace Cppie{
 
 		void add(Window *window);
 		void remove(Window *window);
+
+		void onEvent(Event e);
 	};
 };

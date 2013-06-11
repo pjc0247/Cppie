@@ -24,4 +24,13 @@ namespace Cppie{
 		o.remove(window);
 		layer->remove(window);
 	}
+
+	void WindowManager::onEvent(Event e){
+		
+		std::list<Window *>::iterator itor;
+
+		for(itor=o.begin();itor!=o.end();++itor){
+			(*itor)->onEvent(e);
+		}
+	}
 };
