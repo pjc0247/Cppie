@@ -20,6 +20,10 @@ namespace Cppie{
 
 	int SoundManager::initialize(int maxChannels){
 		int result;
+		int driver;
+		char driverName[256];
+		FMOD_GUID guid;
+		FMOD_OUTPUTTYPE output;
 
 		result = FMOD::System_Create(&system);
 
@@ -43,6 +47,16 @@ namespace Cppie{
 
 		logger->output("Sound system initialized");
 
+		system->getDriver(&driver);
+		system->getDriverInfo(driver, driverName, 256, &guid);
+		system->getOutput(&output);
+
+		logger->output("Sound Device Info");
+		logger->output("  - Driver Name : %s", driverName);
+		logger->output("  - Driver GUID : %x-%x-%x-%x", 
+			guid.Data1, guid.Data2, guid.Data3, guid.Data4);
+		logger->output("  - Output Type : %d", output);
+		
 		return 0;
 	}
 	void SoundManager::dispose(){
