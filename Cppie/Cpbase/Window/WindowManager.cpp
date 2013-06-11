@@ -77,8 +77,8 @@ namespace Cppie{
 				b.set((*itor)->x,(*itor)->y,(*itor)->w,(*itor)->h);
 
 				if(HasIntersection(a,b)){
-					e.x -= (*itor)->x;
-					e.y -= (*itor)->y;
+					e.x -= b.x;
+					e.y -= b.y;
 
 					if(! (*itor)->mouseHovered){
 						Event e;
@@ -86,7 +86,7 @@ namespace Cppie{
 						e.type = CPPIE_WINDOWEVENT_MOUSE_ENTER;
 
 						e.x = a.x - b.x;
-						e.y = a.x - b.x;
+						e.y = a.x - b.y;
 
 						(*itor)->onEvent(e);
 					}
@@ -96,8 +96,8 @@ namespace Cppie{
 				else if((*itor)->mouseHovered){
 					e.type = CPPIE_WINDOWEVENT_MOUSE_LEAVE;
 
-					e.x -= (*itor)->x;
-					e.y -= (*itor)->y;
+					e.x -= b.x;
+					e.y -= b.y;
 
 					(*itor)->onEvent(e);
 				}
