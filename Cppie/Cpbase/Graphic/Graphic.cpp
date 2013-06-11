@@ -50,6 +50,8 @@ namespace Cppie{
 	}
 
 	void Graphic::clear(){
+		SDL_SetRenderDrawColor(renderer,color.r, color.g, color.b, color.a);
+
 		SDL_RenderClear(renderer);
 	}
 
