@@ -2,7 +2,7 @@
 
 namespace Cppie{
 	struct Event{
-		unsigned char type;
+		unsigned int type;
 
 		int key;
 		int x,y;
