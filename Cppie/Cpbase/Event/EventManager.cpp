@@ -25,8 +25,10 @@ namespace Cppie{
 			if((e.type >= CPPIE_EVENT_KEYDOWN && e.type <= CPPIE_EVENT_KEYUP) &&
 				(e.repeated && !keyRepeat)){
 			}
-			else
+			else{
 				scene->scene->onEvent(e);
+				winmgr->onEvent(e);
+			}
 		}
 		else
 			logger->error("Failed to raise event - scene is null");
