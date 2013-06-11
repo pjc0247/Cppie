@@ -3,8 +3,10 @@
 #include "../GameObject/GameObject.h"
 #include "../Event/EventHandler.h"
 
+#include "WindowEventHandler.h"
+
 namespace Cppie{
-	class Window : public GameObject, public EventHandler{
+	class Window : public GameObject, public WindowEventHandler{
 	public:
 		int w,h;
 
@@ -19,5 +21,8 @@ namespace Cppie{
 		virtual void draw(float x,float y);
 		virtual void update();
 
+		void focus();
+		void unfocus();
+		bool focused();
 	};
 };
