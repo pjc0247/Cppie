@@ -192,6 +192,9 @@
     <ClInclude Include="Cpbase\System\Manager.h">
       <Filter>소스 파일\Cpbase\System</Filter>
     </ClInclude>
+    <ClInclude Include="Cpbase\Window\WindowEventHandler.h">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cppie.cpp">

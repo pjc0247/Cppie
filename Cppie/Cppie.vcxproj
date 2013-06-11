@@ -124,6 +124,7 @@
     <ClInclude Include="Cpbase\Util\FilePath.h" />
     <ClInclude Include="Cpbase\Util\Random.h" />
     <ClInclude Include="Cpbase\Window\Window.h" />
+    <ClInclude Include="Cpbase\Window\WindowEventHandler.h" />
     <ClInclude Include="Cpbase\Window\WindowManager.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
