@@ -69,7 +69,20 @@ namespace Cppie{
 				getFocused() != *itor){
 					// do nothing
 			}
-			(*itor)->onEvent(e);
+			else if(e.type >= CPPIE_EVENT_LEFTDOWN && e.type <= CPPIE_EVENT_MOUSEMOVE){
+				Rect a,b;
+				a.set(e.x,e.y,1,1);
+				b.set((*itor)->x,(*itor)->y,(*itor)->w,(*itor)->h);
+
+				if(HasIntersection(a,b)){
+					e.x -= (*itor)->x;
+					e.y -= (*itor)->y;
+
+					(*itor)->onEvent(e);
+				}
+			}
+			else
+				(*itor)->onEvent(e);
 		}
 	}
 };
