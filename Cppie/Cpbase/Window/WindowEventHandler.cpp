@@ -1,7 +1,5 @@
 #include "WindowEventHandler.h"
 
-#include <stdio.h>
-
 namespace Cppie{
 	void WindowEventHandler::onEvent(Event e){
 		switch(e.type){
