@@ -6,11 +6,10 @@
 #include <stdio.h>
 
 namespace Cppie{
-	class Layer;
-
 	class Object{
 	public:
 		
+
 		Object *parent;
 
 	public:

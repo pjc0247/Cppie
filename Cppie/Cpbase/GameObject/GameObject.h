@@ -17,8 +17,6 @@ namespace Cppie{
 		Sprite *sprite;
 		Rect rect;
 
-		Layer *layer;
-
 	public:
 		GameObject(float x=0,float y=0,Sprite *sprite=nullptr);
 		virtual ~GameObject();
