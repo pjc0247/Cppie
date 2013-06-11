@@ -78,6 +78,26 @@ namespace Cppie{
 		SDL_RenderFillRect(renderer, &rect);
 	}
 
+	void Graphic::circle(int x,int y,int rad){
+		SDL_SetRenderDrawColor(renderer,color.r, color.g, color.b, color.a);
+		SDL_SetRenderDrawBlendMode(renderer, blend);
+
+		int old_x = sin(180/3.14 * 0) * rad;
+		int old_y = cos(180/3.14 * 0) * rad;
+		for(int i=0;i<360;i++){
+			int x1 = old_x;
+			int y1 = old_y;
+			int x2 = sin(180/3.14 * (i+1)) * rad;
+			int y2 = cos(180/3.14 * (i+1)) * rad;
+			
+			SDL_RenderDrawLine(renderer,
+				x1+x,y1+y,x2+x,y2+y);
+
+			old_x = x2;
+			old_y = y2;
+		}
+	}
+
 	void Graphic::setSize(Rect size){
 		SDL_SetWindowSize(window, size.w,size.h);
 	}

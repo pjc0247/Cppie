@@ -38,6 +38,8 @@ namespace Cppie{
 		void rect(int x,int y,int w,int h);
 		void fill(int x,int y,int w,int h);
 
+		void circle(int x,int y,int rad);
+
 		void setSize(Rect size);
 		Rect getSize();
 
