@@ -32,7 +32,7 @@ namespace Cppie{
 		}
 
 		virtual void dump(){
-			logger->output("class : Object\n");
+			logger->output("class : Object");
 			logger->output("  memd : %x, (%db)", this, sizeof(Object));
 			logger->output("");
 			logger->output("  parent : %x", parent);
