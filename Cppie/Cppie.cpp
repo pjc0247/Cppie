@@ -153,7 +153,7 @@ public :
 		Scene::update();
 
 		graphic->color = Color::Black;
-		//graphic->clear();
+		graphic->clear();
 
 		//bgi->step = 1;
 		
@@ -176,6 +176,10 @@ public :
 
 	virtual void onLeftDown(int x,int y){
 		printf("%d %d\n", x,y);
+
+		Object o;
+
+		o.dump();
 		
 	}
 	virtual void onKeyDown(int key,bool repeated){
