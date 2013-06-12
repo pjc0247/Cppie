@@ -51,6 +51,8 @@ namespace Cppie{
 		logger->output("  - Renderer Version : %s", glGetString(GL_VERSION));
 		logger->output("  - Rendering Device : %s", glGetString(GL_RENDERER));
 		logger->output("  - Vendor : %s", glGetString(GL_VENDOR));
+
+		return 0;
 	}
 	void Graphic::dispose(){
 	}
