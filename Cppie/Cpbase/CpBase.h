@@ -14,9 +14,9 @@
 	Cppie System
 */
 #include "System/Core.h"
+#include "System/Object.h"
 #include "System/Manager.h"
 #include "System/SystemManager.h"
-#include "System/Object.h"
 
 /*
 	Data Structures
@@ -38,6 +38,7 @@
 /*
 	Graphic
 */
+#include "Graphic/DrawableObject.h"
 #include "Graphic/BlendMode.h"
 #include "Graphic/Texture.h"
 #include "Graphic/Sprite.h"
