@@ -101,6 +101,7 @@
     <ClInclude Include="Cpbase\GameObject\ObjectManager.h" />
     <ClInclude Include="Cpbase\GameObject\ZOrder.h" />
     <ClInclude Include="Cpbase\Graphic\BlendMode.h" />
+    <ClInclude Include="Cpbase\Graphic\DrawableObject.h" />
     <ClInclude Include="Cpbase\Graphic\Flip.h" />
     <ClInclude Include="Cpbase\Graphic\Graphic.h" />
     <ClInclude Include="Cpbase\Graphic\Sprite.h" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Cpbase\GameObject\GameObject.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
+    <ClCompile Include="Cpbase\Graphic\DrawableObject.cpp" />
     <ClCompile Include="Cpbase\Graphic\Graphic.cpp" />
     <ClCompile Include="Cpbase\Graphic\Sprite.cpp" />
     <ClCompile Include="Cpbase\Graphic\SpriteNumber.cpp" />
@@ -167,6 +169,7 @@
     <ClCompile Include="Cpbase\Scene\Scene.h" />
     <ClCompile Include="Cpbase\Scene\SceneManager.cpp" />
     <ClCompile Include="Cpbase\System\Core.cpp" />
+    <ClCompile Include="Cpbase\System\Object.cpp" />
     <ClCompile Include="Cpbase\System\Object.h" />
     <ClCompile Include="Cpbase\System\SystemManager.cpp" />
     <ClCompile Include="Cpbase\Task\AsyncTask.cpp" />

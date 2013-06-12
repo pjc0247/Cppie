@@ -3,10 +3,10 @@
 #include <SDL.h>
 #include <sdl_gdiplus.h>
 
-#include "../System/Object.h"
 #include "../Data/Size.h"
 #include "../Data/Point.h"
 
+#include "DrawableObject.h"
 #include "BlendMode.h"
 #include "Flip.h"
 

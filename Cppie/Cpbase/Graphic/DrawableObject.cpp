@@ -12,6 +12,8 @@ namespace Cppie{
 		color = Color::White;
 		blend = CPPIE_BLENDMODE_BLEND;	
 		alpha = 255;
+
+		return 0;
 	}
 
 	void DrawableObject::draw(int x,int y){

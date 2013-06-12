@@ -17,15 +17,6 @@
 
 #include "Cpbase/CpBase.h"
 
-#include "Cpbase\/Input/Keyboard.h"
-
-#include "Cpbase/Task/AsyncTask.h"
-#include "Cpbase/Task/DelayedTask.h"
-#include "Cpbase/Task/RepeatedTask.h"
-
-#include "Cpbase/Util/Random.h"
-#include "Cpbase/GameObject/AnimatedObject.h"
-
 #include "Cpbase/Particle/ParticleGenerator.h"
 #include "Cpbase/Particle/Particle.h"
 #include "Cpbase/Particle/FlowParticle.h"

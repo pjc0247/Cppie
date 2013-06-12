@@ -1,4 +1,4 @@
-#pragma onces
+#pragma once
 
 #include "../System/Object.h"
 #include "../Data/Color.h"
@@ -12,15 +12,11 @@ namespace Cppie{
 		int alpha;
 
 	public:
-		DrawableObject(){
-			
-		}
-		virtual ~DrawableObject(){
-		}
+		DrawableObject();
+		virtual ~DrawableObject();
 
 		virtual int initialize();
 
 		virtual void draw(int x=0,int y=0);
 	};
-};
 };

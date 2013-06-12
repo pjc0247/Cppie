@@ -1,24 +1,30 @@
 #pragma once
 
-#include "../Data//Color.h"
+#include "../Data/Color.h"
 #include "../Graphic/BlendMode.h"	
-
-#include <stdio.h>
 
 namespace Cppie{
 	class Object{
 	public:
-		
-
 		Object *parent;
 
 	public:
-		Object();
-		virtual ~Object();
+		Object(){
+			initialize();
+		}
+		virtual ~Object(){
+			dispose();
+		}
 
-		virtual int initialize();
-		virtual void dispose();
+		virtual int initialize(){
+			parent = nullptr;
 
-		virtual void update();
+			return 0;
+		}
+		virtual void dispose(){
+		}
+
+		virtual void update(){
+		}
 	};
 }

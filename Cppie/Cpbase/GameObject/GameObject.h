@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../System/Object.h"
+#include "../Graphic/DrawableObject.h"
 #include "../Graphic/Sprite.h"
 #include "../Data/Rect.h"
 

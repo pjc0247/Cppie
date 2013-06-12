@@ -4,11 +4,10 @@
 #include <Windows.h>
 #include <gl/GL.h>
 
-#include "../System/Object.h"
-
 #include "../Data/Color.h"
 #include "../Data/Rect.h"
 
+#include "DrawableObject.h"
 
 #define CPPIE_RENDERER_SOFTWARE "software"
 #define CPPIE_RENDERER_OPENGL	"opengl"
