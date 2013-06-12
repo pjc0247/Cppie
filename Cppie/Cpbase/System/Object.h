@@ -3,7 +3,11 @@
 #include "../Data/Color.h"
 #include "../Graphic/BlendMode.h"	
 
+#include "../Log/Log.h"
+
 namespace Cppie{
+	extern Log *logger;
+
 	class Object{
 	public:
 		Object *parent;
@@ -25,6 +29,13 @@ namespace Cppie{
 		}
 
 		virtual void update(){
+		}
+
+		virtual void dump(){
+			logger->output("class : Object\n");
+			logger->output("  memd : %x, (%db)", this, sizeof(Object));
+			logger->output("");
+			logger->output("  parent : %x", parent);
 		}
 	};
 }
