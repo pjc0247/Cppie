@@ -33,6 +33,7 @@ namespace Cppie{
 		return 0;
 	}
 	void AnimatedObject::dispose(){
+		delete animateTask;
 	}
 
 	void AnimatedObject::update(){
