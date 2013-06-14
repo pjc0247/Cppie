@@ -5,13 +5,13 @@
 
 #include "Task.h"
 
-#include <list>
+#include <vector>
 
 namespace Cppie{
 
 	class TaskManager : public ManagerObject{
 	private:
-		std::list<Object *> o;
+		std::vector<Object *> o;
 
 	public:
 		TaskManager();

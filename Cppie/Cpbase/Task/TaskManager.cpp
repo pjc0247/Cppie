@@ -10,10 +10,8 @@ namespace Cppie{
 	}
 
 	void TaskManager::update(){
-		std::list<Object *>::iterator itor;
-
-		for(itor=o.begin();itor!=o.end();++itor){
-			(*itor)->update();
+		for(int i=0;i<o.size();i++){
+			o[i]->update();
 		}
 	}
 
@@ -21,6 +19,6 @@ namespace Cppie{
 		o.push_back(obj);
 	}
 	void TaskManager::remove(TaskObject *obj){
-		o.remove(obj);
+		o.erase(std::find(o.begin(), o.end(), obj));
 	}
 };
