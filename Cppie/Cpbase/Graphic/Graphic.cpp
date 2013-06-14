@@ -37,7 +37,7 @@ namespace Cppie{
 					SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 			}
 		}
-		if(renderer == NULL){
+		if(renderer == nullptr){
 			logger->error("Open GL not supported");
 
 			return -3;
