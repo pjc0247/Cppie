@@ -67,8 +67,6 @@ namespace Cppie{
 		return 0;
 	}
 	int Texture::initializeWithSize(Size size){
-		SDL_Texture *texture;
-
 		texture = SDL_CreateTexture(renderer,
 			SDL_PIXELFORMAT_ABGR8888, SDL_TEXTUREACCESS_TARGET,
 			size.w, size.h);
