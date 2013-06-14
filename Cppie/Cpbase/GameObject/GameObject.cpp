@@ -32,6 +32,7 @@ namespace Cppie{
 		return 0;
 	}
 	void GameObject::dispose(){
+		dynamic_cast<Layer *>(parent)->remove(this);
 	}
 
 	void GameObject::draw(float x,float y){

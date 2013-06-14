@@ -24,9 +24,9 @@ namespace Cppie{
 		ParticleGenerator::initialize(x,y,sprite,z);
 	}
 	void FireGenerator::generate(){
-		FireParticle *p;
-
 		for(int i=0;i<rand()%7;i++){
+			FireParticle *p;	
+
 			p = new FireParticle(
 				x+rand()%50-25,y+rand()%10-10, this);
 			layer->add(p);
