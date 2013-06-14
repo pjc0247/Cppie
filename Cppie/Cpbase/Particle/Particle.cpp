@@ -47,7 +47,6 @@ namespace Cppie{
 		return 0;
 	}
 	void Particle::dispose(){
-		generator->layer->remove(this);
 	}
 
 	void Particle::draw(float x,float y){
@@ -67,7 +66,7 @@ namespace Cppie{
 
 		if(alpha <= 0 ||
 			getTicks() - startTick >= lifeTime){
-				dispose();
+				delete this;
 		}
 	}
 
