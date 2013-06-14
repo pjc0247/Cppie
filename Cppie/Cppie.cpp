@@ -59,7 +59,7 @@ public:
 
 		cd = new Texture("Cd.png");
 		cd->blend = CPPIE_BLENDMODE_ADD;
-
+		
 		flare1 = new Sprite("flare1.png", 6,1);
 		flare1->blend = CPPIE_BLENDMODE_ADD;
 
@@ -70,11 +70,16 @@ public:
 
 		memset(pressed, 0, sizeof(int) * 7);
 
-		gen = new FireGenerator(400,300, par);
+		gen = new FireGenerator(80,460, par);
 		gen->activity = 30;
 
-		gen = new FireGenerator(450,300, par);
+		gen = new FireGenerator(150,460, par);
 		gen->activity = 30;
+
+		gen = new FireGenerator(220,460, par);
+		gen->activity = 30;
+
+		SDL_SetRenderTarget();
 
 		return 0;
 	}
