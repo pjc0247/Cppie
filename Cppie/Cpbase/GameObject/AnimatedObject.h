@@ -15,7 +15,7 @@ namespace Cppie{
 	public:
 		AnimatedObject();
 		AnimatedObject(float x,float y,Sprite *sprite,int interval);
-		~AnimatedObject();
+		virtual ~AnimatedObject();
 
 		virtual int initialize(float x,float y,Sprite *sprite,int interval);
 		virtual void dispose();
