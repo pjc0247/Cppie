@@ -27,7 +27,6 @@ namespace Cppie{
 			return -2;
 		}
 
-		
 		int n = SDL_GetNumRenderDrivers();
 		for(int i=0;i<n;i++){
 			SDL_RendererInfo info;
