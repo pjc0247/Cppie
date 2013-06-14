@@ -40,11 +40,17 @@ namespace Cppie{
 		o.push_back(obj);
 	}
 	void Layer::remove(Object *obj,bool release){
+		std::vector<Object*>::iterator itor;
+
 		obj->parent = nullptr;
-
-		o.erase(std::find(o.begin(), o.end(), obj));
-
-		if(release)	delete obj;
+		
+		itor = std::find(o.begin(), o.end(), obj);
+		if(itor != o.end())
+			o.erase(itor);
+		
+		if(release)
+			delete obj;
+		
 	}
 
 };
