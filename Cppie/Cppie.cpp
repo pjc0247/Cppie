@@ -70,7 +70,10 @@ public:
 
 		memset(pressed, 0, sizeof(int) * 7);
 
-		gen = new FireGenerator(200,200, par);
+		gen = new FireGenerator(400,300, par);
+		gen->activity = 30;
+
+		gen = new FireGenerator(450,300, par);
 		gen->activity = 30;
 
 		return 0;
