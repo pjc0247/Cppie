@@ -34,7 +34,8 @@ namespace Cppie{
 			SDL_GetRenderDriverInfo(i, &info);
 			if(!strcmp(info.name, rdriver)){
 				renderer = SDL_CreateRenderer(window, i,
-					SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+					SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC |
+					SDL_RENDERER_TARGETTEXTURE);
 			}
 		}
 		if(renderer == nullptr){
