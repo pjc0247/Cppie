@@ -138,12 +138,15 @@ namespace Cppie{
 	}
 
 	void Graphic::setRenderTarget(Texture *tex){
-		if(tex == CPPIE_RENDERTARGET_WINDOW)
+		if(tex == CPPIE_RENDERTARGET_WINDOW){
 			SDL_SetRenderTarget(renderer, nullptr);
+			renderTarget = nullptr;
+		}
 		else{
 			int result;
-
+			
 			result = SDL_SetRenderTarget(renderer, tex->texture);
+			renderTarget = tex;
 
 			if(result != 0)
 				logger->error("Failed to change render target");
