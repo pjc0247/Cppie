@@ -41,6 +41,7 @@ namespace Cppie{
 		if(surface != nullptr){
 			texture = SDL_CreateTextureFromSurface(renderer, surface);
 			SDL_FreeSurface(surface);
+			
 		}
 		else{
 			logger->error("Failed to load image - %s", image);
@@ -68,7 +69,7 @@ namespace Cppie{
 	}
 	int Texture::initializeWithSize(Size size){
 		texture = SDL_CreateTexture(renderer,
-			SDL_PIXELFORMAT_ABGR8888, SDL_TEXTUREACCESS_TARGET,
+			SDL_PIXELFORMAT_UYVY, SDL_TEXTUREACCESS_TARGET,
 			size.w, size.h);
 
 		if(texture == nullptr){
