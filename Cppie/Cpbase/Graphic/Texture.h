@@ -16,14 +16,13 @@
 
 namespace Cppie{
 	class Texture : public DrawableObject{
-	protected:
-		SDL_Texture *texture;
-
 	public:
 		int w,h;
 		float angle;
 		Point origin;
 		Flip flip;
+
+		SDL_Texture *texture;
 
 	public:
 		Texture();
