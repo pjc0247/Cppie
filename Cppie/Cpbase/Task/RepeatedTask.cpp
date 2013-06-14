@@ -14,6 +14,9 @@ namespace Cppie{
 		dispose();
 	}
 
+	void RepeatedTask::dispose(){
+	}
+
 	void RepeatedTask::update(){
 		if(this->state != CPPIE_TASKSTATE_WAITING)
 			return;

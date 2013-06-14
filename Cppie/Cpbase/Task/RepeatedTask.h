@@ -10,6 +10,8 @@ namespace Cppie{
 		RepeatedTask(Task task);
 		virtual ~RepeatedTask();
 
+		virtual void dispose();
+
 		virtual void update();
 	};
 };
