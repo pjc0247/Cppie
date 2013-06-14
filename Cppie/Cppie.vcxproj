@@ -96,6 +96,7 @@
     <ClInclude Include="Cpbase\Event\EventManager.h" />
     <ClInclude Include="Cpbase\Event\EventType.h" />
     <ClInclude Include="Cpbase\GameObject\AnimatedObject.h" />
+    <ClInclude Include="Cpbase\GameObject\EffectObject.h" />
     <ClInclude Include="Cpbase\GameObject\GameObject.h" />
     <ClInclude Include="Cpbase\GameObject\Layer.h" />
     <ClInclude Include="Cpbase\GameObject\ObjectManager.h" />
@@ -115,6 +116,8 @@
     <ClInclude Include="Cpbase\Particle\FlowParticle.h" />
     <ClInclude Include="Cpbase\Particle\Particle.h" />
     <ClInclude Include="Cpbase\Particle\ParticleGenerator.h" />
+    <ClInclude Include="Cpbase\Resource\SharedFont.h" />
+    <ClInclude Include="Cpbase\Resource\SharedResource.h" />
     <ClInclude Include="Cpbase\Scene\SceneManager.h" />
     <ClInclude Include="Cpbase\System\Core.h" />
     <ClInclude Include="Cpbase\System\Manager.h" />
@@ -128,6 +131,7 @@
     <ClInclude Include="Cpbase\TTF\han2unicode.h" />
     <ClInclude Include="Cpbase\Util\FilePath.h" />
     <ClInclude Include="Cpbase\Util\Random.h" />
+    <ClInclude Include="Cpbase\Window\TextView.h" />
     <ClInclude Include="Cpbase\Window\Window.h" />
     <ClInclude Include="Cpbase\Window\WindowEventHandler.h" />
     <ClInclude Include="Cpbase\Window\WindowEventType.h" />
@@ -151,6 +155,7 @@
     <ClCompile Include="Cpbase\Event\EventHandler.cpp" />
     <ClCompile Include="Cpbase\Event\EventManager.cpp" />
     <ClCompile Include="Cpbase\GameObject\AnimatedObject.cpp" />
+    <ClCompile Include="Cpbase\GameObject\EffectObject.cpp" />
     <ClCompile Include="Cpbase\GameObject\GameObject.cpp" />
     <ClCompile Include="Cpbase\GameObject\Layer.cpp" />
     <ClCompile Include="Cpbase\GameObject\ObjectManager.cpp" />
@@ -166,6 +171,7 @@
     <ClCompile Include="Cpbase\Particle\FlowParticle.cpp" />
     <ClCompile Include="Cpbase\Particle\Particle.cpp" />
     <ClCompile Include="Cpbase\Particle\ParticleGenerator.cpp" />
+    <ClCompile Include="Cpbase\Resource\SharedResource.cpp" />
     <ClCompile Include="Cpbase\Scene\Scene.h" />
     <ClCompile Include="Cpbase\Scene\SceneManager.cpp" />
     <ClCompile Include="Cpbase\System\Core.cpp" />
@@ -179,6 +185,7 @@
     <ClCompile Include="Cpbase\Task\TaskManager.cpp" />
     <ClCompile Include="Cpbase\TTF\Font.cpp" />
     <ClCompile Include="Cpbase\Util\FilePath.cpp" />
+    <ClCompile Include="Cpbase\Window\TextView.cpp" />
     <ClCompile Include="Cpbase\Window\Window.cpp" />
     <ClCompile Include="Cpbase\Window\WindowEventHandler.cpp" />
     <ClCompile Include="Cpbase\Window\WindowManager.cpp" />
