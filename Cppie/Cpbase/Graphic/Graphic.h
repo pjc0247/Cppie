@@ -8,12 +8,14 @@
 #include "../Data/Rect.h"
 
 #include "DrawableObject.h"
+#include "Texture.h"
 
 #define CPPIE_RENDERER_SOFTWARE "software"
 #define CPPIE_RENDERER_OPENGL	"opengl"
 #define CPPIE_RENDERER_OPENGLES "opengles"
 #define CPPIE_RENDERER_DIRECT3D "direct3d"
 
+#define CPPIE_RENDERTARGET_WINDOW	nullptr
 
 namespace Cppie{
 	extern SDL_Renderer *renderer;
@@ -22,6 +24,7 @@ namespace Cppie{
 	class Graphic : public DrawableObject{
 	private:
 		char title[256];
+		Texture *renderTarget;
 
 	public:
 
@@ -45,5 +48,8 @@ namespace Cppie{
 
 		void setTitle(const char *title);
 		const char *getTitle();
+
+		void setRenderTarget(Texture *tex);
+		Texture *getRenderTarget();
 	};
 };

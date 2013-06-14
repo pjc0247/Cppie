@@ -136,4 +136,20 @@ namespace Cppie{
 		//return SDL_GetWindowTitle(window);
 		return title;
 	}
+
+	void Graphic::setRenderTarget(Texture *tex){
+		if(tex == CPPIE_RENDERTARGET_WINDOW)
+			SDL_SetRenderTarget(renderer, nullptr);
+		else{
+			int result;
+
+			result = SDL_SetRenderTarget(renderer, tex->texture);
+
+			if(result != 0)
+				logger->error("Failed to change render target");
+		}
+	}
+	Texture *Graphic::getRenderTarget(){
+		return renderTarget;
+	}
 };
