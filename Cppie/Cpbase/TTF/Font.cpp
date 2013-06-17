@@ -22,17 +22,16 @@ namespace Cppie{
 		FILE *fp;
 		char path[256];
 
-		sprintf_s(path, "c:\\windows\\fonts\\%s", font);
+		sprintf_s(path, "resource\\%s", font);
 		fopen_s(&fp, path, "r");
 		if(fp != NULL){
 			fclose(fp);
 			goto LoadFont;
 		}
 
-		sprintf_s(path, "resource\\%s", font);
+		sprintf_s(path, "c:\\windows\\fonts\\%s", font);
 		fopen_s(&fp, path, "r");
 		if(fp != NULL){
-			printf("ASDF");
 			fclose(fp);
 			goto LoadFont;
 		}
@@ -50,7 +49,6 @@ namespace Cppie{
 		}
 
 LoadFont:
-		printf("%s\n", path);
 		this->font = TTF_OpenFont(path, size);
 
 		if(this->font == nullptr){
