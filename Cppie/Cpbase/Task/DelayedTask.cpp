@@ -81,4 +81,8 @@ namespace Cppie{
 			return true;
 		else return false;
 	}
+
+	void DelayedTask::stop(){
+		this->state = CPPIE_TASKSTATE_DEAD;
+	}
 };

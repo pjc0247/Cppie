@@ -33,6 +33,8 @@ namespace Cppie{
 		void pause();
 		void resume();
 
+		void stop();
+
 		bool paused();
 	};
 };
