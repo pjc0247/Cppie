@@ -30,6 +30,7 @@
 
 #include "bmsparser.hpp"
 
+
 using namespace Cppie;
 
 class Flare : public AnimatedObject{
@@ -44,7 +45,25 @@ struct MeasureData{
 	int cursor;
 	int tick;
 };
-
+char* filetobuf(char *file)
+{
+    FILE *fptr;
+    long length;
+    char *buf;
+ 
+    fptr = fopen(file, "rb"); /* Open file for reading */
+    if (!fptr) /* Return NULL on failure */
+        return NULL;
+    fseek(fptr, 0, SEEK_END); /* Seek to the end of the file */
+    length = ftell(fptr); /* Find out how many bytes into the file we are */
+    buf = (char*)malloc(length+1); /* Allocate a buffer for the entire length of the file and a null terminator */
+    fseek(fptr, 0, SEEK_SET); /* Go back to the beginning of the file */
+    fread(buf, length, 1, fptr); /* Read the contents of the file in to the buffer */
+    fclose(fptr); /* Close the file */
+    buf[length] = 0; /* Null terminator */
+ 
+    return buf; /* Return the buffer */
+}
 class TestScene : public Scene {
 protected:
 	Texture *gearTex;
@@ -74,6 +93,8 @@ protected:
 	FlowGenerator *fgen;
 	Sprite *par;
 
+	Font *debug;
+
 
 	Sound *keySound[2056];
 
@@ -83,13 +104,14 @@ protected:
 	CHANNEL2QUEUE cq2;
 
 	CHANNELQUEUE chBgs;
+	CHANNELQUEUE chMeasureMult;
 	CHANNELQUEUE chNote[50];
 
 	CHANNELQUEUE::QueueNode *node;
 
 	int hp;
 	int hpbar_h;
-
+	
 	int pressed[7];
 	int judgePanelType;
 	int judgePanelAni;
@@ -104,11 +126,14 @@ public:
 
 	virtual int initialize(){
 
+		debug = new Font("gulim.ttc", 20);
+		debug->color = Color::Red;
+
 		BmsParser::LoadFromFile("bms\\flower\\FLOWER [1N tricoro].bme", bms_header, bms_data);
 
 		printf("%s \n", bms_header.artist);
 
-		for(int i=0;i<2056;i++){
+		for(int i=0;i<1296;i++){
 			if(strlen(bms_header.wav[i])){
 				char path[256];
 				sprintf_s(path, "bms\\flower\\%s", bms_header.wav[i]);
@@ -120,6 +145,21 @@ public:
 		}
 
 		bms_data.GetChannelQueue(1,chBgs);
+		bms_data.GetChannelQueue(2,chMeasureMult);
+
+		bms_data.GetChannel2Queue(cq2);
+
+		printf("mm\n");
+		CHANNELQUEUE::QueueNode *n;
+		CHANNEL2QUEUE::QueueNode2 *n2;
+		while(true){
+			n2 = cq2.dequeue();
+			if(n2 == nullptr) break;
+
+			printf("BPMQ %d : %f\n",n2->measure, n2->data);
+			
+		}
+		printf("\n\n");
 
 		for(int i=0;i<20;i++){
 			bms_data.GetChannelQueue(11+i,chNote[i]);
@@ -171,7 +211,10 @@ public:
 
 		judgePanel = new Texture(200,150);
 
-		judgeFont = new Font("CooperBlackStd-Italic.otf", 30);
+		//judgeFont = debug;
+		judgeFont = new Font("COOPBL.TTF", 30);
+
+		
 		
 		judgeFont->color = cpColor(255,255,255);
 		judge[4][2] = judgeFont->render("Miss");
@@ -196,10 +239,15 @@ public:
 		judgePanelAni = 0;
 		measure = 0;
 		measureTick = getTicks();
-		measureDuration = 240.0f/ bms_header.bpm * 1000;
 
+		measureDuration = 240.0f/ bms_header.bpm * 1000;
+		measureDuration *= 1.72916666666667f;
+
+
+		//measureDuration = (60 / (double)bms_header.bpm * 4) * 1000;//* (double)i * 1000) + (60 / (double)bms_header.bpm / 4 * ((double)j / 2) * 1000);
+
+		printf("BPM : %f\n", bms_header.bpm);
 		printf("duration : %f\n", measureDuration);	
-		//abort();
 
 		for(int i=0;i<20;i++){
 			measureData[i+1].cursor = 0;
@@ -208,8 +256,6 @@ public:
 		}
 
 		hp = 100;
-
-		
 
 		return 0;
 	}
@@ -282,6 +328,18 @@ public:
 		graphic->color = Color::Red;
 		graphic->line(50,470,225,470);
 
+
+		char str[128];
+
+		sprintf_s(str,"BPM : %d", (int)bms_header.bpm);
+		debug->draw(0,0, str);
+
+		sprintf_s(str,"Measure : %d", measure);
+		debug->draw(0,20, str);
+
+		sprintf_s(str,"Next Measure : %d", (int)measureDuration - (getTicks() - measureTick));
+		debug->draw(0,40, str);
+			
 	}
 	virtual void update(){
 		cd->angle += 10;
@@ -300,6 +358,8 @@ public:
 			measure ++;	
 			measureTick = getTicks();
 
+			measureDuration = 240.0f/ bms_header.bpm * 1000;
+
 			parseMeasure();
 
 			printf("Measure ++ ( current :%d )\n\n", measure);
@@ -317,13 +377,16 @@ public:
 						printf("play wav %d, %s\n", 
 							measureData[i].data[measureData[i].cursor],
 							bms_header.wav[measureData[i].data[measureData[i].cursor]]);
+
+						if(keySound[
+							measureData[i].data[measureData[i].cursor]] == nullptr)
+								printf("aaa\n");
 						keySound[
 							measureData[i].data[measureData[i].cursor]]->play();
 					}
 				}
 			}
 		}
-
 		//keySound[1]->setVolume(10);
 		//keySound[1]->pause();
 		draw();

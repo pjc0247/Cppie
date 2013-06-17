@@ -754,6 +754,10 @@ private:
 
 			pline+=6;
 
+			printf("%s\n", cmd.c_str());
+			if(channel == 2){
+			}
+
 			// µ¥ÀÌÅÍ È¹µæ
 			int datalen = (int) ( strlen(pline) / 2 );
 			ref_data._add_data(measure,channel,pline,datalen);
