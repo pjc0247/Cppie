@@ -14,8 +14,12 @@ namespace Cppie{
 		this->sound = nullptr;
 		this->channel = nullptr;
 
-		result = sndmgr->getSystem()->createSound(
-			sound, FMOD_HARDWARE | FMOD_LOOP_NORMAL | FMOD_2D, NULL, &this->sound);
+		if(loop)
+			result = sndmgr->getSystem()->createSound(
+				sound, FMOD_HARDWARE | FMOD_LOOP_NORMAL | FMOD_2D, NULL, &this->sound);
+		else
+			result = sndmgr->getSystem()->createSound(
+				sound, FMOD_HARDWARE | FMOD_LOOP_OFF | FMOD_2D, NULL, &this->sound);
 
 		if(result != 0){
 			logger->error("Failed to open audio file - %s", sound);
