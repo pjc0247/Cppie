@@ -167,3 +167,6 @@ pip-log.txt
 *.mp3
 *.jpg
 *.png
+
+resource/
+bms/
