@@ -134,6 +134,7 @@
     <ClInclude Include="Cpbase\TTF\han2unicode.h" />
     <ClInclude Include="Cpbase\Util\FilePath.h" />
     <ClInclude Include="Cpbase\Util\Random.h" />
+    <ClInclude Include="Cpbase\Util\Timer.h" />
     <ClInclude Include="Cpbase\Window\TextView.h" />
     <ClInclude Include="Cpbase\Window\Window.h" />
     <ClInclude Include="Cpbase\Window\WindowEventHandler.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Cpbase\Task\TaskManager.cpp" />
     <ClCompile Include="Cpbase\TTF\Font.cpp" />
     <ClCompile Include="Cpbase\Util\FilePath.cpp" />
+    <ClCompile Include="Cpbase\Util\Timer.cpp" />
     <ClCompile Include="Cpbase\Window\TextView.cpp" />
     <ClCompile Include="Cpbase\Window\Window.cpp" />
     <ClCompile Include="Cpbase\Window\WindowEventHandler.cpp" />
