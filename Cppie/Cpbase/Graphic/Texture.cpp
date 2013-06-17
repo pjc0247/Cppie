@@ -149,8 +149,6 @@ namespace Cppie{
 			texture = SDL_CreateTexture(renderer, format,
 				SDL_TEXTUREACCESS_STREAMING, surface->w, surface->h);
 
-			printf("f %d %d\n", SDL_PIXELFORMAT_ARGB8888, format);
-
 			if(texture == nullptr){
 				logger->error("Failed to create texture - %x, %d", surface, access);
 
@@ -305,5 +303,4 @@ namespace Cppie{
 		SDL_RenderCopyEx(renderer, texture, &src, &dst,
 						angle, &pt, flip);
 	}
-
 };
