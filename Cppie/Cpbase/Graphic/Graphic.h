@@ -52,4 +52,4 @@ namespace Cppie{
 		void setRenderTarget(Texture *tex);
 		Texture *getRenderTarget();
 	};
-};
+};	
