@@ -16,7 +16,7 @@ namespace Cppie{
 		int startCount;
 		int startTick;
 
-		int pausedTick;
+		int pauseTick;
 
 	public:
 		DelayedTask();

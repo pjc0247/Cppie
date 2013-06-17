@@ -16,7 +16,7 @@ namespace Cppie{
 		this->task = task;
 		this->state = CPPIE_TASKSTATE_RUNNING;		
 
-		pausedTick = -1;
+		pauseTick = -1;
 
 		taskmgr->add(this);
 
@@ -68,16 +68,16 @@ namespace Cppie{
 	}
 
 	void DelayedTask::pause(){
-		pausedTick = getTicks();
+		pauseTick = getTicks();
 	}
 	void DelayedTask::resume(){
-		startTick += getTicks() - pausedTick;
+		startTick += getTicks() - pauseTick;
 
-		pausedTick = -1;
+		pauseTick = -1;
 	}
 
 	bool DelayedTask::paused(){
-		if(pausedTick > 0)
+		if(pauseTick > 0)
 			return true;
 		else return false;
 	}
