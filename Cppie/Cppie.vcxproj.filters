@@ -61,6 +61,9 @@
     <Filter Include="소스 파일\Cpbase\Particle">
       <UniqueIdentifier>{4835dc4e-426e-4b4c-9290-82904e08029d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Cpbase\Resource">
+      <UniqueIdentifier>{cfea991e-f19f-4b76-ae43-d90b09d4a5df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -86,9 +89,6 @@
     </ClInclude>
     <ClInclude Include="Cpbase\Data\Point.h">
       <Filter>소스 파일\Cpbase\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="Cpbase\CpBase.h">
-      <Filter>소스 파일\Cpbase</Filter>
     </ClInclude>
     <ClInclude Include="Cpbase\GameObject\GameObject.h">
       <Filter>소스 파일\Cpbase\GameObject</Filter>
@@ -212,6 +212,27 @@
     </ClInclude>
     <ClInclude Include="Cpbase\Particle\FireParticle.h">
       <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Graphic\DrawableObject.h">
+      <Filter>소스 파일\Cpbase\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Window\TextView.h">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Resource\SharedResource.h">
+      <Filter>소스 파일\Cpbase\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\Resource\SharedFont.h">
+      <Filter>소스 파일\Cpbase\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\GameObject\EffectObject.h">
+      <Filter>소스 파일\Cpbase\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Cpbase\CpBase.h">
+      <Filter>소스 파일\Cpbase</Filter>
+    </ClInclude>
+    <ClInclude Include="bmsparser.hpp">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +361,21 @@
     </ClCompile>
     <ClCompile Include="Cpbase\Particle\FireParticle.cpp">
       <Filter>소스 파일\Cpbase\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\System\Object.cpp">
+      <Filter>소스 파일\Cpbase\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Graphic\DrawableObject.cpp">
+      <Filter>소스 파일\Cpbase\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Window\TextView.cpp">
+      <Filter>소스 파일\Cpbase\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\Resource\SharedResource.cpp">
+      <Filter>소스 파일\Cpbase\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Cpbase\GameObject\EffectObject.cpp">
+      <Filter>소스 파일\Cpbase\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -46,6 +46,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\sdk\sdl\include;C:\sdk\SDL_GDIPLUS;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Windows\api\inc;c:\sdk\sdl_ttf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\sdk\sdl\lib;C:\sdk\SDL_GDIPLUS;C:\Program Files %28x86%29\FMOD SoundSystem\FMOD Programmers API Windows\api\lib;c:\sdk\sdl_ttf\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,6 +85,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bmsparser.hpp" />
     <ClInclude Include="Cpbase\Audio\Sound.h" />
     <ClInclude Include="Cpbase\Audio\SoundManager.h" />
     <ClInclude Include="Cpbase\Audio\SoundStream.h" />
