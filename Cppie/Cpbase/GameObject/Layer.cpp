@@ -20,8 +20,6 @@ namespace Cppie{
 
 	void Layer::dispose(){
 		for(int i=0;i<o.size();i++){
-			o[i]->dispose();
-
 			delete o[i];
 		}
 	}
