@@ -30,7 +30,6 @@
 
 #include "bmsparser.hpp"
 
-
 using namespace Cppie;
 
 class Flare : public AnimatedObject{
