@@ -20,7 +20,7 @@ namespace Cppie{
 
 	void Layer::dispose(){
 		for(int i=0;i<o.size();i++){
-			delete o[i];
+			delete o[i];	
 		}
 	}
 
@@ -51,4 +51,4 @@ namespace Cppie{
 		
 	}
 
-};
+};	
